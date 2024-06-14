@@ -1,15 +1,19 @@
 package fr.uga.iut2.genevent.modele;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 
 public class Spectacle {
     private String nom;
     private String lieu;
     private int nbrPlaces;
     private float prix;
-
-    private ArrayList<Spectateur> spectateurs = new ArrayList<Spectateur>();
+    private HashSet<Evenement> evenements = new HashSet();
+    private HashSet<Spectateur> spectateurs = new HashSet<>();
     private ArrayList<Numero> numeros = new ArrayList<Numero>();
+    private HashSet<Organisateur> organisateurs = new HashSet<>();
+
     public Spectacle(String nom, String lieu, int nbrPlaces, float prix) {
         this.nom = nom;
         this.lieu = lieu;
@@ -61,8 +65,9 @@ public class Spectacle {
     }
 
     public void ajouterOrganisateur(Organisateur organisateur){
-
+        organisateurs.add(organisateur);
     }
+    public void
 
 
 }
