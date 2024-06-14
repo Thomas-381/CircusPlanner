@@ -67,7 +67,11 @@ public class Spectacle {
     public void ajouterOrganisateur(Organisateur organisateur){
         organisateurs.add(organisateur);
     }
-    public void
+
+    public float gainSpectacle(){
+        float total = 0;
+        total = getPrix() *
+    }
 
 
 }
