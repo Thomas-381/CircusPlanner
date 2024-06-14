@@ -25,7 +25,7 @@ public class Evenement implements Serializable {
         this.dateFin = dateFin;
     }
 
-    public Spectacle ajouterSpectacle(Spectacle spectacle){
+    public void ajouterSpectacle(Spectacle spectacle){
         spectacles.add(spectacle);
         return spectacle;
     }
