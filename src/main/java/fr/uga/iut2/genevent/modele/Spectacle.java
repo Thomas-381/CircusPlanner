@@ -80,7 +80,7 @@ public class Spectacle {
      * @return Le nom du Spectacle.
      */
     public String getNom() {
-        return nom;
+        return this.nom;
     }
 
     /**
@@ -89,7 +89,7 @@ public class Spectacle {
      * @return Le lieu du Spectacle.
      */
     public String getLieu() {
-        return lieu;
+        return this.lieu;
     }
 
     /**
@@ -98,7 +98,7 @@ public class Spectacle {
      * @return Le nombre de places du Spectacle.
      */
     public int getNbrPlaces() {
-        return nbrPlaces;
+        return this.nbrPlaces;
     }
 
     /**
@@ -107,7 +107,7 @@ public class Spectacle {
      * @return Le nombre de places libres du Spectacle.
      */
     public int getNbrPlacesLibres(){
-        return 0; // À implémenter
+        return nbrPlaces - spectateurs.size();
     }
 
     /**
@@ -116,7 +116,13 @@ public class Spectacle {
      * @return Le nombre de places VIP du Spectacle.
      */
     public int getNbrPlacesVIP(){
-        return 0; // À implémenter
+        int nbrPlacesVIP = 0;
+        for (Spectateur spectateur : spectateurs) {
+            if (spectateur.isVip()) {
+                nbrPlacesVIP++;
+            }
+        }
+        return nbrPlacesVIP;
     }
 
     /**
@@ -125,37 +131,7 @@ public class Spectacle {
      * @return Le nombre de places normales du Spectacle.
      */
     public int getNbrPlacesNormales(){
-        return 0; // À implémenter
+        return nbrPlaces - getNbrPlacesVIP();
     }
-
-    /**
-     * Retourne le prix du Spectacle.
-     *
-     * @return Le prix du Spectacle.
-     */
-    public float getPrix() {
-        return prix;
-    }
-
-    /**
-     * Ajoute un organisateur au Spectacle.
-     *
-     * @param organisateur L'organisateur à ajouter.
-     */
-    public void ajouterOrganisateur(Organisateur organisateur){
-        organisateurs.add(organisateur);
-    }
-
-    /**
-     * Calcule le gain total du Spectacle.
-     *
-     * @return Le gain total du Spectacle.
-     */
-    public float gainSpectacle(){
-        float total = 0;
-        // À implémenter
-        return total;
-    }
-
 
 }
