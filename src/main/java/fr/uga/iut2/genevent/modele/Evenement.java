@@ -27,7 +27,6 @@ public class Evenement implements Serializable {
 
     public void ajouterSpectacle(Spectacle spectacle){
         spectacles.add(spectacle);
-        return spectacle;
     }
 
     public void setDateFin(String dateFin) {
@@ -58,8 +57,8 @@ public class Evenement implements Serializable {
         return dateFin;
     }
 
-    public Organisateur ajoutOganisateur(Organisateur organisateur){
-
+    public void ajoutOganisateur(Organisateur organisateur){
+        organisateurs.add(organisateur);
     }
 
     public Spectacle getSppectacle(int i) {
