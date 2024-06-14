@@ -37,6 +37,7 @@ public class Evenement implements Serializable {
         this.adresse = adresse;
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
+        this.nbrPlacesMax = nbrPlacesMax;
     }
 
     /**
@@ -141,10 +142,15 @@ public class Evenement implements Serializable {
     public int getNbrPlacesDispos(){
         return placesNormales + placesVIP * 2;
     }
+    public void setNbrPlacesMax(int nbrPlacesMax){
+        this.nbrPlacesMax = nbrPlacesMax;
+    }
     public float getPrix() {
         return prix;
     }
-
+    public void setPrix(float prix){
+        this.prix = prix;
+    }
     public float gainSpectacle(){
         float total = 0;
         total = getPrix() * getPlacesNormales();
