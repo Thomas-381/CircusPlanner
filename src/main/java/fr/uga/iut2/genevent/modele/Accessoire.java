@@ -14,6 +14,7 @@ public class Accessoire {
      */
     private String label;
 
+
     /**
      * Construit un nouvel Accessoire avec l'identifiant et le libellé donnés.
      *

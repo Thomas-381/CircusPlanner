@@ -9,6 +9,7 @@ public class Acteur {
     private String prenom;
     private String specialite;
 
+
     /**
      * Construit un nouvel Acteur avec l'identifiant, le nom, le prénom et la spécialité donnés.
      *

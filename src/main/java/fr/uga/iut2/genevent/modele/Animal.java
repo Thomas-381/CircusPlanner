@@ -15,6 +15,7 @@ public class Animal {
      */
     public Animal(String nom, String espece) {
         this.nom = nom;
+
         this.espece = espece;
     }
 }

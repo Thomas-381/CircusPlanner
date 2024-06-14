@@ -20,4 +20,5 @@ public class Spectateur {
     public boolean isVip() {
         return vip;
     }
+
 }

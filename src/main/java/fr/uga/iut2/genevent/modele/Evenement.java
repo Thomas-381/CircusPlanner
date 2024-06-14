@@ -126,4 +126,5 @@ public class Evenement implements Serializable {
     public Spectacle getSppectacle(int i) {
         return spectacles.get(i);
     }
+
 }
