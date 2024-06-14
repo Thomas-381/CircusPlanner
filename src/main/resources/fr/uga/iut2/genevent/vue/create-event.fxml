@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <HBox alignment="CENTER" prefHeight="30.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+               <HBox.margin>
+                  <Insets right="90.0" />
+               </HBox.margin></ImageView>
+            <Label alignment="CENTER" contentDisplay="CENTER" text="Plannifiez l'emerveillement" />
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin></ImageView>
+         </children>
+      </HBox>
+   </top>
+   <bottom>
+      <Label text="Copyright © 2024 CircusPlanner" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="8.0" />
+         </font></Label>
+   </bottom>
+   <left>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+           <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="5.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="60.0" minHeight="30.0" prefHeight="60.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+               <children>
+                  <Label text="Nom event" />
+                  <Label text="Date debut et fin" />
+                  <Label text="Adresse" />
+                  <CheckBox mnemonicParsing="false" text="Event terminé" />
+                  <TextArea prefHeight="200.0" prefWidth="200.0" promptText="Commentaire" />
+                  <Button mnemonicParsing="false" text="Modifier" />
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
+               <children>
+                  <Label text="Mes Spectacles" />
+                  <Button mnemonicParsing="false" text="Spectacle1 " />
+                  <Button mnemonicParsing="false" text="Spectacle2" />
+                  <Button mnemonicParsing="false" text="+ Créer Spectacle" />
+               </children></VBox>
+            <Button mnemonicParsing="false" text="Retour" />
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" />
+         </padding>
+         <BorderPane.margin>
+            <Insets right="50.0" />
+         </BorderPane.margin>
+      </GridPane>
+   </left>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField promptText="Titre" />
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <TextField promptText="Date debut" />
+                  <TextField promptText="Date fin" />
+                  <TextField promptText="Lieu" />
+               </children>
+            </HBox>
+            <ImageView fitHeight="150.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true" />
+            <Button mnemonicParsing="false" text="+ Ajouter Spectacle" />
+            <TextArea prefHeight="200.0" prefWidth="200.0" promptText="Commentaire" />
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+</BorderPane>
