@@ -14,6 +14,7 @@ public class Spectateur {
 
     public void inscriptionSpectacle(Spectacle spectacle){
         spectacles.add(spectacle);
+        spectacle.ajoutSpectateur(this);
     }
 
     public boolean isVip() {
