@@ -1,7 +1,6 @@
 package fr.uga.iut2.genevent;
 
 import fr.uga.iut2.genevent.controleur.Controleur;
-import fr.uga.iut2.genevent.modele.GenEvent;
 import fr.uga.iut2.genevent.util.Persisteur;
 import java.io.IOException;
 
