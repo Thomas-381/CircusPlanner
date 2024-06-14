@@ -16,4 +16,7 @@ public class Spectateur {
         spectacles.add(spectacle);
     }
 
+    public boolean isVip() {
+        return vip;
+    }
 }
