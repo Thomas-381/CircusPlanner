@@ -1,6 +1,5 @@
 package fr.uga.iut2.genevent.util;
 
-import fr.uga.iut2.genevent.modele.GenEvent;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
