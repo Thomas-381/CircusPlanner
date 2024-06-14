@@ -12,10 +12,9 @@ public class Spectacle {
     private String lieu;
     private int nbrPlaces;
     private float prix;
-    private HashSet<Evenement> evenements;
-    private HashSet<Spectateur> spectateurs;
-    private ArrayList<Numero> numeros;
-    private HashSet<Organisateur> organisateurs;
+    private HashSet<Evenement> evenements = new HashSet<>();
+    private ArrayList<Numero> numeros = new ArrayList<>();
+    private HashSet<Organisateur> organisateurs = new HashSet<>();
 
     /**
      * Construit un nouveau Spectacle avec le nom, le lieu, le nombre de places et le prix donnés.
@@ -30,10 +29,6 @@ public class Spectacle {
         this.lieu = lieu;
         this.nbrPlaces = nbrPlaces;
         this.prix = prix;
-        this.evenements = new HashSet<>();
-        this.spectateurs = new HashSet<>();
-        this.numeros = new ArrayList<>();
-        this.organisateurs = new HashSet<>();
     }
 
 
@@ -56,14 +51,6 @@ public class Spectacle {
         this.lieu = lieu;
     }
 
-    /**
-     * Définit le nombre de places du Spectacle.
-     *
-     * @param nbrPlaces Le nouveau nombre de places du Spectacle.
-     */
-    public void setNbrPlaces(int nbrPlaces) {
-        this.nbrPlaces = nbrPlaces;
-    }
 
     /**
      * Définit le prix du Spectacle.
@@ -92,46 +79,15 @@ public class Spectacle {
         return this.lieu;
     }
 
-    /**
-     * Retourne le nombre de places du Spectacle.
-     *
-     * @return Le nombre de places du Spectacle.
-     */
-    public int getNbrPlaces() {
-        return this.nbrPlaces;
-    }
+
 
     /**
-     * Retourne le nombre de places libres du Spectacle.
+     * Ajoute un organisateur au Spectacle.
      *
-     * @return Le nombre de places libres du Spectacle.
+     * @param organisateur L'organisateur à ajouter.
      */
-    public int getNbrPlacesLibres(){
-        return nbrPlaces - spectateurs.size();
-    }
-
-    /**
-     * Retourne le nombre de places VIP du Spectacle.
-     *
-     * @return Le nombre de places VIP du Spectacle.
-     */
-    public int getNbrPlacesVIP(){
-        int nbrPlacesVIP = 0;
-        for (Spectateur spectateur : spectateurs) {
-            if (spectateur.isVip()) {
-                nbrPlacesVIP++;
-            }
-        }
-        return nbrPlacesVIP;
-    }
-
-    /**
-     * Retourne le nombre de places normales du Spectacle.
-     *
-     * @return Le nombre de places normales du Spectacle.
-     */
-    public int getNbrPlacesNormales(){
-        return nbrPlaces - getNbrPlacesVIP();
+    public void ajouterOrganisateur(Organisateur organisateur){
+        organisateurs.add(organisateur);
     }
 
 }
