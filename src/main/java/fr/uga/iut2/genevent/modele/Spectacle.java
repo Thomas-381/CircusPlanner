@@ -70,7 +70,19 @@ public class Spectacle {
 
     public float gainSpectacle(){
         float total = 0;
-        total = getPrix() *
+        total += getPrix() * getNbrPlacesNormales();
+        total += getPrix() * 1.5 * getNbrPlacesVIP();
+        return total;
+    }
+
+    public boolean ajoutSpectateur(Spectateur spectateur){
+        int placeSpectateur = 0;
+        if(spectateur.isVip()){
+            placeSpectateur = 2;
+        }else{
+            placeSpectateur = 1;
+        }
+        return placeSpectateur > getNbrPlacesLibres();
     }
 
 
