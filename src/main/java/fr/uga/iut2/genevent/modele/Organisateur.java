@@ -11,16 +11,12 @@ public class Organisateur {
     private ArrayList<Spectacle> spectacles;
 
     /**
-     * Construit un nouvel Organisateur avec le nom, les événements et les spectacles donnés.
+     * Construit un nouvel Organisateur avec un nom.
      *
      * @param nom Le nom de l'Organisateur.
-     * @param evenements La liste des événements de l'Organisateur.
-     * @param spectacles La liste des spectacles de l'Organisateur.
      */
-    public Organisateur(String nom, ArrayList<Evenement> evenements, ArrayList<Spectacle> spectacles) {
+    public Organisateur(String nom) {
         this.nom = nom;
-        this.evenements = evenements;
-        this.spectacles = spectacles;
     }
 
     /**
@@ -39,5 +35,29 @@ public class Organisateur {
      */
     public void ajouterSpectacle(Spectacle spectacle){
         spectacles.add(spectacle);
+    }
+
+    /**
+     * Getter de l'attribut nom
+     * @return le nom de l'organisateur
+     */
+    public String getNom() {
+        return nom;
+    }
+
+    /**
+     * Getter de l'attribut evenements
+     * @return la liste des événements organisés par l'organisateur
+     */
+    public ArrayList<Evenement> getEvenements() {
+        return evenements;
+    }
+
+    /**
+     * Getter de l'attribut spectacles
+     * @return la liste des spectacles organisés par l'organisateur
+     */
+    public ArrayList<Spectacle> getSpectacles() {
+        return spectacles;
     }
 }
