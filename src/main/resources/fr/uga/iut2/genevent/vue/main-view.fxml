@@ -42,7 +42,7 @@
    <top>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="103.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="logo" accessibleHelp="LOGO" accessibleRoleDescription="LOGO" accessibleText="LOGO" fitHeight="103.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
                <HBox.margin>
                   <Insets right="125.0" />
                </HBox.margin></ImageView>
@@ -74,7 +74,20 @@
                   <Button mnemonicParsing="false" text="Modifier" />
                </children>
             </VBox>
-            <VBox prefHeight="59.0" prefWidth="100.0" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.vgrow="NEVER" />
+            <VBox prefHeight="59.0" prefWidth="100.0" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.vgrow="NEVER">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" />
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="Label" />
+                              <Label text="Label" />
+                           </children></VBox>
+                        <Button mnemonicParsing="false" text="Modifier" />
+                     </children>
+                  </HBox>
+               </children></VBox>
          </children>
       </GridPane>
    </left>
@@ -90,7 +103,7 @@
          <children>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Label prefHeight="18.0" prefWidth="499.0" text="Evenements" />
+                  <Label alignment="CENTER" prefHeight="18.0" prefWidth="499.0" text="Evenements" />
                   <VBox prefHeight="200.0" prefWidth="100.0">
                      <children>
                         <TextField editable="false" />
@@ -105,7 +118,7 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Label prefHeight="18.0" prefWidth="500.0" text="Spectacles" />
+                  <Label alignment="CENTER" prefHeight="18.0" prefWidth="500.0" text="Spectacles" />
                   <VBox prefHeight="200.0" prefWidth="100.0">
                      <children>
                         <TextField editable="false" />
@@ -118,9 +131,9 @@
                   <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="+ Nouveau spectacle" textAlignment="CENTER" />
                </children>
             </VBox>
-            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+            <VBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Label prefHeight="18.0" prefWidth="500.0" text="Numéros" />
+                  <Label alignment="CENTER" prefHeight="18.0" prefWidth="500.0" text="Numéros" />
                   <VBox prefHeight="200.0" prefWidth="100.0">
                      <children>
                         <TextField editable="false" />
