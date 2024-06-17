@@ -36,6 +36,10 @@ public class Numero {
      */
     public Numero(String titre) {
         this.titre = titre;
+        this.animaux = new ArrayList<>();
+        this.accessoires = new ArrayList<>();
+        this.acteurs = new ArrayList<>();
+        this.organisateurs = new ArrayList<>();
     }
 
     public Numero() {
