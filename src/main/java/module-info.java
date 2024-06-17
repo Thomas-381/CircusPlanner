@@ -5,5 +5,4 @@ module genevent {
 
     opens fr.uga.iut2.genevent.vue to javafx.fxml;
 
-    exports fr.uga.iut2.genevent;
 }

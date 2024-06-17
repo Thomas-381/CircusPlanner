@@ -24,6 +24,8 @@ public class Spectacle {
         this.lieu = lieu;
     }
 
+
+
     /**
      * Définit le nom du Spectacle.
      * @param nom Le nouveau nom du Spectacle.

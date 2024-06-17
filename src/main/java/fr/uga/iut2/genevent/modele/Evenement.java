@@ -173,4 +173,8 @@ public class Evenement implements Serializable {
         }
         return placesDispo;
     }
+
+    public Organisateur getOrganisateur(int i) {
+        return organisateurs.get(i);
+    }
 }
