@@ -21,7 +21,10 @@
                 <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                     <HBox.margin>
                         <Insets left="120.0" />
-                    </HBox.margin></ImageView>
+                    </HBox.margin>
+               <image>
+                  <Image url="@Img/profil.jpg" />
+               </image></ImageView>
             </children>
         </HBox>
     </top>
@@ -142,10 +145,13 @@
                         <Insets top="20.0" />
                     </VBox.margin>
                 </HBox>
-                <ImageView fitHeight="175.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="175.0" fitWidth="301.0" pickOnBounds="true" preserveRatio="true">
                     <VBox.margin>
                         <Insets bottom="10.0" left="2.0" right="2.0" top="10.0" />
                     </VBox.margin>
+               <image>
+                  <Image url="@Img/image-defaut.png" />
+               </image>
                 </ImageView>
                 <VBox alignment="CENTER" prefHeight="167.0" prefWidth="350.0" style="-fx-background-color: #ffffff;">
                     <children>
