@@ -15,9 +15,9 @@
                         <Insets right="120.0" />
                     </HBox.margin></ImageView>
                 <Label alignment="CENTER" contentDisplay="CENTER" minWidth="200.0" prefHeight="24.0" prefWidth="233.0" text="Plannifiez l'emerveillement !">
-               <font>
-                  <Font size="17.0" />
-               </font></Label>
+                    <font>
+                        <Font size="17.0" />
+                    </font></Label>
                 <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                     <HBox.margin>
                         <Insets left="120.0" />
@@ -37,43 +37,12 @@
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             </columnConstraints>
             <rowConstraints>
-                <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="224.0" minHeight="20.0" prefHeight="168.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="279.0" minHeight="30.0" prefHeight="279.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="198.0" minHeight="4.0" prefHeight="4.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="418.0" minHeight="20.0" prefHeight="418.0" vgrow="SOMETIMES" />
+
             </rowConstraints>
             <children>
-                <VBox prefHeight="270.0" prefWidth="100.0" style="-fx-background-color: #bbc9c6;" GridPane.rowIndex="1">
-                    <children>
-                        <Label text="Nom event">
-                            <VBox.margin>
-                                <Insets left="2.0" />
-                            </VBox.margin></Label>
-                        <Label text="Date debut et fin">
-                            <VBox.margin>
-                                <Insets left="2.0" />
-                            </VBox.margin></Label>
-                        <Label text="Adresse">
-                            <VBox.margin>
-                                <Insets bottom="15.0" left="2.0" />
-                            </VBox.margin></Label>
-                        <CheckBox mnemonicParsing="false" text="Event terminé">
-                            <VBox.margin>
-                                <Insets bottom="10.0" left="2.0" />
-                            </VBox.margin></CheckBox>
-                        <TextArea prefHeight="60.0" prefWidth="100.0" promptText="Commentaire">
-                            <VBox.margin>
-                                <Insets bottom="10.0" left="2.0" right="5.0" />
-                            </VBox.margin></TextArea>
-                        <Button mnemonicParsing="false" text="Modifier">
-                            <VBox.margin>
-                                <Insets bottom="3.0" left="2.0" />
-                            </VBox.margin></Button>
-                    </children>
-                    <GridPane.margin>
-                        <Insets bottom="2.0" />
-                    </GridPane.margin>
-                </VBox>
-                <VBox prefHeight="208.0" prefWidth="100.0" style="-fx-background-color: #f7edef;" GridPane.rowIndex="2">
+                <VBox prefHeight="208.0" prefWidth="100.0" style="-fx-background-color: #f7edef;" GridPane.rowIndex="1">
                     <children>
                         <Label prefHeight="27.0" prefWidth="120.0" text="Mes Artistes">
                             <font>
@@ -96,14 +65,7 @@
                             <VBox.margin>
                                 <Insets bottom="10.0" left="2.0" right="5.0" />
                             </VBox.margin></Button>
-                        <Button mnemonicParsing="false" text="+ Créer Artiste">
-                            <VBox.margin>
-                                <Insets left="2.0" top="50.0" />
-                            </VBox.margin></Button>
-                    </children>
-               <GridPane.margin>
-                  <Insets />
-               </GridPane.margin></VBox>
+                    </children></VBox>
                 <Button mnemonicParsing="false" style="-fx-background-color: #f7f4b0;" text="&lt;- Retour" />
             </children>
             <padding>
@@ -117,33 +79,49 @@
     <center>
         <VBox prefHeight="524.0" prefWidth="400.0" style="-fx-background-color: #f7d7ad;" BorderPane.alignment="CENTER">
             <children>
-                <TextField minWidth="50.0" prefHeight="26.0" prefWidth="50.0" promptText="Titre">
+                <TextField minWidth="50.0" prefHeight="26.0" prefWidth="50.0" promptText="Nom artiste">
                     <VBox.margin>
-                        <Insets left="2.0" right="200.0" top="10.0" />
+                        <Insets left="5.0" right="200.0" top="10.0" />
                     </VBox.margin></TextField>
-            <TextField prefHeight="26.0" prefWidth="50.0" promptText="Durée">
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <TextField promptText="Nom">
+                           <VBox.margin>
+                              <Insets bottom="8.0" top="5.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField promptText="Prenom">
+                           <VBox.margin>
+                              <Insets bottom="8.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField promptText="Surnom">
+                           <VBox.margin>
+                              <Insets bottom="8.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField promptText="Spécialité" />
+                     </children>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
                <VBox.margin>
-                  <Insets left="2.0" right="345.0" top="10.0" />
+                  <Insets top="10.0" />
                </VBox.margin>
-            </TextField>
-                <ImageView fitHeight="175.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
-                    <VBox.margin>
-                        <Insets bottom="10.0" left="2.0" right="2.0" top="10.0" />
-                    </VBox.margin>
-                </ImageView>
-                <VBox alignment="CENTER" prefHeight="137.0" prefWidth="400.0" style="-fx-background-color: #ffffff;">
-                    <children>
-                        <Button mnemonicParsing="false" text="+ Ajouter Artiste" />
-                    </children>
-                    <VBox.margin>
-                        <Insets bottom="20.0" left="2.0" right="2.0" />
-                    </VBox.margin>
-                </VBox>
-                <TextArea prefHeight="105.0" prefWidth="200.0" promptText="Commentaire">
-                    <VBox.margin>
-                        <Insets bottom="10.0" left="50.0" right="50.0" />
-                    </VBox.margin>
-                </TextArea>
+            </HBox>
+            <Button mnemonicParsing="false" text="+ Ajouter artiste">
+               <VBox.margin>
+                  <Insets left="275.0" top="50.0" />
+               </VBox.margin></Button>
             </children>
             <BorderPane.margin>
                 <Insets left="2.0" />

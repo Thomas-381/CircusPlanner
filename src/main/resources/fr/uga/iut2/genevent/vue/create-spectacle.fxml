@@ -14,7 +14,10 @@
                     <HBox.margin>
                         <Insets right="120.0" />
                     </HBox.margin></ImageView>
-                <Label alignment="CENTER" contentDisplay="CENTER" minWidth="200.0" prefWidth="200.0" text="Plannifiez l'emerveillement !" />
+                <Label alignment="CENTER" contentDisplay="CENTER" minWidth="200.0" prefHeight="24.0" prefWidth="233.0" text="Plannifiez l'emerveillement !">
+               <font>
+                  <Font size="17.0" />
+               </font></Label>
                 <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                     <HBox.margin>
                         <Insets left="120.0" />
@@ -63,11 +66,11 @@
                             </VBox.margin></TextArea>
                         <Button mnemonicParsing="false" text="Modifier">
                             <VBox.margin>
-                                <Insets left="2.0" />
+                                <Insets bottom="3.0" left="2.0" />
                             </VBox.margin></Button>
                     </children>
                     <GridPane.margin>
-                        <Insets />
+                        <Insets bottom="2.0" />
                     </GridPane.margin>
                 </VBox>
                 <VBox prefHeight="208.0" prefWidth="100.0" style="-fx-background-color: #f7edef;" GridPane.rowIndex="2">
