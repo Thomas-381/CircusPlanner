@@ -35,6 +35,13 @@ public class Evenement implements Serializable {
         this.dateFin = dateFin;
         this.nbrPlacesMax = nbrPlacesMax;
     }
+    public Evenement() {
+        this.titre = "";
+        this.adresse = "";
+        this.dateDebut = "";
+        this.dateFin = "";
+        this.nbrPlacesMax = 0;
+    }
 
     /**
      * Ajoute un spectacle à l'événement.

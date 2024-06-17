@@ -38,6 +38,14 @@ public class Numero {
         this.titre = titre;
     }
 
+    public Numero() {
+        this.titre = "";
+        this.animaux = new ArrayList<>();
+        this.accessoires = new ArrayList<>();
+        this.acteurs = new ArrayList<>();
+        this.organisateurs = new ArrayList<>();
+    }
+
     /**
      * Ajoute un animal au Numéro.
      *

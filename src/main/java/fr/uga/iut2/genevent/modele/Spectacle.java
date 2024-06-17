@@ -24,6 +24,11 @@ public class Spectacle {
         this.lieu = lieu;
     }
 
+    public Spectacle() {
+        this.nom = "";
+        this.lieu = "";
+    }
+
 
 
     /**
