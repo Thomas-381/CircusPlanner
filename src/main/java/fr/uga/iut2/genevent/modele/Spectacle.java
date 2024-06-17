@@ -10,37 +10,22 @@ import java.util.HashSet;
 public class Spectacle {
     private String nom;
     private String lieu;
-    private int nbrPlaces;
-    private float prix;
-    private HashSet<Evenement> evenements;
-    private HashSet<Spectateur> spectateurs;
-    private ArrayList<Numero> numeros;
-    private HashSet<Organisateur> organisateurs;
+    private ArrayList<Numero> numeros = new ArrayList<>();
+    private HashSet<Organisateur> organisateurs = new HashSet<>();
 
     /**
-     * Construit un nouveau Spectacle avec le nom, le lieu, le nombre de places et le prix donnés.
+     * Construit un nouveau Spectacle avec le nom, le lieu.
      *
      * @param nom Le nom du Spectacle.
      * @param lieu Le lieu du Spectacle.
-     * @param nbrPlaces Le nombre de places du Spectacle.
-     * @param prix Le prix du Spectacle.
      */
-    public Spectacle(String nom, String lieu, int nbrPlaces, float prix) {
+    public Spectacle(String nom, String lieu) {
         this.nom = nom;
         this.lieu = lieu;
-        this.nbrPlaces = nbrPlaces;
-        this.prix = prix;
-        this.evenements = new HashSet<>();
-        this.spectateurs = new HashSet<>();
-        this.numeros = new ArrayList<>();
-        this.organisateurs = new HashSet<>();
     }
-
-
 
     /**
      * Définit le nom du Spectacle.
-     *
      * @param nom Le nouveau nom du Spectacle.
      */
     public void setNom(String nom) {
@@ -49,7 +34,6 @@ public class Spectacle {
 
     /**
      * Définit le lieu du Spectacle.
-     *
      * @param lieu Le nouveau lieu du Spectacle.
      */
     public void setLieu(String lieu) {
@@ -57,26 +41,7 @@ public class Spectacle {
     }
 
     /**
-     * Définit le nombre de places du Spectacle.
-     *
-     * @param nbrPlaces Le nouveau nombre de places du Spectacle.
-     */
-    public void setNbrPlaces(int nbrPlaces) {
-        this.nbrPlaces = nbrPlaces;
-    }
-
-    /**
-     * Définit le prix du Spectacle.
-     *
-     * @param prix Le nouveau prix du Spectacle.
-     */
-    public void setPrix(float prix) {
-        this.prix = prix;
-    }
-
-    /**
      * Retourne le nom du Spectacle.
-     *
      * @return Le nom du Spectacle.
      */
     public String getNom() {
@@ -85,7 +50,6 @@ public class Spectacle {
 
     /**
      * Retourne le lieu du Spectacle.
-     *
      * @return Le lieu du Spectacle.
      */
     public String getLieu() {
@@ -93,45 +57,34 @@ public class Spectacle {
     }
 
     /**
-     * Retourne le nombre de places du Spectacle.
-     *
-     * @return Le nombre de places du Spectacle.
+     * Ajoute un organisateur au Spectacle.
+     * @param organisateur L'organisateur à ajouter.
      */
-    public int getNbrPlaces() {
-        return this.nbrPlaces;
+    public void ajouterOrganisateur(Organisateur organisateur){
+        organisateurs.add(organisateur);
     }
 
     /**
-     * Retourne le nombre de places libres du Spectacle.
-     *
-     * @return Le nombre de places libres du Spectacle.
+     * Ajoute un numéro au spectacle.
+     * @param numero Le numéro à ajouter.
      */
-    public int getNbrPlacesLibres(){
-        return nbrPlaces - spectateurs.size();
+    public void ajouterNumero(Numero numero) {
+        numeros.add(numero);
     }
 
     /**
-     * Retourne le nombre de places VIP du Spectacle.
-     *
-     * @return Le nombre de places VIP du Spectacle.
+     * Getter de l'attribut numeros.
+     * @return la liste ordonnée des numéros composants le spectacle.
      */
-    public int getNbrPlacesVIP(){
-        int nbrPlacesVIP = 0;
-        for (Spectateur spectateur : spectateurs) {
-            if (spectateur.isVip()) {
-                nbrPlacesVIP++;
-            }
-        }
-        return nbrPlacesVIP;
+    public ArrayList<Numero> getNumeros() {
+        return numeros;
     }
 
     /**
-     * Retourne le nombre de places normales du Spectacle.
-     *
-     * @return Le nombre de places normales du Spectacle.
+     * Getter de l'attribut organisateurs.
+     * @return la liste des organisateurs du spectacle.
      */
-    public int getNbrPlacesNormales(){
-        return nbrPlaces - getNbrPlacesVIP();
+    public HashSet<Organisateur> getOrganisateurs() {
+        return organisateurs;
     }
-
 }

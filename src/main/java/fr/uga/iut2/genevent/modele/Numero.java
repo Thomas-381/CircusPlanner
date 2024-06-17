@@ -6,26 +6,23 @@ import java.util.ArrayList;
  * Représente un Numéro dans le système.
  */
 public class Numero {
-    private String titre;
-    private ArrayList<Spectacle> spectacles;
+    private final String titre;
     private ArrayList<Animal> animaux;
     private ArrayList<Accessoire> accessoires;
     private ArrayList<Acteur> acteurs;
     private ArrayList<Organisateur> organisateurs;
 
     /**
-     * Construit un nouveau Numéro avec le titre, les spectacles, les animaux, les accessoires, les acteurs et les organisateurs donnés.
+     * Construits un nouveau Numéro avec le titre, les animaux, les accessoires, les acteurs et les organisateurs donnés.
      *
      * @param titre Le titre du Numéro.
-     * @param spectacles La liste des spectacles du Numéro.
      * @param animaux La liste des animaux du Numéro.
      * @param accessoires La liste des accessoires du Numéro.
      * @param acteurs La liste des acteurs du Numéro.
      * @param organisateurs La liste des organisateurs du Numéro.
      */
-    public Numero(String titre, ArrayList<Spectacle> spectacles, ArrayList<Animal> animaux, ArrayList<Accessoire> accessoires, ArrayList<Acteur> acteurs, ArrayList<Organisateur> organisateurs) {
+    public Numero(String titre, ArrayList<Animal> animaux, ArrayList<Accessoire> accessoires, ArrayList<Acteur> acteurs, ArrayList<Organisateur> organisateurs) {
         this.titre = titre;
-        this.spectacles = spectacles;
         this.animaux = animaux;
         this.accessoires = accessoires;
         this.acteurs = acteurs;
@@ -75,5 +72,45 @@ public class Numero {
      */
     public void ajouterOrganisateur(Organisateur organisateur){
         this.organisateurs.add(organisateur);
+    }
+
+    /**
+     * Getter de l'attribut titre
+     * @return le titre du numéro
+     */
+    public String getTitre() {
+        return titre;
+    }
+
+    /**
+     * Getter de l'attribut animaux
+     * @return la liste des animaux du numéro
+     */
+    public ArrayList<Animal> getAnimaux() {
+        return animaux;
+    }
+
+    /**
+     * Getter de l'attribut accessoires
+     * @return la liste des accessoires du numéro
+     */
+    public ArrayList<Accessoire> getAccessoires() {
+        return accessoires;
+    }
+
+    /**
+     * Getter de l'attribut acteurs
+     * @return la liste des acteurs du numéro
+     */
+    public ArrayList<Acteur> getActeurs() {
+        return acteurs;
+    }
+
+    /**
+     * Getter de l'attribut organisateurs
+     * @return la liste des organisateurs du numéro
+     */
+    public ArrayList<Organisateur> getOrganisateurs() {
+        return organisateurs;
     }
 }

@@ -4,25 +4,25 @@ package fr.uga.iut2.genevent.modele;
  * Représente un Accessoire dans le système.
  */
 public class Accessoire {
-    /**
-     * L'identifiant unique pour cet Accessoire.
-     */
-    private long id;
 
     /**
      * Le libellé de cet Accessoire.
      */
-    private String label;
-
+    private final String label;
 
     /**
      * Construit un nouvel Accessoire avec l'identifiant et le libellé donnés.
-     *
-     * @param id    L'identifiant unique pour cet Accessoire.
      * @param label Le libellé de cet Accessoire.
      */
-    public Accessoire(long id, String label) {
-        this.id = id;
+    public Accessoire(String label) {
         this.label = label;
+    }
+
+    /**
+     * Getter de l'attribut label
+     * @return le libellé de l'accessoire
+     */
+    public String getLabel() {
+        return label;
     }
 }

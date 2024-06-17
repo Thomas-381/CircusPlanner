@@ -11,7 +11,6 @@ import java.util.Map;
  */
 public class Evenement implements Serializable {
 
-    private long ID;
     private String titre;
     private String adresse;
     private String dateDebut;
@@ -24,15 +23,12 @@ public class Evenement implements Serializable {
 
     /**
      * Construit un nouvel Événement avec l'ID, le titre, l'adresse, la date de début et la date de fin donnés.
-     *
-     * @param ID L'identifiant unique de l'Événement.
      * @param titre Le titre de l'Événement.
      * @param adresse L'adresse de l'Événement.
      * @param dateDebut La date de début de l'Événement.
      * @param dateFin La date de fin de l'Événement.
      */
-    public Evenement(long ID, String titre, String adresse, String dateDebut, String dateFin, int nbrPlacesMax) {
-        this.ID = ID;
+    public Evenement(String titre, String adresse, String dateDebut, String dateFin, int nbrPlacesMax) {
         this.titre = titre;
         this.adresse = adresse;
         this.dateDebut = dateDebut;
@@ -42,7 +38,6 @@ public class Evenement implements Serializable {
 
     /**
      * Ajoute un spectacle à l'événement.
-     *
      * @param spectacle Le spectacle à ajouter.
      */
     public void ajouterSpectacle(Spectacle spectacle){
@@ -51,7 +46,6 @@ public class Evenement implements Serializable {
 
     /**
      * Définit la date de fin de l'événement.
-     *
      * @param dateFin La nouvelle date de fin de l'événement.
      */
     public void setDateFin(String dateFin) {
@@ -60,7 +54,6 @@ public class Evenement implements Serializable {
 
     /**
      * Définit la date de début de l'événement.
-     *
      * @param dateDebut La nouvelle date de début de l'événement.
      */
     public void setDateDebut(String dateDebut) {
@@ -69,7 +62,6 @@ public class Evenement implements Serializable {
 
     /**
      * Définit l'adresse de l'événement.
-     *
      * @param adresse La nouvelle adresse de l'événement.
      */
     public void setAdresse(String adresse) {
@@ -78,7 +70,6 @@ public class Evenement implements Serializable {
 
     /**
      * Définit le titre de l'événement.
-     *
      * @param titre Le nouveau titre de l'événement.
      */
     public void setTitre(String titre) {
@@ -87,7 +78,6 @@ public class Evenement implements Serializable {
 
     /**
      * Retourne l'adresse de l'événement.
-     *
      * @return L'adresse de l'événement.
      */
     public String getAdresse() {
@@ -96,7 +86,6 @@ public class Evenement implements Serializable {
 
     /**
      * Retourne la date de début de l'événement.
-     *
      * @return La date de début de l'événement.
      */
     public String getDateDebut() {
@@ -105,7 +94,6 @@ public class Evenement implements Serializable {
 
     /**
      * Retourne la date de fin de l'événement.
-     *
      * @return La date de fin de l'événement.
      */
     public String getDateFin() {
@@ -114,7 +102,6 @@ public class Evenement implements Serializable {
 
     /**
      * Ajoute un organisateur à l'événement.
-     *
      * @param organisateur L'organisateur à ajouter.
      */
     public void ajoutOrganisateur(Organisateur organisateur){
@@ -123,14 +110,12 @@ public class Evenement implements Serializable {
 
     /**
      * Retourne le spectacle à l'index spécifié.
-     *
      * @param i L'index du spectacle à retourner.
      * @return Le spectacle à l'index spécifié.
      */
     public Spectacle getSpectacle(int i) {
         return spectacles.get(i);
     }
-
 
     public int getPlacesNormales() {
         return placesNormales;
@@ -139,18 +124,23 @@ public class Evenement implements Serializable {
     public int getPlacesVIP() {
         return placesVIP;
     }
+
     public int getNbrPlacesDispos(){
         return placesNormales + placesVIP * 2;
     }
+
     public void setNbrPlacesMax(int nbrPlacesMax){
         this.nbrPlacesMax = nbrPlacesMax;
     }
+
     public float getPrix() {
         return prix;
     }
+
     public void setPrix(float prix){
         this.prix = prix;
     }
+
     public float gainSpectacle(){
         float total = 0;
         total = getPrix() * getPlacesNormales();
@@ -160,7 +150,6 @@ public class Evenement implements Serializable {
 
     /**
      * Actualisation du nombre de spectateurs normaux qu'on ajoute à l'évènement.
-     *
      * @param nbr Le nombre de spectateurs avec des places normales qu'on ajoute.
      */
     public boolean ajoutSpectateurNormaux(int nbr){
@@ -170,9 +159,9 @@ public class Evenement implements Serializable {
         }
         return placesDispo;
     }
+
     /**
      * Actualisation du nombre de spectateurs VIP qu'on ajoute à l'évènement.
-     *
      * @param nbr Le nombre de spectateurs avec des places normales qu'on ajoute.
      * Ajoute le nombre de places prises par les nouveaux spectateurs
      * Renvoie true si l'ajout a été effectué,  false sinon
@@ -184,5 +173,4 @@ public class Evenement implements Serializable {
         }
         return placesDispo;
     }
-
 }
