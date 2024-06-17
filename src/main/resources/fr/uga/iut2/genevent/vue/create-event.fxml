@@ -8,16 +8,16 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
     <top>
-        <HBox alignment="CENTER" prefHeight="30.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <HBox alignment="CENTER" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #d9d0c1;" BorderPane.alignment="CENTER">
             <children>
                 <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                     <HBox.margin>
-                        <Insets right="90.0" />
+                        <Insets right="120.0" />
                     </HBox.margin></ImageView>
-                <Label alignment="CENTER" contentDisplay="CENTER" text="Plannifiez l'emerveillement" />
+                <Label alignment="CENTER" contentDisplay="CENTER" minWidth="200.0" prefWidth="200.0" text="Plannifiez l'emerveillement !" />
                 <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                     <HBox.margin>
-                        <Insets />
+                        <Insets left="120.0" />
                     </HBox.margin></ImageView>
             </children>
         </HBox>
@@ -29,60 +29,134 @@
             </font></Label>
     </bottom>
     <left>
-        <GridPane BorderPane.alignment="CENTER">
+        <GridPane prefWidth="200.0" BorderPane.alignment="CENTER">
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             </columnConstraints>
             <rowConstraints>
-                <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="5.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="60.0" minHeight="30.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="224.0" minHeight="20.0" prefHeight="168.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="279.0" minHeight="30.0" prefHeight="279.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-                <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+                <VBox prefHeight="270.0" prefWidth="100.0" style="-fx-background-color: #bbc9c6;" GridPane.rowIndex="1">
                     <children>
-                        <Label text="Nom event" />
-                        <Label text="Date debut et fin" />
-                        <Label text="Adresse" />
-                        <CheckBox mnemonicParsing="false" text="Event terminé" />
-                        <TextArea prefHeight="200.0" prefWidth="200.0" promptText="Commentaire" />
-                        <Button mnemonicParsing="false" text="Modifier" />
+                        <Label text="Nom event">
+                            <VBox.margin>
+                                <Insets left="2.0" />
+                            </VBox.margin></Label>
+                        <Label text="Date debut et fin">
+                            <VBox.margin>
+                                <Insets left="2.0" />
+                            </VBox.margin></Label>
+                        <Label text="Adresse">
+                            <VBox.margin>
+                                <Insets bottom="15.0" left="2.0" />
+                            </VBox.margin></Label>
+                        <CheckBox mnemonicParsing="false" text="Event terminé">
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="2.0" />
+                            </VBox.margin></CheckBox>
+                        <TextArea prefHeight="60.0" prefWidth="100.0" promptText="Commentaire">
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="2.0" right="5.0" />
+                            </VBox.margin></TextArea>
+                        <Button mnemonicParsing="false" text="Modifier">
+                            <VBox.margin>
+                                <Insets left="2.0" />
+                            </VBox.margin></Button>
                     </children>
+                    <GridPane.margin>
+                        <Insets />
+                    </GridPane.margin>
                 </VBox>
-                <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
+                <VBox prefHeight="208.0" prefWidth="100.0" style="-fx-background-color: #f7edef;" GridPane.rowIndex="2">
                     <children>
-                        <Label text="Mes Spectacles" />
-                        <Button mnemonicParsing="false" text="Spectacle1 " />
-                        <Button mnemonicParsing="false" text="Spectacle2" />
-                        <Button mnemonicParsing="false" text="+ Créer Spectacle" />
+                        <Label prefHeight="27.0" prefWidth="120.0" text="Mes Spectacles">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets left="2.0" />
+                            </VBox.margin></Label>
+                        <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #f7f4b0;" text="Spectacle1 ">
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="2.0" right="5.0" top="10.0" />
+                            </VBox.margin>
+                            <graphic>
+                                <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" />
+                            </graphic></Button>
+                        <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #f7cdd3;" text="Spectacle2">
+                            <graphic>
+                                <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" />
+                            </graphic>
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="2.0" right="5.0" />
+                            </VBox.margin></Button>
+                        <Button mnemonicParsing="false" text="+ Créer Spectacle">
+                            <VBox.margin>
+                                <Insets left="2.0" top="50.0" />
+                            </VBox.margin></Button>
                     </children></VBox>
-                <Button mnemonicParsing="false" text="Retour" />
+                <Button mnemonicParsing="false" style="-fx-background-color: #f7f4b0;" text="&lt;- Retour" />
             </children>
             <padding>
-                <Insets bottom="20.0" left="20.0" />
+                <Insets bottom="5.0" left="5.0" />
             </padding>
             <BorderPane.margin>
-                <Insets right="50.0" />
+                <Insets />
             </BorderPane.margin>
         </GridPane>
     </left>
     <center>
-        <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+        <VBox prefHeight="524.0" prefWidth="400.0" style="-fx-background-color: #f7d7ad;" BorderPane.alignment="CENTER">
             <children>
-                <TextField promptText="Titre" />
-                <HBox prefHeight="100.0" prefWidth="200.0">
+                <TextField minWidth="50.0" prefHeight="26.0" prefWidth="50.0" promptText="Titre">
+                    <VBox.margin>
+                        <Insets left="2.0" right="200.0" top="10.0" />
+                    </VBox.margin></TextField>
+                <HBox prefHeight="37.0" prefWidth="500.0">
                     <children>
-                        <TextField promptText="Date debut" />
-                        <TextField promptText="Date fin" />
-                        <TextField promptText="Lieu" />
+                        <TextField prefHeight="26.0" prefWidth="85.0" promptText="Date debut">
+                            <HBox.margin>
+                                <Insets left="2.0" right="10.0" />
+                            </HBox.margin></TextField>
+                        <TextField prefHeight="26.0" prefWidth="85.0" promptText="Date fin">
+                            <HBox.margin>
+                                <Insets right="10.0" />
+                            </HBox.margin></TextField>
+                        <TextField prefHeight="26.0" prefWidth="85.0" promptText="Nombre place">
+                            <HBox.margin>
+                                <Insets right="10.0" />
+                            </HBox.margin>
+                        </TextField>
+                        <TextField prefHeight="26.0" prefWidth="85.0" promptText="Lieu" />
                     </children>
+                    <VBox.margin>
+                        <Insets top="20.0" />
+                    </VBox.margin>
                 </HBox>
-                <ImageView fitHeight="150.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true" />
-                <Button mnemonicParsing="false" text="+ Ajouter Spectacle" />
-                <TextArea prefHeight="200.0" prefWidth="200.0" promptText="Commentaire" />
+                <ImageView fitHeight="175.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+                    <VBox.margin>
+                        <Insets bottom="10.0" left="2.0" right="2.0" top="10.0" />
+                    </VBox.margin>
+                </ImageView>
+                <VBox alignment="CENTER" prefHeight="167.0" prefWidth="350.0" style="-fx-background-color: #ffffff;">
+                    <children>
+                        <Button mnemonicParsing="false" text="+ Ajouter Spectacle" />
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="20.0" left="2.0" right="2.0" />
+                    </VBox.margin>
+                </VBox>
+                <TextArea prefHeight="105.0" prefWidth="200.0" promptText="Commentaire">
+                    <VBox.margin>
+                        <Insets bottom="10.0" left="50.0" right="50.0" />
+                    </VBox.margin>
+                </TextArea>
             </children>
             <BorderPane.margin>
-                <Insets />
+                <Insets left="2.0" />
             </BorderPane.margin>
         </VBox>
     </center>
