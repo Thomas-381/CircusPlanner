@@ -14,21 +14,21 @@ import org.apache.commons.validator.routines.EmailValidator;
 
 
 /**
- * La classe CLI est responsable des interactions avec l'utilisa·teur/trice en
+ * La classe CLI est responsable des interactions avec l'utilisateur/trice en
  * mode texte.
- * <p>
  * C'est une classe qui n'est associée à aucun état : elle ne contient aucun
  * attribut d'instance.
- * <p>
  * Aucun méthode de cette classe n'est pas censée modifier ses paramètres,
  * c'est pourquoi les paramètres des méthodes sont tous marqués comme `final`.
- *
  */
+
+
 public class CLI extends IHM {
 
     /**
-     * Nombre maximum d'essais pour la lecture d'une saisie utilisa·teur/trice.
+     * Nombre maximum d'essais pour la lecture d'une saisie utilisateur/trice.
      */
+
     private static final int MAX_ESSAIS = 3;
     private final Controleur controleur;
 
@@ -41,8 +41,9 @@ public class CLI extends IHM {
     /**
      * L'enum Commande répertorie les actions que l'utilisa·teur/trice peut
      * entreprendre via CLI.
-     *
      */
+
+
     private static enum Commande {
 
         QUITTER(0, "Quitter"),
@@ -72,6 +73,7 @@ public class CLI extends IHM {
          * @return La variante de la classe enum dont le code est celui
          *     spécifié.
          */
+
         public static final Commande valueOfCode(int code) {
             Commande result = Commande.valueByCode.get(code);
             if (result == null) {
@@ -92,6 +94,7 @@ public class CLI extends IHM {
          * @return Une chaîne de caractères sans retour à la ligne contenant le
          *     synopsis de la commande.
          */
+
         public String synopsis() {
             return this.code + " — " + this.description;
         }
@@ -188,6 +191,7 @@ public class CLI extends IHM {
      *
      * @return Une chaîne de caractères contenant le synopsis des commandes.
      */
+
     private static String synopsisCommandes() {
         StringBuilder builder = new StringBuilder();
 
@@ -200,11 +204,12 @@ public class CLI extends IHM {
         return builder.toString();
     }
 
-    /**
+/**
      * Affiche un message à l'attention de l'utilisa·teur/trice.
      *
      * @param msg Le message à afficher.
-     */
+    */
+
     private static void afficher(final String msg) {
         System.out.println(msg);
         System.out.flush();
@@ -231,6 +236,7 @@ public class CLI extends IHM {
      *
      * @return L'interprétation de la lecture de l'entrée standard.
      */
+
     private static <T> T lireAvecErreurs(final Function<String, Optional<T>> parseFunction) {
         Optional<T> result = Optional.empty();
         Scanner in = new Scanner(System.in);
@@ -252,6 +258,7 @@ public class CLI extends IHM {
      * @return Une option contenant la {@link Commande} en cas de succès,
      *     l'option vide en cas d'erreur.
      */
+
     private static Optional<Commande> parseCommande(final String token) {
         Optional<Commande> result;
         try {
@@ -279,6 +286,7 @@ public class CLI extends IHM {
      * @return Une option contenant la chaîne de caractère en cas de succès,
      *     l'option vide en cas d'erreur.
      */
+
     private static Optional<String> parseNouveauNom(final String token, final Set<String> nomsConnus) {
         Optional<String> result;
         if (nomsConnus.contains(token)) {
@@ -301,6 +309,7 @@ public class CLI extends IHM {
      * @return Une option contenant la chaîne de caractère en cas de succès,
      *     l'option vide en cas d'erreur.
      */
+
     private static Optional<String> parseNomExistant(final String token, final Set<String> nomsConnus) {
         Optional<String> result;
         if (nomsConnus.contains(token)) {
@@ -324,6 +333,7 @@ public class CLI extends IHM {
      *
      * @return Le nom saisi par l'utilisa·teur/trice.
      */
+
     private static String lireNom(final Set<String> nomsConnus, final boolean nouveau) {
         if (nouveau) {
             if (!nomsConnus.isEmpty()) {
@@ -339,16 +349,17 @@ public class CLI extends IHM {
         }
     }
 
-    /**
+/**
      * Lit sur l'entrée standard un nom.
      *
      * @return Le nom saisi par l'utilisa·teur/trice.
      */
+
     private static String lireNom() {
         return CLI.lireNom(Collections.emptySet(), true);
     }
 
-    /**
+/**
      * Interprète un token comme une chaîne de caractère et vérifie que la
      * chaîne est une adresse mél valide.
      *
@@ -357,6 +368,7 @@ public class CLI extends IHM {
      * @return Une option contenant la chaîne de caractère si token est une
      *     adresse mél valide, l'option vide en cas d'erreur.
      */
+
     private static Optional<String> parseEmail(final String token) {
         Optional<String> result;
         EmailValidator validator = EmailValidator.getInstance(false, false);
@@ -369,17 +381,18 @@ public class CLI extends IHM {
         return result;
     }
 
-    /**
+/**
      * Lit une adresse mél.
      *
      * @return L'adresse mél saisie par l'utilisa·teur/trice.
      */
+
     private static String lireEmail() {
         CLI.afficher("Saisir une adresse mél :");
         return CLI.lireAvecErreurs(CLI::parseEmail);
     }
 
-    /**
+/**
      * Interprète un token comme une {@link LocalDate}.
      *
      * @param token La chaîne de caractère à interpréter.
@@ -389,7 +402,8 @@ public class CLI extends IHM {
      *
      * @return Une option contenant la {@link LocalDate} en cas de succès,
      *     l'option vide en cas d'erreur.
-     */
+    */
+
     private static Optional<LocalDate> parseDate(final String token, final Optional<LocalDate> apres) {
         Optional<LocalDate> result;
         try {
@@ -409,7 +423,7 @@ public class CLI extends IHM {
         return result;
     }
 
-    /**
+/**
      * Lit une date au format ISO-8601.
      *
      * @param apres Si l'option contient une valeur, la date lue doit être
@@ -419,13 +433,14 @@ public class CLI extends IHM {
      *
      * @return La date saisie par l'utilisa·teur/trice.
      */
+
     private static LocalDate lireDate(final Optional<LocalDate> apres) {
         CLI.afficher("Saisir une date au format ISO-8601 :");
         apres.ifPresent(date -> CLI.afficher("La date doit être ultérieure à " + date.toString()));
         return CLI.lireAvecErreurs(token -> CLI.parseDate(token, apres));
     }
 
-    /**
+/**
      * Lit une date au format ISO-8601.
      * <p>
      * Alias pour {@code lireDate(Optional.empty())}.
@@ -433,12 +448,13 @@ public class CLI extends IHM {
      * @return La date saisie par l'utilisa·teur/trice.
      *
      * @see #lireDate(java.util.Optional)
-     */
+*/
+
     private static LocalDate lireDate() {
         return CLI.lireDate(Optional.empty());
     }
 
-    /**
+/**
      * Lit une date au format ISO-8601.
      * <p>
      * Alias pour {@code lireDate(Optional.of(apres))}.
@@ -448,7 +464,8 @@ public class CLI extends IHM {
      * @return La date saisie par l'utilisa·teur/trice.
      *
      * @see #lireDate(java.util.Optional)
-     */
+    */
+
     private static LocalDate lireDate(final LocalDate apres) {
         return CLI.lireDate(Optional.of(apres));
     }

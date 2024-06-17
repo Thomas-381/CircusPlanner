@@ -1,3 +1,4 @@
+
 package fr.uga.iut2.genevent.vue;
 
 import fr.uga.iut2.genevent.controleur.Controleur;
@@ -17,6 +18,7 @@ import javafx.stage.WindowEvent;
 import org.apache.commons.validator.routines.EmailValidator;
 
 
+
 /**
  * La classe JavaFXGUI est responsable des interactions avec
  * l'utilisa·teur/trice en mode graphique.
@@ -30,6 +32,7 @@ import org.apache.commons.validator.routines.EmailValidator;
  * {@link fr.uga.iut2.genevent.controleur.Controleur} via l'appel de la méthode
  * {@link #demarrerInteraction()}.
  */
+
 public class JavaFXGUI extends IHM {
 
     private final Controleur controleur;
@@ -47,8 +50,7 @@ public class JavaFXGUI extends IHM {
 
         this.eolBarrier = new CountDownLatch(1);  // /!\ ne pas supprimer /!\
     }
-
-    /**
+/**
      * Point d'entrée principal pour le code de l'interface JavaFX.
      *
      * @param primaryStage stage principale de l'interface JavaFX, sur laquelle
@@ -58,6 +60,7 @@ public class JavaFXGUI extends IHM {
      *
      * @see javafx.application.Application#start(Stage)
      */
+
     private void start(Stage primaryStage) throws IOException {
         FXMLLoader mainViewLoader = new FXMLLoader(getClass().getResource("main-view.fxml"));
         mainViewLoader.setController(this);
