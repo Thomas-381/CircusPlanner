@@ -15,8 +15,8 @@ public class Evenement implements Serializable {
     private String adresse;
     private String dateDebut;
     private String dateFin;
-    private ArrayList<Spectacle> spectacles;
-    private ArrayList<Organisateur> organisateurs;
+    private ArrayList<Spectacle> spectacles = new ArrayList<>();
+    private ArrayList<Organisateur> organisateurs = new ArrayList<>();
     private int nbrPlacesMax;
     private int placesNormales, placesVIP;
     private float prix;
