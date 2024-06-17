@@ -5,6 +5,8 @@ package fr.uga.iut2.genevent.modele;
  */
 public class Accessoire {
 
+
+
     /**
      * Le libellé de cet Accessoire.
      */
@@ -16,6 +18,10 @@ public class Accessoire {
      */
     public Accessoire(String label) {
         this.label = label;
+    }
+
+    public Accessoire() {
+        this.label = "";
     }
 
     /**

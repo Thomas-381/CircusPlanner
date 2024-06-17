@@ -19,6 +19,11 @@ public class Animal {
         this.espece = espece;
     }
 
+    public Animal() {
+        this.nom = "";
+        this.espece = "";
+    }
+
     /**
      * Getter de l'attribut nom
      * @return le nom de l'animal

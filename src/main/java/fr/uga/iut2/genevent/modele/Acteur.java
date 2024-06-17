@@ -40,6 +40,14 @@ public class Acteur {
         this.commentaires = commentaires;
     }
 
+    public Acteur() {
+        this.surnom = "";
+        this.nom = "";
+        this.prenom = "";
+        this.specialite = "";
+        this.commentaires = "";
+    }
+
     /**
      * Getter de l'attribut surnom
      * @return le surnom de l'acteur

@@ -7,18 +7,27 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Cette classe contient des tests pour la classe Organisateur.
+ */
 class OrganisateurTest {
     private Organisateur organisateur;
     private Evenement evenement;
     private Spectacle spectacle;
 
+    /**
+     * Configuration initiale avant chaque test.
+     */
     @BeforeEach
     void setUp() {
         organisateur = new Organisateur("Test Organisateur");
-        evenement = new Evenement(); // Assuming Evenement has a default constructor
-        spectacle = new Spectacle(); // Assuming Spectacle has a default constructor
+        evenement = new Evenement();
+        spectacle = new Spectacle();
     }
 
+    /**
+     * Test pour la méthode ajouterEvenement de la classe Organisateur.
+     */
     @Test
     void ajouterEvenement() {
         organisateur.ajouterEvenement(evenement);
@@ -26,6 +35,9 @@ class OrganisateurTest {
         assertTrue(evenements.contains(evenement));
     }
 
+    /**
+     * Test pour la méthode ajouterSpectacle de la classe Organisateur.
+     */
     @Test
     void ajouterSpectacle() {
         organisateur.ajouterSpectacle(spectacle);
@@ -33,11 +45,17 @@ class OrganisateurTest {
         assertTrue(spectacles.contains(spectacle));
     }
 
+    /**
+     * Test pour la méthode getNom de la classe Organisateur.
+     */
     @Test
     void getNom() {
         assertEquals("Test Organisateur", organisateur.getNom());
     }
 
+    /**
+     * Test pour la méthode getEvenements de la classe Organisateur.
+     */
     @Test
     void getEvenements() {
         organisateur.ajouterEvenement(evenement);
@@ -46,6 +64,9 @@ class OrganisateurTest {
         assertTrue(evenements.contains(evenement));
     }
 
+    /**
+     * Test pour la méthode getSpectacles de la classe Organisateur.
+     */
     @Test
     void getSpectacles() {
         organisateur.ajouterSpectacle(spectacle);
