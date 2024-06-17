@@ -8,6 +8,21 @@ class AccessoireTest {
 
     @Test
     void getLabel() {
+        Accessoire accessoire = new Accessoire();
+        assertEquals("", accessoire.getLabel());
 
+        Accessoire accessoire2 = new Accessoire("Bracelet");
+        assertEquals("Bracelet", accessoire.getLabel());
+    }
+
+    @Test
+    void setLabel(){
+        Accessoire accessoire = new Accessoire();
+        accessoire.setLabel("Perche");
+        assertEquals("Perche", accessoire.getLabel());
+
+        Accessoire accessoire2 = new Accessoire("Bracelet");
+        accessoire.setLabel("");
+        assertEquals("", accessoire.getLabel());
     }
 }

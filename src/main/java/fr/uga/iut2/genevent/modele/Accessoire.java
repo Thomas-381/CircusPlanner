@@ -10,7 +10,7 @@ public class Accessoire {
     /**
      * Le libellé de cet Accessoire.
      */
-    private final String label;
+    private String label;
 
     /**
      * Construit un nouvel Accessoire avec l'identifiant et le libellé donnés.
@@ -30,5 +30,13 @@ public class Accessoire {
      */
     public String getLabel() {
         return label;
+    }
+
+    /**
+     * Setter de l'attribut label
+     * @param label le nom de l'accessoire
+     */
+    public void setLabel(String label){
+        this.label = label;
     }
 }
