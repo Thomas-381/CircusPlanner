@@ -41,20 +41,18 @@
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="725.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
    <top>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <ImageView fx:id="logo" accessibleHelp="LOGO" accessibleRoleDescription="LOGO" accessibleText="LOGO" fitHeight="103.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
-               <HBox.margin>
-                  <Insets right="40.0" />
-               </HBox.margin></ImageView>
-            <Label text="Plannifiez l'emerveillement">
-               <font>
-                  <Font size="26.0" />
-               </font></Label>
-            <ImageView fitHeight="100.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true">
-               <HBox.margin>
-                  <Insets left="40.0" />
-               </HBox.margin></ImageView>
-         </children>
+         <ImageView fx:id="logo" accessibleHelp="LOGO" accessibleRoleDescription="LOGO" accessibleText="LOGO" fitHeight="103.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
+            <HBox.margin>
+               <Insets right="40.0" />
+            </HBox.margin></ImageView>
+         <Label text="Plannifiez l'emerveillement">
+            <font>
+               <Font size="26.0" />
+            </font></Label>
+         <ImageView fitHeight="100.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true">
+            <HBox.margin>
+               <Insets left="40.0" />
+            </HBox.margin></ImageView>
       </HBox>
    </top>
    <left>
@@ -66,31 +64,25 @@
           <RowConstraints maxHeight="200.0" minHeight="10.0" prefHeight="0.0" vgrow="SOMETIMES" />
           <RowConstraints maxHeight="410.0" minHeight="10.0" prefHeight="220.0" vgrow="NEVER" />
         </rowConstraints>
-         <children>
-            <VBox maxHeight="200.0" prefHeight="200.0" prefWidth="100.0">
-               <children>
-                  <Label text="Nom événement" />
-                  <Label text="dates" />
-                  <Label text="Localisation" />
-                  <CheckBox mnemonicParsing="false" text="Evenement terminé">
-                     <VBox.margin>
-                        <Insets bottom="5.0" top="5.0" />
-                     </VBox.margin></CheckBox>
-                  <TextArea prefHeight="200.0" prefWidth="200.0" promptText="notes ..." />
-                  <Button mnemonicParsing="false" text="Modifier" />
-               </children>
-            </VBox>
-            <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
-               <children>
-                  <Label text="Mes acteurs">
-                     <VBox.margin>
-                        <Insets top="25.0" />
-                     </VBox.margin>
-                  </Label>
-                  <ListView fx:id="lstActeur" prefHeight="200.0" prefWidth="200.0" />
-               </children>
-            </VBox>
-         </children>
+         <VBox maxHeight="200.0" prefHeight="200.0" prefWidth="100.0">
+            <Label text="Nom événement" />
+            <Label text="dates" />
+            <Label text="Localisation" />
+            <CheckBox mnemonicParsing="false" text="Evenement terminé">
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin></CheckBox>
+            <TextArea prefHeight="200.0" prefWidth="200.0" promptText="notes ..." />
+            <Button mnemonicParsing="false" text="Modifier" />
+         </VBox>
+         <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+            <Label text="Mes acteurs">
+               <VBox.margin>
+                  <Insets top="25.0"/>
+               </VBox.margin>
+            </Label>
+            <ListView fx:id="lstActeur" prefHeight="200.0" prefWidth="200.0"/>
+         </VBox>
          <BorderPane.margin>
             <Insets left="5.0" right="15.0" />
          </BorderPane.margin>
@@ -105,29 +97,24 @@
    </bottom>
    <center>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
-         <children>
-            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
-               <children>
-                  <Label prefHeight="18.0" prefWidth="499.0" text="Evenements" />
-                  <ListView prefHeight="200.0" prefWidth="200.0" />
-                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="+ Nouvel evenement" textAlignment="CENTER" />
-               </children>
-            </VBox>
-            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
-               <children>
-                  <Label prefHeight="18.0" prefWidth="500.0" text="Spectacles" />
-                  <ListView prefHeight="200.0" prefWidth="200.0" />
-                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="+ Nouveau spectacle" textAlignment="CENTER" />
-               </children>
-            </VBox>
-            <VBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="100.0">
-               <children>
-                  <Label prefHeight="18.0" prefWidth="500.0" text="Numéros" />
-                  <ListView prefHeight="200.0" prefWidth="200.0" />
-                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="+ Nouveau numéro" textAlignment="CENTER" />
-               </children>
-            </VBox>
-         </children>
+         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+            <Label prefHeight="18.0" prefWidth="499.0" text="Evenements"/>
+            <ListView prefHeight="200.0" prefWidth="200.0"/>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="+ Nouvel evenement"
+                    textAlignment="CENTER"/>
+         </VBox>
+         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+            <Label prefHeight="18.0" prefWidth="500.0" text="Spectacles"/>
+            <ListView prefHeight="200.0" prefWidth="200.0"/>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="+ Nouveau spectacle"
+                    textAlignment="CENTER"/>
+         </VBox>
+         <VBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="100.0">
+            <Label prefHeight="18.0" prefWidth="500.0" text="Numéros"/>
+            <ListView prefHeight="200.0" prefWidth="200.0"/>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="+ Nouveau numéro"
+                    textAlignment="CENTER"/>
+         </VBox>
       </VBox>
    </center>
 </BorderPane>
