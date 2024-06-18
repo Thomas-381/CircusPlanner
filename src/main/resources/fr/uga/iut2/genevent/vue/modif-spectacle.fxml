@@ -10,10 +10,13 @@
     <top>
         <HBox alignment="CENTER" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #d9d0c1;" BorderPane.alignment="CENTER">
             <children>
-                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="logo" accessibleHelp="LOGO" accessibleRoleDescription="LOGO" accessibleText="LOGO" fitHeight="80.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
                     <HBox.margin>
-                        <Insets right="120.0" />
-                    </HBox.margin></ImageView>
+                        <Insets right="65.0" />
+                    </HBox.margin>
+                    <image>
+                        <Image url="@Img/logo.png" />
+                    </image></ImageView>
                 <Label alignment="CENTER" contentDisplay="CENTER" minWidth="200.0" prefHeight="24.0" prefWidth="233.0" text="Plannifiez l'emerveillement !">
                     <font>
                         <Font size="17.0" />

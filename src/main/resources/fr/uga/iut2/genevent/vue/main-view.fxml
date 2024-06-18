@@ -39,20 +39,23 @@
 <?import javafx.scene.text.*?>
 <?scenebuilder-stylesheet Styles.css ?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="725.0" prefWidth="600.0" style="-fx-background-color: #f7d7ad;" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="725.0" prefWidth="600.0" styleClass="arrierePlan" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
    <top>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #d9d0c1;" BorderPane.alignment="CENTER">
-         <ImageView fx:id="logo" accessibleHelp="LOGO" accessibleRoleDescription="LOGO" accessibleText="LOGO" fitHeight="103.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="titre" BorderPane.alignment="CENTER">
+         <ImageView fx:id="logo" accessibleHelp="LOGO" accessibleRoleDescription="LOGO" accessibleText="LOGO" fitHeight="80.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
             <HBox.margin>
-               <Insets right="40.0" />
-            </HBox.margin></ImageView>
+               <Insets right="65.0" />
+            </HBox.margin>
+            <image>
+               <Image url="@Img/logo.png" />
+            </image></ImageView>
          <Label text="Plannifiez l'emerveillement">
             <font>
                <Font size="26.0" />
             </font></Label>
          <ImageView fitHeight="75.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" smooth="false">
             <HBox.margin>
-               <Insets left="40.0" />
+               <Insets left="60.0" />
             </HBox.margin>
             <image>
                <Image url="@Img/profilN.png" />
