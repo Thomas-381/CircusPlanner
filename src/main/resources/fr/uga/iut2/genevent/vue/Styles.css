@@ -1,0 +1,12 @@
+.arrierePlan{
+    -fx-background-color:  #f7d7ad;
+}
+Button{
+    -fx-background-color: #2C88D9;
+}
+.whiteBone{
+    -fx-text-fill: #f9f6ee;
+}
+.titre{
+    -fx-background-color:  #d9d0c1;
+}

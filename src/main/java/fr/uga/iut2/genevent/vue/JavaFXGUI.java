@@ -62,7 +62,7 @@ public class JavaFXGUI extends IHM {
      */
 
     private void start(Stage primaryStage) throws IOException {
-        FXMLLoader mainViewLoader = new FXMLLoader(getClass().getResource("create-event.fxml"));
+        FXMLLoader mainViewLoader = new FXMLLoader(getClass().getResource("new-user-view.fxml"));
         mainViewLoader.setController(this);
         Scene mainScene = new Scene(mainViewLoader.load());
 
