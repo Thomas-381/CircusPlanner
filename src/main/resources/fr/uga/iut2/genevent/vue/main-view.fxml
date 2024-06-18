@@ -39,7 +39,7 @@
 <?import javafx.scene.text.*?>
 <?scenebuilder-stylesheet Styles.css ?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="725.0" prefWidth="600.0" styleClass="arrierePlan" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="725.0" prefWidth="600.0" styleClass="arrierePlan" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.uga.iut2.genevent.controleur.ControleurMainView">
    <top>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="titre" BorderPane.alignment="CENTER">
          <ImageView fx:id="logo" accessibleHelp="LOGO" accessibleRoleDescription="LOGO" accessibleText="LOGO" fitHeight="80.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
@@ -72,13 +72,9 @@
           <RowConstraints maxHeight="410.0" minHeight="10.0" prefHeight="161.0" vgrow="NEVER" />
         </rowConstraints>
          <VBox maxHeight="266.0" prefHeight="266.0" prefWidth="180.0" styleClass="infoSup">
-            <Label text="Nom événement" />
-            <Label text="dates" />
-            <Label text="Localisation" />
-            <CheckBox mnemonicParsing="false" text="Evenement terminé">
-               <VBox.margin>
-                  <Insets bottom="5.0" top="5.0" />
-               </VBox.margin></CheckBox>
+            <Label fx:id="previewTitre" text="Nom événement" />
+            <Label fx:id="previewDate" text="dates" />
+            <Label fx:id="previewLoc" text="Localisation" />
             <TextArea prefHeight="111.0" prefWidth="180.0" promptText="notes ..." />
             <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="whiteBone" text="Modifier">
                <VBox.margin>
@@ -91,7 +87,7 @@
                   <Insets top="25.0" />
                </VBox.margin>
             </Label>
-            <ListView fx:id="lstActeur" prefHeight="200.0" prefWidth="200.0" />
+            <ListView fx:id="listeActeurs" prefHeight="200.0" prefWidth="200.0" />
          </VBox>
          <BorderPane.margin>
             <Insets left="5.0" right="15.0" top="20.0" />
@@ -109,7 +105,7 @@
       <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #f7d7ad;" BorderPane.alignment="CENTER">
          <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
             <Label prefHeight="18.0" prefWidth="499.0" text="Evenements" />
-            <ListView prefHeight="200.0" prefWidth="200.0">
+            <ListView fx:id="listeEvents" prefHeight="200.0" prefWidth="200.0">
                <VBox.margin>
                   <Insets bottom="10.0" />
                </VBox.margin></ListView>
@@ -117,7 +113,7 @@
          </VBox>
          <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
             <Label prefHeight="18.0" prefWidth="500.0" text="Spectacles" />
-            <ListView prefHeight="200.0" prefWidth="200.0">
+            <ListView fx:id="listeSpectacles" prefHeight="200.0" prefWidth="200.0">
                <VBox.margin>
                   <Insets bottom="10.0" />
                </VBox.margin></ListView>
@@ -125,7 +121,7 @@
          </VBox>
          <VBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="100.0">
             <Label prefHeight="18.0" prefWidth="500.0" text="Numéros" />
-            <ListView prefHeight="200.0" prefWidth="200.0">
+            <ListView fx:id="listeNumeros" prefHeight="200.0" prefWidth="200.0">
                <VBox.margin>
                   <Insets bottom="10.0" />
                </VBox.margin></ListView>

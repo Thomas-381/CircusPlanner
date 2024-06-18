@@ -140,6 +140,10 @@ public class Evenement implements Serializable {
         this.nbrPlacesMax = nbrPlacesMax;
     }
 
+    public String getTitre() {
+        return titre;
+    }
+
     public float getPrix() {
         return prix;
     }
