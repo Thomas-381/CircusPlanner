@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?scenebuilder-stylesheet Styles.css ?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="725.0" prefWidth="600.0" styleClass="arrierePlan" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="titre" BorderPane.alignment="CENTER">
+         <ImageView fx:id="logo" accessibleHelp="LOGO" accessibleRoleDescription="LOGO" accessibleText="LOGO" fitHeight="80.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+            <HBox.margin>
+               <Insets right="65.0" />
+            </HBox.margin>
+            <image>
+               <Image url="@Img/logo.png" />
+            </image></ImageView>
+         <Label text="Plannifiez l'emerveillement">
+            <font>
+               <Font size="26.0" />
+            </font></Label>
+         <ImageView fitHeight="75.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+            <HBox.margin>
+               <Insets left="60.0" />
+            </HBox.margin>
+            <image>
+               <Image url="@Img/profilN.png" />
+            </image></ImageView>
+      </HBox>
+   </top>
+   <left>
+      <GridPane prefHeight="610.0" prefWidth="180.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="259.0" minHeight="10.0" prefHeight="259.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="410.0" minHeight="10.0" prefHeight="161.0" vgrow="NEVER" />
+        </rowConstraints>
+         <VBox maxHeight="266.0" prefHeight="266.0" prefWidth="180.0" styleClass="infoSup">
+            <Label text="Nom événement" />
+            <Label text="dates" />
+            <Label text="Localisation" />
+            <CheckBox mnemonicParsing="false" text="Evenement terminé">
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin></CheckBox>
+            <TextArea prefHeight="111.0" prefWidth="180.0" promptText="notes ..." />
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="whiteBone" text="Modifier">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin></Button>
+         </VBox>
+         <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+            <Label text="Mes acteurs">
+               <VBox.margin>
+                  <Insets top="25.0" />
+               </VBox.margin>
+            </Label>
+            <ListView fx:id="lstActeur" prefHeight="200.0" prefWidth="200.0" />
+         </VBox>
+         <BorderPane.margin>
+            <Insets left="5.0" right="15.0" top="20.0" />
+         </BorderPane.margin>
+      </GridPane>
+   </left>
+   <bottom>
+      <Label text="CircusPlanner © 2024 " BorderPane.alignment="CENTER">
+         <font>
+            <Font size="8.0" />
+         </font>
+      </Label>
+   </bottom>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #f7d7ad;" BorderPane.alignment="CENTER">
+         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+            <Label prefHeight="18.0" prefWidth="499.0" text="Evenements" />
+            <ListView prefHeight="200.0" prefWidth="200.0">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin></ListView>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="whiteBone" text="+ Nouvel evenement" textAlignment="CENTER" />
+         </VBox>
+         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+            <Label prefHeight="18.0" prefWidth="500.0" text="Spectacles" />
+            <ListView prefHeight="200.0" prefWidth="200.0">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin></ListView>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="whiteBone" text="+ Nouveau spectacle" textAlignment="CENTER" />
+         </VBox>
+         <VBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="100.0">
+            <Label prefHeight="18.0" prefWidth="500.0" text="Numéros" />
+            <ListView prefHeight="200.0" prefWidth="200.0">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin></ListView>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="whiteBone" text="+ Nouveau numéro" textAlignment="CENTER" />
+         </VBox>
+      </VBox>
+   </center>
+</BorderPane>

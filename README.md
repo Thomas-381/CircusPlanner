@@ -8,7 +8,7 @@ Le projet est configuré comme un projet [IntelliJ](https://www.jetbrains.com/fr
 Les fichiers sources sont dans le dossier `src`, le dossier `persistence` est l'endroit où l'application stocke les données.
 
 
-```console
+```shell
 $ tree -a -d -L 1 -I .git --gitignore --noreport -- genevent
 genevent
 ├── doc
