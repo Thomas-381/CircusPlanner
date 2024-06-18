@@ -44,12 +44,15 @@
          <children>
             <ImageView fx:id="logo" accessibleHelp="LOGO" accessibleRoleDescription="LOGO" accessibleText="LOGO" fitHeight="103.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
                <HBox.margin>
-                  <Insets right="125.0" />
+                  <Insets right="40.0" />
                </HBox.margin></ImageView>
-            <Label text="Plannifiez l'emerveillement" />
+            <Label text="Plannifiez l'emerveillement">
+               <font>
+                  <Font size="26.0" />
+               </font></Label>
             <ImageView fitHeight="100.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true">
                <HBox.margin>
-                  <Insets left="125.0" />
+                  <Insets left="40.0" />
                </HBox.margin></ImageView>
          </children>
       </HBox>
@@ -74,45 +77,20 @@
                   <Button mnemonicParsing="false" text="Modifier" />
                </children>
             </VBox>
-            <VBox minHeight="60.0" prefHeight="60.0" prefWidth="120.0" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.vgrow="NEVER">
+            <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
                <children>
-                  <HBox alignment="CENTER_LEFT" prefHeight="48.0" prefWidth="160.0">
-                     <children>
-                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" />
-                        <VBox maxHeight="36.0" prefHeight="36.0" prefWidth="73.0">
-                           <children>
-                              <Label text="Nom" />
-                              <Label prefHeight="18.0" prefWidth="70.0" text="Spécialité" />
-                           </children></VBox>
-                        <Button mnemonicParsing="false" text="edit" />
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="48.0" prefWidth="160.0">
-                     <children>
-                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" />
-                        <VBox maxHeight="36.0" prefHeight="36.0" prefWidth="73.0">
-                           <children>
-                              <Label text="Nom" />
-                              <Label prefHeight="18.0" prefWidth="70.0" text="Spécialité" />
-                           </children>
-                        </VBox>
-                        <Button mnemonicParsing="false" text="edit" />
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="58.0" prefHeight="48.0" prefWidth="160.0">
-                     <children>
-                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" />
-                        <VBox maxHeight="36.0" prefHeight="36.0" prefWidth="73.0">
-                           <children>
-                              <Label text="Nom" />
-                              <Label prefHeight="18.0" prefWidth="70.0" text="Spécialité" />
-                           </children>
-                        </VBox>
-                        <Button mnemonicParsing="false" text="edit" />
-                     </children>
-                  </HBox>
-               </children></VBox>
+                  <Label text="Mes acteurs">
+                     <VBox.margin>
+                        <Insets top="25.0" />
+                     </VBox.margin>
+                  </Label>
+                  <ListView fx:id="lstActeur" prefHeight="200.0" prefWidth="200.0" />
+               </children>
+            </VBox>
          </children>
+         <BorderPane.margin>
+            <Insets right="15.0" />
+         </BorderPane.margin>
       </GridPane>
    </left>
    <bottom>
@@ -127,46 +105,22 @@
          <children>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Label alignment="CENTER" prefHeight="18.0" prefWidth="499.0" text="Evenements" />
-                  <VBox prefHeight="200.0" prefWidth="100.0">
-                     <children>
-                        <TextField editable="false" />
-                        <TextField editable="false" />
-                        <TextField editable="false" />
-                        <TextField editable="false" />
-                        <TextField editable="false" />
-                        <TextField editable="false" />
-                     </children></VBox>
-                  <Button fx:id="NvEvent" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="+ Nouvel evenement" textAlignment="CENTER" />
+                  <Label prefHeight="18.0" prefWidth="499.0" text="Evenements" />
+                  <ListView prefHeight="200.0" prefWidth="200.0" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="+ Nouvel evenement" textAlignment="CENTER" />
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Label alignment="CENTER" prefHeight="18.0" prefWidth="500.0" text="Spectacles" />
-                  <VBox prefHeight="200.0" prefWidth="100.0">
-                     <children>
-                        <TextField editable="false" />
-                        <TextField editable="false" />
-                        <TextField editable="false" />
-                        <TextField editable="false" />
-                        <TextField editable="false" />
-                        <TextField editable="false" />
-                     </children></VBox>
+                  <Label prefHeight="18.0" prefWidth="500.0" text="Spectacles" />
+                  <ListView prefHeight="200.0" prefWidth="200.0" />
                   <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="+ Nouveau spectacle" textAlignment="CENTER" />
                </children>
             </VBox>
             <VBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="100.0">
                <children>
                   <Label prefHeight="18.0" prefWidth="500.0" text="Numéros" />
-                  <VBox prefHeight="200.0" prefWidth="100.0">
-                     <children>
-                        <TextField editable="false" />
-                        <TextField editable="false" />
-                        <TextField editable="false" />
-                        <TextField editable="false" />
-                        <TextField editable="false" />
-                        <TextField editable="false" />
-                     </children></VBox>
+                  <ListView prefHeight="200.0" prefWidth="200.0" />
                   <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="+ Nouveau numéro" textAlignment="CENTER" />
                </children>
             </VBox>
