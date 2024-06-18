@@ -12,7 +12,7 @@ class AccessoireTest {
         assertEquals("", accessoire.getLabel());
 
         Accessoire accessoire2 = new Accessoire("Bracelet");
-        assertEquals("Bracelet", accessoire.getLabel());
+        assertEquals("Bracelet", accessoire2.getLabel());
     }
 
     @Test

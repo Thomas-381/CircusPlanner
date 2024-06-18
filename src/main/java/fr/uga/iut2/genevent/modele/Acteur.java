@@ -22,6 +22,7 @@ public class Acteur {
         this.nom = nom;
         this.prenom = prenom;
         this.specialite = specialite;
+        this.commentaires = "";
     }
 
     /**

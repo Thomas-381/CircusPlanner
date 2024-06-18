@@ -117,12 +117,12 @@ class NumeroTest {
         assertEquals(accessoires, numeroChien.getAccessoires());
         assertEquals(accessoires, numeroChevauxComplet.getAccessoires());
 
-        accessoires.clear();
+
         Accessoire selle = new Accessoire("Selle pour cheval");
         numeroChevauxComplet.ajouterAccessoire(selle);
         accessoires.add(selle);
-        assertNotEquals(animaux, numeroChien.getAnimaux());
-        assertEquals(animaux, numeroChevauxComplet.getAnimaux());
+        assertNotEquals(accessoires, numeroChien.getAccessoires());
+        assertEquals(accessoires, numeroChevauxComplet.getAccessoires());
     }
 
     @Test
