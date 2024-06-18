@@ -64,7 +64,7 @@
                             <graphic>
                                 <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" />
                             </graphic></Button>
-                        <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #f7cdd3;" text="Artiste2">
+                        <Button fx:id="BtnRetour" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #f7cdd3;" text="Artiste2">
                             <graphic>
                                 <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" />
                             </graphic>
@@ -72,7 +72,7 @@
                                 <Insets bottom="10.0" left="2.0" right="5.0" />
                             </VBox.margin></Button>
                     </children></VBox>
-                <Button mnemonicParsing="false" style="-fx-background-color: #f7f4b0;" text="&lt;- Retour" />
+                <Button fx:id="retour" mnemonicParsing="false" style="-fx-background-color: #f7f4b0;" text="&lt;- Retour" />
             </children>
             <padding>
                 <Insets bottom="5.0" left="5.0" />
@@ -101,22 +101,22 @@
                   </ImageView>
                   <VBox prefHeight="200.0" prefWidth="100.0">
                      <children>
-                        <TextField promptText="Nom">
+                        <TextField fx:id="nomC" promptText="Nom">
                            <VBox.margin>
                               <Insets bottom="8.0" top="5.0" />
                            </VBox.margin>
                         </TextField>
-                        <TextField promptText="Prenom">
+                        <TextField fx:id="prenomC" promptText="Prenom">
                            <VBox.margin>
                               <Insets bottom="8.0" />
                            </VBox.margin>
                         </TextField>
-                        <TextField promptText="Surnom">
+                        <TextField fx:id="surnomC" promptText="Surnom">
                            <VBox.margin>
                               <Insets bottom="8.0" />
                            </VBox.margin>
                         </TextField>
-                        <TextField promptText="Spécialité" />
+                        <TextField fx:id="specialiteC" promptText="Spécialité" />
                      </children>
                      <HBox.margin>
                         <Insets left="5.0" />
@@ -127,7 +127,7 @@
                   <Insets top="10.0" />
                </VBox.margin>
             </HBox>
-            <Button mnemonicParsing="false" text="+ Ajouter artiste">
+            <Button fx:id="creerArtisteC" mnemonicParsing="false" text="+ Créer artiste">
                <VBox.margin>
                   <Insets left="275.0" top="50.0" />
                </VBox.margin></Button>

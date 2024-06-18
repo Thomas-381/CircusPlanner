@@ -102,7 +102,7 @@
                             <VBox.margin>
                                 <Insets bottom="10.0" left="2.0" right="5.0" />
                             </VBox.margin></Button>
-                        <Button mnemonicParsing="false" text="+ Créer Artiste">
+                        <Button fx:id="nouveauArtisteC" mnemonicParsing="false" text="+ Créer Artiste">
                             <VBox.margin>
                                 <Insets left="2.0" top="50.0" />
                             </VBox.margin></Button>
@@ -110,7 +110,7 @@
                <GridPane.margin>
                   <Insets />
                </GridPane.margin></VBox>
-                <Button mnemonicParsing="false" style="-fx-background-color: #f7f4b0;" text="&lt;- Retour" />
+                <Button fx:id="BtnRetour" mnemonicParsing="false" style="-fx-background-color: #f7f4b0;" text="&lt;- Retour" />
             </children>
             <padding>
                 <Insets bottom="5.0" left="5.0" />
@@ -123,16 +123,16 @@
     <center>
         <VBox prefHeight="524.0" prefWidth="400.0" style="-fx-background-color: #f7d7ad;" BorderPane.alignment="CENTER">
             <children>
-                <TextField minWidth="50.0" prefHeight="26.0" prefWidth="50.0" promptText="Titre">
+                <TextField fx:id="titreC" minWidth="50.0" prefHeight="26.0" prefWidth="50.0" promptText="Titre">
                     <VBox.margin>
                         <Insets left="2.0" right="200.0" top="10.0" />
                     </VBox.margin></TextField>
-            <TextField prefHeight="26.0" prefWidth="50.0" promptText="Durée">
+            <TextField fx:id="dureeC" prefHeight="26.0" prefWidth="50.0" promptText="Durée">
                <VBox.margin>
                   <Insets left="2.0" right="345.0" top="10.0" />
                </VBox.margin>
             </TextField>
-                <ImageView fitHeight="175.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="imgNumeroC" fitHeight="175.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
                     <VBox.margin>
                         <Insets bottom="10.0" left="2.0" right="2.0" top="10.0" />
                     </VBox.margin>
@@ -142,7 +142,7 @@
                 </ImageView>
                 <VBox alignment="CENTER" prefHeight="137.0" prefWidth="400.0" style="-fx-background-color: #ffffff;">
                     <children>
-                        <Button mnemonicParsing="false" text="+ Ajouter Artiste" />
+                        <Button fx:id="ajouterArtisteC" mnemonicParsing="false" text="+ Ajouter Artiste" />
                     </children>
                     <VBox.margin>
                         <Insets bottom="20.0" left="2.0" right="2.0" />
@@ -153,7 +153,7 @@
                         <Insets bottom="10.0" left="50.0" right="50.0" />
                     </VBox.margin>
                 </TextArea>
-            <Button mnemonicParsing="false" text="Créer">
+            <Button fx:id="creerNumeroC" mnemonicParsing="false" text="Créer">
                <VBox.margin>
                   <Insets left="320.0" />
                </VBox.margin>

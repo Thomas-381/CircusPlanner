@@ -102,7 +102,7 @@
                             <VBox.margin>
                                 <Insets bottom="10.0" left="2.0" right="5.0" />
                             </VBox.margin></Button>
-                        <Button mnemonicParsing="false" text="+ Créer Numéro">
+                        <Button fx:id="nouveauNumero" mnemonicParsing="false" text="+ Créer Numéro">
                             <VBox.margin>
                                 <Insets left="2.0" top="50.0" />
                             </VBox.margin></Button>
@@ -120,7 +120,7 @@
     <center>
         <VBox prefHeight="524.0" prefWidth="400.0" style="-fx-background-color: #f7d7ad;" BorderPane.alignment="CENTER">
             <children>
-                <TextField minWidth="50.0" prefHeight="26.0" prefWidth="50.0" promptText="Titre">
+                <TextField fx:id="titre" minWidth="50.0" prefHeight="26.0" prefWidth="50.0" promptText="Titre">
                     <VBox.margin>
                         <Insets left="2.0" right="200.0" top="10.0" />
                     </VBox.margin></TextField>
@@ -129,17 +129,17 @@
                       
                       <HBox prefHeight="37.0" prefWidth="500.0">
                           <children>
-                              <TextField prefHeight="26.0" prefWidth="85.0" promptText="Date debut">
+                              <TextField fx:id="dateDebut" prefHeight="26.0" prefWidth="85.0" promptText="Date debut">
                                   <HBox.margin>
                                       <Insets left="2.0" right="10.0" />
                                   </HBox.margin>
                         </TextField>
-                              <TextField prefHeight="26.0" prefWidth="85.0" promptText="Date fin">
+                              <TextField fx:id="dateFin" prefHeight="26.0" prefWidth="85.0" promptText="Date fin">
                                   <HBox.margin>
                                       <Insets right="10.0" />
                                   </HBox.margin>
                         </TextField>
-                              <TextField prefHeight="26.0" prefWidth="85.0" promptText="Lieu" />
+                              <TextField fx:id="lieu" prefHeight="26.0" prefWidth="85.0" promptText="Lieu" />
                           </children>
                           <VBox.margin>
                               <Insets top="20.0" />
@@ -147,12 +147,12 @@
                       </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <TextField prefHeight="26.0" prefWidth="85.0" promptText="Nb places">
+                        <TextField fx:id="nbrPlaces" prefHeight="26.0" prefWidth="85.0" promptText="Nb places">
                            <HBox.margin>
                               <Insets left="2.0" right="10.0" top="5.0" />
                            </HBox.margin>
                         </TextField>
-                        <TextField prefHeight="26.0" prefWidth="85.0" promptText="Prix">
+                        <TextField fx:id="prix" prefHeight="26.0" prefWidth="85.0" promptText="Prix">
                            <HBox.margin>
                               <Insets top="5.0" />
                            </HBox.margin>
@@ -171,7 +171,7 @@
                 </ImageView>
                 <VBox alignment="CENTER" prefHeight="167.0" prefWidth="350.0" style="-fx-background-color: #ffffff;">
                     <children>
-                        <Button mnemonicParsing="false" text="+ Ajouter Numéro" />
+                        <Button fx:id="ajouterNumero" mnemonicParsing="false" text="+ Ajouter Numéro" />
                     </children>
                     <VBox.margin>
                         <Insets bottom="20.0" left="2.0" right="2.0" />
@@ -182,7 +182,7 @@
                         <Insets bottom="10.0" left="50.0" right="50.0" />
                     </VBox.margin>
                 </TextArea>
-            <Button mnemonicParsing="false" text="Créer">
+            <Button fx:id="creerNumero" mnemonicParsing="false" text="Créer">
                <VBox.margin>
                   <Insets left="320.0" />
                </VBox.margin>

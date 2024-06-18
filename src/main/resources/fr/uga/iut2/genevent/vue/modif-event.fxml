@@ -110,7 +110,7 @@
                                 <Insets left="2.0" top="50.0" />
                             </VBox.margin></Button>
                     </children></VBox>
-                <Button mnemonicParsing="false" style="-fx-background-color: #f7f4b0;" text="&lt;- Retour" />
+                <Button fx:id="BtnRetour" mnemonicParsing="false" style="-fx-background-color: #f7f4b0;" text="&lt;- Retour" />
             </children>
             <padding>
                 <Insets bottom="5.0" left="5.0" />
@@ -123,37 +123,37 @@
     <center>
         <VBox prefHeight="524.0" prefWidth="400.0" style="-fx-background-color: #f7d7ad;" BorderPane.alignment="CENTER">
             <children>
-                <TextField minWidth="50.0" prefHeight="26.0" prefWidth="50.0" promptText="Titre">
+                <TextField fx:id="titreM" minWidth="50.0" prefHeight="26.0" prefWidth="50.0" promptText="Titre">
                     <VBox.margin>
                         <Insets left="2.0" right="200.0" top="10.0" />
                     </VBox.margin></TextField>
                 <HBox prefHeight="37.0" prefWidth="500.0">
                     <children>
-                        <TextField prefHeight="26.0" prefWidth="85.0" promptText="Date debut">
+                        <TextField fx:id="dateDebutM" prefHeight="26.0" prefWidth="85.0" promptText="Date debut">
                             <HBox.margin>
                                 <Insets left="2.0" right="10.0" />
                             </HBox.margin></TextField>
-                        <TextField prefHeight="26.0" prefWidth="85.0" promptText="Date fin">
+                        <TextField fx:id="dateFinM" prefHeight="26.0" prefWidth="85.0" promptText="Date fin">
                             <HBox.margin>
                                 <Insets right="10.0" />
                             </HBox.margin></TextField>
-                        <TextField prefHeight="26.0" prefWidth="85.0" promptText="Nombre place">
+                        <TextField fx:id="nbrPlacesM" prefHeight="26.0" prefWidth="85.0" promptText="Nombre place">
                             <HBox.margin>
                                 <Insets right="10.0" />
                             </HBox.margin>
                         </TextField>
-                        <TextField prefHeight="26.0" prefWidth="85.0" promptText="Lieu" />
+                        <TextField fx:id="lieuM" prefHeight="26.0" prefWidth="85.0" promptText="Lieu" />
                     </children>
                     <VBox.margin>
                         <Insets top="20.0" />
                     </VBox.margin>
                 </HBox>
-            <CheckBox mnemonicParsing="false" text="Evenement terminé">
+            <CheckBox fx:id="eventTermineM" mnemonicParsing="false" text="Evenement terminé">
                <VBox.margin>
                   <Insets left="2.0" top="5.0" />
                </VBox.margin>
             </CheckBox>
-                <ImageView fitHeight="175.0" fitWidth="301.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="imgEventM" fitHeight="175.0" fitWidth="301.0" pickOnBounds="true" preserveRatio="true">
                     <VBox.margin>
                         <Insets bottom="10.0" left="2.0" right="2.0" top="10.0" />
                     </VBox.margin>
@@ -163,7 +163,7 @@
                 </ImageView>
                 <VBox alignment="CENTER" prefHeight="167.0" prefWidth="350.0" style="-fx-background-color: #ffffff;">
                     <children>
-                        <Button mnemonicParsing="false" text="+ Ajouter Spectacle" />
+                        <Button fx:id="ajouterSpectacleM" mnemonicParsing="false" text="+ Ajouter Spectacle" />
                     </children>
                     <VBox.margin>
                         <Insets bottom="20.0" left="2.0" right="2.0" />
@@ -174,7 +174,7 @@
                         <Insets bottom="10.0" left="50.0" right="50.0" />
                     </VBox.margin>
                 </TextArea>
-                <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Créer">
+                <Button fx:id="finaliserEventM" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Finaliser">
                     <VBox.margin>
                         <Insets left="320.0" />
                     </VBox.margin>

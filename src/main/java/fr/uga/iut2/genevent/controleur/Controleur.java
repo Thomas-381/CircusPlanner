@@ -16,7 +16,7 @@ public class Controleur {
     private Button retour;
 
     @FXML
-    private Button EvenementTerminer;
+    private Button eventTermine;
 
     @FXML
     private Button modifier;
@@ -30,9 +30,15 @@ public class Controleur {
     @FXML
     private Button ajouterSpectacle;
 
+    //Page Evenement
+    @FXML
+    private TextField dateDebut, dateFin, nbrPlaces, prix, lieu;
+    @FXML
+    private Button creerEvent;
+
     //Page Projets
     @FXML
-    private Button nouveauEvenement;
+    private Button nouveauEvent;
 
     @FXML
     private Button nouveauSpectacle;
@@ -40,16 +46,18 @@ public class Controleur {
     @FXML
     private Button nouveauNumero;
 
-    @FXML
-    private Button creerArtiste;
-
     //Page Artiste
     @FXML
-    private TextField Nom, Prenom, Surnom, Specialite;
+    private TextField nom, prenom, surnom, specialite;
 
-    //Page Artiste + Numéro
+    @FXML
+    private Button creerArtiste;
+    //PageNuméro
     @FXML
     private Button ajouterArtiste;
+    
+    @FXML
+    private Button nouveauArtiste;
 
     //Page Numéro
     @FXML
@@ -57,4 +65,5 @@ public class Controleur {
 
     @FXML
     private Button ajouterAnimal, ajouterAccessoire;
+
 }
