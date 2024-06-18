@@ -30,7 +30,31 @@ public class Controleur {
     @FXML
     private Button ajouterSpectacle;
 
+    //Page Projets
+    @FXML
+    private Button nouveauEvenement;
 
+    @FXML
+    private Button nouveauSpectacle;
 
+    @FXML
+    private Button nouveauNumero;
 
+    @FXML
+    private Button creerArtiste;
+
+    //Page Artiste
+    @FXML
+    private TextField Nom, Prenom, Surnom, Specialite;
+
+    //Page Artiste + Numéro
+    @FXML
+    private Button ajouterArtiste;
+
+    //Page Numéro
+    @FXML
+    private TextField Titre, duree;
+
+    @FXML
+    private Button ajouterAnimal, ajouterAccessoire;
 }
