@@ -1,15 +1,36 @@
+
 .arrierePlan{
-    -fx-background-color:  #f7d7ad;
+    -fx-background-color: #f7d7ad;
 }
+
 Button{
     -fx-background-color: #2C88D9;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-margin: 5px;
 }
+
+.retour{
+    -fx-background-color:  #f7f4b0;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-margin: 5px;
+}
+
 .whiteBone{
     -fx-text-fill: #f9f6ee;
 }
+
 .titre{
-    -fx-background-color:  #d9d0c1;
+    -fx-background-color: #d9d0c1;
 }
+
 .infoSup{
-    -fx-background-color: 
+    -fx-background-color: #bbc9c6;
+    -fx-border-radius: 15px;
+    -fx-border-color: #f9f6ee;
+    -fx-border-width: 1px;
+    -fx-background-radius: 15px;
+    -fx-padding: 5px;
+    
 }
