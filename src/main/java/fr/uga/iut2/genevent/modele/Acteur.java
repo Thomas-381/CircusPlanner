@@ -104,4 +104,9 @@ public class Acteur {
     public void setCommentaires(String commentaires) {
         this.commentaires = commentaires;
     }
+
+    @Override
+    public String toString() {
+        return surnom + "\n (" + prenom + " " + nom + ")";
+    }
 }

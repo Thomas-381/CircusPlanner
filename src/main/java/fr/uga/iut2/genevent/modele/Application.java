@@ -1,16 +1,19 @@
 package fr.uga.iut2.genevent.modele;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.util.HashSet;
 
 public class Application {
 
     // Attributs
-    private HashSet<Evenement> evenements = new HashSet<>();
-    private HashSet<Spectacle> spectacles = new HashSet<>();
-    private HashSet<Numero> numeros = new HashSet<>();
-    private HashSet<Acteur> acteurs = new HashSet<>();
-    private HashSet<Animal> animaux = new HashSet<>();
-    private HashSet<Accessoire> accessoires = new HashSet<>();
+    private ObservableList<Evenement> evenements = FXCollections.observableArrayList();
+    private ObservableList<Spectacle> spectacles = FXCollections.observableArrayList();
+    private ObservableList<Numero> numeros = FXCollections.observableArrayList();
+    private ObservableList<Acteur> acteurs = FXCollections.observableArrayList();
+    private ObservableList<Animal> animaux = FXCollections.observableArrayList();
+    private ObservableList<Accessoire> accessoires = FXCollections.observableArrayList();
 
     public Application() {
     }
@@ -67,7 +70,7 @@ public class Application {
      * Getter de l'attribut evenements
      * @return la liste des événements
      */
-    public HashSet<Evenement> getEvenements() {
+    public ObservableList<Evenement> getEvenements() {
         return evenements;
     }
 
@@ -75,7 +78,7 @@ public class Application {
      * Getter de l'attribut spectacles
      * @return la liste des spectacles
      */
-    public HashSet<Spectacle> getSpectacles() {
+    public ObservableList<Spectacle> getSpectacles() {
         return spectacles;
     }
 
@@ -83,7 +86,7 @@ public class Application {
      * Getter de l'attribut numéros
      * @return la liste des numéros
      */
-    public HashSet<Numero> getNumeros() {
+    public ObservableList<Numero> getNumeros() {
         return numeros;
     }
 
@@ -91,7 +94,7 @@ public class Application {
      * Getter de l'attribut animaux
      * @return la liste des animaux
      */
-    public HashSet<Animal> getAnimaux() {
+    public ObservableList<Animal> getAnimaux() {
         return animaux;
     }
 
@@ -99,7 +102,7 @@ public class Application {
      * Getter de l'attribut acteurs
      * @return la liste des acteurs
      */
-    public HashSet<Acteur> getActeurs() {
+    public ObservableList<Acteur> getActeurs() {
         return acteurs;
     }
 
@@ -107,7 +110,7 @@ public class Application {
      * Getter de l'attribut accessoires
      * @return la liste des accessoires
      */
-    public HashSet<Accessoire> getAccessoires() {
+    public ObservableList<Accessoire> getAccessoires() {
         return accessoires;
     }
 

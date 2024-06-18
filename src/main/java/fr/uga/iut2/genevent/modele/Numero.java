@@ -125,4 +125,9 @@ public class Numero {
     public ArrayList<Organisateur> getOrganisateurs() {
         return organisateurs;
     }
+
+    @Override
+    public String toString() {
+        return titre;
+    }
 }

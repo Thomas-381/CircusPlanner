@@ -184,4 +184,9 @@ public class Evenement implements Serializable {
     public Organisateur getOrganisateur(int i) {
         return organisateurs.get(i);
     }
+
+    @Override
+    public String toString() {
+        return titre;
+    }
 }

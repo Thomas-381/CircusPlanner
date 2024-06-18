@@ -94,4 +94,9 @@ public class Spectacle {
     public HashSet<Organisateur> getOrganisateurs() {
         return organisateurs;
     }
+
+    @Override
+    public String toString() {
+        return nom;
+    }
 }

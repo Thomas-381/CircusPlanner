@@ -39,4 +39,9 @@ public class Animal {
     public String getEspece() {
         return espece;
     }
+
+    @Override
+    public String toString() {
+        return nom + " (" + espece + ")";
+    }
 }
