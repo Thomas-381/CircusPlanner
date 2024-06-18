@@ -50,10 +50,13 @@
             <font>
                <Font size="26.0" />
             </font></Label>
-         <ImageView fitHeight="100.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true">
+         <ImageView fitHeight="75.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" smooth="false">
             <HBox.margin>
                <Insets left="40.0" />
-            </HBox.margin></ImageView>
+            </HBox.margin>
+            <image>
+               <Image url="@Img/profilN.png" />
+            </image></ImageView>
       </HBox>
    </top>
    <left>
@@ -62,10 +65,10 @@
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints maxHeight="231.0" minHeight="10.0" prefHeight="231.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="410.0" minHeight="10.0" prefHeight="189.0" vgrow="NEVER" />
+          <RowConstraints maxHeight="259.0" minHeight="10.0" prefHeight="259.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="410.0" minHeight="10.0" prefHeight="161.0" vgrow="NEVER" />
         </rowConstraints>
-         <VBox maxHeight="232.0" prefHeight="232.0" prefWidth="180.0">
+         <VBox maxHeight="266.0" prefHeight="266.0" prefWidth="180.0" styleClass="infoSup">
             <Label text="Nom événement" />
             <Label text="dates" />
             <Label text="Localisation" />
@@ -73,8 +76,11 @@
                <VBox.margin>
                   <Insets bottom="5.0" top="5.0" />
                </VBox.margin></CheckBox>
-            <TextArea prefHeight="200.0" prefWidth="200.0" promptText="notes ..." />
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="whiteBone" text="Modifier" />
+            <TextArea prefHeight="111.0" prefWidth="180.0" promptText="notes ..." />
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="whiteBone" text="Modifier">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin></Button>
          </VBox>
          <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
             <Label text="Mes acteurs">

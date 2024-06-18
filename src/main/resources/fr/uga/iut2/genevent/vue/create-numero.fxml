@@ -18,12 +18,13 @@
                <font>
                   <Font size="17.0" />
                </font></Label>
-                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="75.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                     <HBox.margin>
-                        <Insets left="120.0" />
+                        <Insets left="40.0" />
                     </HBox.margin>
-               <image>
-                  <Image url="@Img/profil.jpg" />
+                    <image>
+                        <Image url="@Img/profilN.png" />
+                    </image></ImageView>
                </image></ImageView>
             </children>
         </HBox>
