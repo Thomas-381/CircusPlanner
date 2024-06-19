@@ -62,11 +62,11 @@
                             <VBox.margin>
                                 <Insets bottom="15.0" left="2.0" />
                             </VBox.margin></Label>
-                        <CheckBox mnemonicParsing="false" text="Event terminé">
+                        <CheckBox fx:id="cbEvent" mnemonicParsing="false" text="Event terminé">
                             <VBox.margin>
                                 <Insets bottom="10.0" left="2.0" />
                             </VBox.margin></CheckBox>
-                        <TextArea prefHeight="60.0" prefWidth="100.0" promptText="Commentaire">
+                        <TextArea fx:id="tfCom" prefHeight="60.0" prefWidth="100.0" promptText="Commentaire">
                             <VBox.margin>
                                 <Insets bottom="10.0" left="2.0" right="5.0" />
                             </VBox.margin></TextArea>
@@ -88,8 +88,8 @@
                             <VBox.margin>
                                 <Insets left="2.0" />
                             </VBox.margin></Label>
-                  <ListView prefHeight="200.0" prefWidth="200.0" />
-                        <Button mnemonicParsing="false" styleClass="whiteBone" text="+ Créer Numéro">
+                  <ListView fx:id="listeNumeros" prefHeight="200.0" prefWidth="200.0" />
+                        <Button fx:id="btnCréeNum" mnemonicParsing="false" styleClass="whiteBone" text="+ Créer Numéro">
                             <VBox.margin>
                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                             </VBox.margin></Button>
@@ -110,7 +110,7 @@
     <center>
         <VBox prefHeight="524.0" prefWidth="400.0" style="-fx-background-color: #f7d7ad;" BorderPane.alignment="CENTER">
             <children>
-                <TextField minWidth="50.0" prefHeight="26.0" prefWidth="50.0" promptText="Titre">
+                <TextField fx:id="tfTitre" minWidth="50.0" prefHeight="26.0" prefWidth="50.0" promptText="Titre">
                     <VBox.margin>
                         <Insets left="2.0" right="200.0" top="10.0" />
                     </VBox.margin></TextField>
@@ -119,17 +119,17 @@
                       
                       <HBox prefHeight="37.0" prefWidth="500.0">
                           <children>
-                              <TextField prefHeight="26.0" prefWidth="85.0" promptText="Date debut">
+                              <TextField fx:id="tfDateDebut" prefHeight="26.0" prefWidth="85.0" promptText="Date debut">
                                   <HBox.margin>
                                       <Insets left="2.0" right="10.0" />
                                   </HBox.margin>
                         </TextField>
-                              <TextField prefHeight="26.0" prefWidth="85.0" promptText="Date fin">
+                              <TextField fx:id="tfDateFin" prefHeight="26.0" prefWidth="85.0" promptText="Date fin">
                                   <HBox.margin>
                                       <Insets right="10.0" />
                                   </HBox.margin>
                         </TextField>
-                              <TextField prefHeight="26.0" prefWidth="85.0" promptText="Lieu" />
+                              <TextField fx:id="tfLieu" prefHeight="26.0" prefWidth="85.0" promptText="Lieu" />
                           </children>
                           <VBox.margin>
                               <Insets top="20.0" />
@@ -137,12 +137,12 @@
                       </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <TextField prefHeight="26.0" prefWidth="85.0" promptText="Nb places">
+                        <TextField fx:id="tfPlaces" prefHeight="26.0" prefWidth="85.0" promptText="Nb places">
                            <HBox.margin>
                               <Insets left="2.0" right="10.0" top="5.0" />
                            </HBox.margin>
                         </TextField>
-                        <TextField prefHeight="26.0" prefWidth="85.0" promptText="Prix">
+                        <TextField fx:id="tfPrix" prefHeight="26.0" prefWidth="85.0" promptText="Prix">
                            <HBox.margin>
                               <Insets top="5.0" />
                            </HBox.margin>
@@ -167,12 +167,12 @@
                         <Insets bottom="20.0" left="2.0" right="2.0" />
                     </VBox.margin>
                 </VBox>
-                <TextArea prefHeight="105.0" prefWidth="200.0" promptText="Commentaire">
+                <TextArea fx:id="tfCommentaire" prefHeight="105.0" prefWidth="200.0" promptText="Commentaire">
                     <VBox.margin>
                         <Insets bottom="10.0" left="50.0" right="50.0" />
                     </VBox.margin>
                 </TextArea>
-            <Button mnemonicParsing="false" styleClass="whiteBone" text="Créer">
+            <Button fx:id="btnCrée" mnemonicParsing="false" styleClass="whiteBone" text="Créer">
                <VBox.margin>
                   <Insets left="320.0" />
                </VBox.margin>
