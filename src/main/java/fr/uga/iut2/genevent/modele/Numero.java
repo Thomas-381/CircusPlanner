@@ -36,6 +36,18 @@ public class Numero {
      */
     public Numero(String titre) {
         this.titre = titre;
+        this.animaux = new ArrayList<>();
+        this.accessoires = new ArrayList<>();
+        this.acteurs = new ArrayList<>();
+        this.organisateurs = new ArrayList<>();
+    }
+
+    public Numero() {
+        this.titre = "";
+        this.animaux = new ArrayList<>();
+        this.accessoires = new ArrayList<>();
+        this.acteurs = new ArrayList<>();
+        this.organisateurs = new ArrayList<>();
     }
 
     /**
@@ -112,5 +124,10 @@ public class Numero {
      */
     public ArrayList<Organisateur> getOrganisateurs() {
         return organisateurs;
+    }
+
+    @Override
+    public String toString() {
+        return titre;
     }
 }

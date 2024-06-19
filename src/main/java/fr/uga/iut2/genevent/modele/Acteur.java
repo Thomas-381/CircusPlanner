@@ -22,6 +22,7 @@ public class Acteur {
         this.nom = nom;
         this.prenom = prenom;
         this.specialite = specialite;
+        this.commentaires = "";
     }
 
     /**
@@ -38,6 +39,14 @@ public class Acteur {
         this.prenom = prenom;
         this.specialite = specialite;
         this.commentaires = commentaires;
+    }
+
+    public Acteur() {
+        this.surnom = "";
+        this.nom = "";
+        this.prenom = "";
+        this.specialite = "";
+        this.commentaires = "";
     }
 
     /**
@@ -94,5 +103,10 @@ public class Acteur {
      */
     public void setCommentaires(String commentaires) {
         this.commentaires = commentaires;
+    }
+
+    @Override
+    public String toString() {
+        return surnom + "\n (" + prenom + " " + nom + ")";
     }
 }

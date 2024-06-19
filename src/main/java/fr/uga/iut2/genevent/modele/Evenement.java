@@ -15,8 +15,8 @@ public class Evenement implements Serializable {
     private String adresse;
     private String dateDebut;
     private String dateFin;
-    private ArrayList<Spectacle> spectacles;
-    private ArrayList<Organisateur> organisateurs;
+    private ArrayList<Spectacle> spectacles = new ArrayList<>();
+    private ArrayList<Organisateur> organisateurs = new ArrayList<>();
     private int nbrPlacesMax;
     private int placesNormales, placesVIP;
     private float prix;
@@ -34,6 +34,13 @@ public class Evenement implements Serializable {
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
         this.nbrPlacesMax = nbrPlacesMax;
+    }
+    public Evenement() {
+        this.titre = "";
+        this.adresse = "";
+        this.dateDebut = "";
+        this.dateFin = "";
+        this.nbrPlacesMax = 0;
     }
 
     /**
@@ -133,6 +140,10 @@ public class Evenement implements Serializable {
         this.nbrPlacesMax = nbrPlacesMax;
     }
 
+    public String getTitre() {
+        return titre;
+    }
+
     public float getPrix() {
         return prix;
     }
@@ -172,5 +183,14 @@ public class Evenement implements Serializable {
             placesVIP += nbr;
         }
         return placesDispo;
+    }
+
+    public Organisateur getOrganisateur(int i) {
+        return organisateurs.get(i);
+    }
+
+    @Override
+    public String toString() {
+        return titre;
     }
 }

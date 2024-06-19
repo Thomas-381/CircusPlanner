@@ -24,6 +24,13 @@ public class Spectacle {
         this.lieu = lieu;
     }
 
+    public Spectacle() {
+        this.nom = "";
+        this.lieu = "";
+    }
+
+
+
     /**
      * Définit le nom du Spectacle.
      * @param nom Le nouveau nom du Spectacle.
@@ -86,5 +93,10 @@ public class Spectacle {
      */
     public HashSet<Organisateur> getOrganisateurs() {
         return organisateurs;
+    }
+
+    @Override
+    public String toString() {
+        return nom;
     }
 }

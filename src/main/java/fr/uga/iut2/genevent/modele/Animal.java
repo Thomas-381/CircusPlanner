@@ -19,6 +19,11 @@ public class Animal {
         this.espece = espece;
     }
 
+    public Animal() {
+        this.nom = "";
+        this.espece = "";
+    }
+
     /**
      * Getter de l'attribut nom
      * @return le nom de l'animal
@@ -33,5 +38,10 @@ public class Animal {
      */
     public String getEspece() {
         return espece;
+    }
+
+    @Override
+    public String toString() {
+        return nom + " (" + espece + ")";
     }
 }

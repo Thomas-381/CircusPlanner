@@ -19,7 +19,13 @@ public class Organisateur {
         this.nom = nom;
     }
 
-    /**
+    public Organisateur() {
+        this.nom = "";
+        this.evenements = new ArrayList<>();
+        this.spectacles = new ArrayList<>();
+    }
+
+    /**Numero
      * Ajoute un événement à l'Organisateur.
      *
      * @param evenement L'événement à ajouter.

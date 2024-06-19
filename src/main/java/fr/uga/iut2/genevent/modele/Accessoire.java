@@ -5,10 +5,12 @@ package fr.uga.iut2.genevent.modele;
  */
 public class Accessoire {
 
+
+
     /**
      * Le libellé de cet Accessoire.
      */
-    private final String label;
+    private String label;
 
     /**
      * Construit un nouvel Accessoire avec l'identifiant et le libellé donnés.
@@ -18,11 +20,28 @@ public class Accessoire {
         this.label = label;
     }
 
+    public Accessoire() {
+        this.label = "";
+    }
+
     /**
      * Getter de l'attribut label
      * @return le libellé de l'accessoire
      */
     public String getLabel() {
+        return label;
+    }
+
+    /**
+     * Setter de l'attribut label
+     * @param label le nom de l'accessoire
+     */
+    public void setLabel(String label){
+        this.label = label;
+    }
+
+    @Override
+    public String toString() {
         return label;
     }
 }

@@ -18,9 +18,9 @@
                         <Image url="@Img/logo.png" />
                     </image></ImageView>
                 <Label alignment="CENTER" contentDisplay="CENTER" minWidth="200.0" prefHeight="24.0" prefWidth="233.0" text="Plannifiez l'emerveillement !">
-               <font>
-                  <Font size="17.0" />
-               </font></Label>
+                    <font>
+                        <Font size="17.0" />
+                    </font></Label>
                 <ImageView fitHeight="75.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                     <HBox.margin>
                         <Insets left="40.0" />
@@ -78,38 +78,38 @@
                     <GridPane.margin>
                         <Insets bottom="2.0" />
                     </GridPane.margin>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
                 </VBox>
                 <VBox prefHeight="208.0" prefWidth="100.0" style="-fx-background-color: #f7edef;" GridPane.rowIndex="2">
                     <children>
-                        <Label prefHeight="27.0" prefWidth="120.0" text="Mes Spectacles">
+                        <Label prefHeight="27.0" prefWidth="120.0" text="Mes Artistes">
                             <font>
                                 <Font size="15.0" />
                             </font>
                             <VBox.margin>
                                 <Insets left="2.0" />
                             </VBox.margin></Label>
-                        <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #f7f4b0;" text="Spectacle1 ">
+                        <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #f7f4b0;" text="Artiste1">
                             <VBox.margin>
                                 <Insets bottom="10.0" left="2.0" right="5.0" top="10.0" />
                             </VBox.margin>
                             <graphic>
                                 <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" />
                             </graphic></Button>
-                        <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #f7cdd3;" text="Spectacle2">
+                        <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #f7cdd3;" text="Artiste2">
                             <graphic>
                                 <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" />
                             </graphic>
                             <VBox.margin>
                                 <Insets bottom="10.0" left="2.0" right="5.0" />
                             </VBox.margin></Button>
-                        <Button fx:id="nouveauSpectacleC" mnemonicParsing="false" text="+ Créer Spectacle">
+                        <Button mnemonicParsing="false" text="+ Créer Artiste">
                             <VBox.margin>
                                 <Insets left="2.0" top="50.0" />
                             </VBox.margin></Button>
-                    </children></VBox>
+                    </children>
+                    <GridPane.margin>
+                        <Insets />
+                    </GridPane.margin></VBox>
                 <Button fx:id="BtnRetour" mnemonicParsing="false" style="-fx-background-color: #f7f4b0;" text="&lt;- Retour" />
             </children>
             <padding>
@@ -123,47 +123,26 @@
     <center>
         <VBox prefHeight="524.0" prefWidth="400.0" style="-fx-background-color: #f7d7ad;" BorderPane.alignment="CENTER">
             <children>
-                <TextField fx:id="titreC" minWidth="50.0" prefHeight="26.0" prefWidth="50.0" promptText="Titre">
+                <TextField fx:id="titreM" minWidth="50.0" prefHeight="26.0" prefWidth="50.0" promptText="Titre">
                     <VBox.margin>
                         <Insets left="2.0" right="200.0" top="10.0" />
                     </VBox.margin></TextField>
-                <HBox prefHeight="37.0" prefWidth="500.0">
-                    <children>
-                        <TextField fx:id="dateDebutC" prefHeight="26.0" prefWidth="85.0" promptText="Date debut">
-                            <HBox.margin>
-                                <Insets left="2.0" right="10.0" />
-                            </HBox.margin></TextField>
-                        <TextField fx:id="dateFinC" prefHeight="26.0" prefWidth="85.0" promptText="Date fin">
-                            <HBox.margin>
-                                <Insets right="10.0" />
-                            </HBox.margin></TextField>
-                        <TextField fx:id="nbrPlacesC" prefHeight="26.0" prefWidth="85.0" promptText="Nombre place">
-                            <HBox.margin>
-                                <Insets right="10.0" />
-                            </HBox.margin>
-                        </TextField>
-                        <TextField fx:id="lieuC" prefHeight="26.0" prefWidth="85.0" promptText="Lieu" />
-                    </children>
+                <TextField fx:id="dureeM" prefHeight="26.0" prefWidth="50.0" promptText="Durée">
                     <VBox.margin>
-                        <Insets top="20.0" />
+                        <Insets left="2.0" right="345.0" top="10.0" />
                     </VBox.margin>
-                </HBox>
-            <CheckBox fx:id="eventTermineC" mnemonicParsing="false" text="Evenement terminé">
-               <VBox.margin>
-                  <Insets left="2.0" top="5.0" />
-               </VBox.margin>
-            </CheckBox>
-                <ImageView fx:id="imgEventC" fitHeight="175.0" fitWidth="301.0" pickOnBounds="true" preserveRatio="true">
+                </TextField>
+                <ImageView fx:id="imgNumeroM" fitHeight="175.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
                     <VBox.margin>
                         <Insets bottom="10.0" left="2.0" right="2.0" top="10.0" />
                     </VBox.margin>
-               <image>
-                  <Image url="@Img/image-defaut.png" />
-               </image>
+                    <image>
+                        <Image url="@Img/image-defaut.png" />
+                    </image>
                 </ImageView>
-                <VBox alignment="CENTER" prefHeight="167.0" prefWidth="350.0" style="-fx-background-color: #ffffff;">
+                <VBox alignment="CENTER" prefHeight="137.0" prefWidth="400.0" style="-fx-background-color: #ffffff;">
                     <children>
-                        <Button fx:id="ajouterSpectacleC" mnemonicParsing="false" text="+ Ajouter Spectacle" />
+                        <Button fx:id="ajouterArtisteM" mnemonicParsing="false" text="+ Ajouter Artiste" />
                     </children>
                     <VBox.margin>
                         <Insets bottom="20.0" left="2.0" right="2.0" />
@@ -174,11 +153,11 @@
                         <Insets bottom="10.0" left="50.0" right="50.0" />
                     </VBox.margin>
                 </TextArea>
-            <Button fx:id="creerEventC" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Créer">
-               <VBox.margin>
-                  <Insets left="320.0" />
-               </VBox.margin>
-            </Button>
+                <Button fx:id="finaliserNumeroM" mnemonicParsing="false" text="Finaliser">
+                    <VBox.margin>
+                        <Insets left="320.0" />
+                    </VBox.margin>
+                </Button>
             </children>
             <BorderPane.margin>
                 <Insets left="2.0" />
