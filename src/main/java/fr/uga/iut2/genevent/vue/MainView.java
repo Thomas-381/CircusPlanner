@@ -32,19 +32,17 @@ public class MainView extends Application {
         try {
             app = Sauvegarde.load();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+                    app.ajouterEvenement(new Evenement("event1", "quelque part", "53/43/8946", "17/28/7391", 700));
+                    app.ajouterEvenement(new Evenement("event2", "autre part", "55/48/6846", "24/37/1468", 500));
+                    app.ajouterSpectacle(new Spectacle("spectacle1", "quelque part"));
+                    app.ajouterSpectacle(new Spectacle("spectacle2", "autre part"));
+                    app.ajouterNumero(new Numero("numero1"));
+                    app.ajouterNumero(new Numero("numero2"));
+                    app.ajouterActeur(new Acteur("acteur1", "patrick", "Jean", "spécialiste"));
+                    app.ajouterActeur(new Acteur("acteur2", "d'arc", "Jeanne", "très forte"));
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
-
-//        app.ajouterEvenement(new Evenement("event1", "quelque part", "53/43/8946", "17/28/7391", 700));
-//        app.ajouterEvenement(new Evenement("event2", "autre part", "55/48/6846", "24/37/1468", 500));
-//        app.ajouterSpectacle(new Spectacle("spectacle1", "quelque part"));
-//        app.ajouterSpectacle(new Spectacle("spectacle2", "autre part"));
-//        app.ajouterNumero(new Numero("numero1"));
-//        app.ajouterNumero(new Numero("numero2"));
-//        app.ajouterActeur(new Acteur("acteur1", "patrick", "Jean", "spécialiste"));
-//        app.ajouterActeur(new Acteur("acteur2", "d'arc", "Jeanne", "très forte"));
 
         launch();
 
