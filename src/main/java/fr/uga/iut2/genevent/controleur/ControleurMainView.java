@@ -1,10 +1,18 @@
 package fr.uga.iut2.genevent.controleur;
 
 import fr.uga.iut2.genevent.modele.*;
+import fr.uga.iut2.genevent.vue.MainView;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
+import javafx.stage.Stage;
+
+import javax.swing.*;
+import java.io.IOException;
 
 public class ControleurMainView {
 
@@ -66,4 +74,50 @@ public class ControleurMainView {
                 })
         );
     }
+
+    @FXML
+    public void handleAjouterEvent(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(MainView.class.getResource("create-event.fxml"));
+        loader.setController(new Controleur_create_event(app));
+        Stage window = new Stage();
+        Scene scene = new Scene(loader.load());
+
+        window.setScene(scene);
+        window.show();
+    }
+
+    @FXML
+    public void handleAjouterSpectacle(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(MainView.class.getResource("create-spectacle.fxml"));
+        loader.setController(new Controleur_create_spectacle(app));
+        Stage window = new Stage();
+        Scene scene = new Scene(loader.load());
+
+        window.setScene(scene);
+        window.show();
+    }
+
+    @FXML
+    public void handleAjouterNumero(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(MainView.class.getResource("create-numero.fxml"));
+        loader.setController(new Controleur_create_num(app));
+        Stage window = new Stage();
+        Scene scene = new Scene(loader.load());
+
+        window.setScene(scene);
+        window.show();
+    }
+
+    @FXML
+    public void handleAjouterActeur(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(MainView.class.getResource("create-artiste.fxml"));
+        loader.setController(new Controleur_modif_acteur(app));
+        Stage window = new Stage();
+        Scene scene = new Scene(loader.load());
+
+        window.setScene(scene);
+        window.show();
+    }
+
+
 }
