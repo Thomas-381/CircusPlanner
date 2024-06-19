@@ -29,27 +29,32 @@ public class ControleurMainView {
 
     @FXML
     public void initialize() {
+        // initialise les listes avec les éléments du modèle
         listeEvents.setItems(app.getEvenements());
         listeNumeros.setItems(app.getNumeros());
         listeSpectacles.setItems(app.getSpectacles());
         listeActeurs.setItems(app.getActeurs());
 
+        // Ajoute des EventListeners aux listes pour afficher une preview
         listeEvents.getSelectionModel().selectedItemProperty().addListener(
                 ((observableValue, evenement, t1) -> {
                     previewTitre.setText(t1.getTitre());
                     previewDesc.setText("DATE : " + t1.getDateDebut() + " - " + t1.getDateFin() + "\n ADRESSE : " + t1.getAdresse());
+                    previewNotes.setText(t1.getCommentaires());
                 })
         );
         listeSpectacles.getSelectionModel().selectedItemProperty().addListener(
                 ((observableValue, spectacles, t1) -> {
                     previewTitre.setText(t1.getNom());
                     previewDesc.setText("LIEU : " + t1.getLieu());
+                    previewNotes.setText(t1.getCommentaires());
                 })
         );
         listeNumeros.getSelectionModel().selectedItemProperty().addListener(
                 ((observableValue, numeros, t1) -> {
                     previewTitre.setText(t1.getTitre());
                     previewDesc.setText("");
+                    previewNotes.setText(t1.getCommentaires());
                 })
         );
         listeActeurs.getSelectionModel().selectedItemProperty().addListener(
@@ -57,8 +62,8 @@ public class ControleurMainView {
                     previewTitre.setText(t1.getSurnom());
                     previewDesc.setText("NOM COMPLET : " + t1.getPrenom() + " " + t1.getNom() + "\nSPECIALITE : " + t1.getSpecialite());
                     previewNotes.setText(t1.getCommentaires());
+                    previewNotes.setText(t1.getCommentaires());
                 })
         );
-
     }
 }

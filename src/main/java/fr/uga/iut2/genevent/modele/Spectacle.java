@@ -93,6 +93,25 @@ public class Spectacle implements Serializable {
         return numeros;
     }
 
+    /**
+     * Récupère les commentaires liés à ce spectacle
+     * @return les commentaires de tous les numéros de ce spectacle
+     */
+    public String getCommentaires() {
+        StringBuilder retours = new StringBuilder();
+        for (Numero n : numeros) {
+            retours.append(n.getCommentaires());
+        }
+        return retours.toString();
+    }
+
+    @Override
+    public String toString() {
+        return nom;
+    }
+
+    // Méthodes nécessaires pour la sérialisation et dé sérialisation de l'objet
+
     private void writeObject(ObjectOutputStream s) throws IOException {
         s.writeUTF(nom);
         s.writeUTF(lieu);
@@ -103,10 +122,5 @@ public class Spectacle implements Serializable {
         nom = s.readUTF();
         lieu = s.readUTF();
         numeros = FXCollections.observableArrayList((ArrayList<Numero>) s.readObject());
-    }
-
-    @Override
-    public String toString() {
-        return nom;
     }
 }

@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -25,6 +24,7 @@ public class Evenement implements Serializable{
     private String dateDebut;
     private String dateFin;
     private float prix;
+    private int nbrPlaces;
     private transient ObservableList<Spectacle> spectacles = FXCollections.observableArrayList();
 
     /**
@@ -38,22 +38,43 @@ public class Evenement implements Serializable{
      * @param adresse L'adresse de l'Événement.
      * @param dateDebut La date de début de l'Événement.
      * @param dateFin La date de fin de l'Événement.
-     * @param nbrPlacesMax Le nombre de places disponibles pour l'évènement.
+     * @param nbrPlaces le nombre de places de l'événement
      */
-    public Evenement(String titre, String adresse, String dateDebut, String dateFin, int nbrPlacesMax) {
+    public Evenement(String titre, String adresse, String dateDebut, String dateFin, int nbrPlaces) {
         this.titre = titre;
         this.adresse = adresse;
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
+        this.nbrPlaces = nbrPlaces;
         this.prix = 0;
         LOGGER.log(Level.INFO, "Création d'un "+this.getClass().getTypeName());
     }
+
+    /**
+     * Construit un nouvel Événement avec l'ID, le titre, l'adresse, la date de début et la date de fin donnés.
+     * @param titre Le titre de l'Événement.
+     * @param adresse L'adresse de l'Événement.
+     * @param dateDebut La date de début de l'Événement.
+     * @param dateFin La date de fin de l'Événement.
+     * @param nbrPlaces le nombre de places de l'événement
+     * @param prix le prix d'accès
+     */
+    public Evenement(String titre, String adresse, String dateDebut, String dateFin, int nbrPlaces, float prix) {
+        this.titre = titre;
+        this.adresse = adresse;
+        this.dateDebut = dateDebut;
+        this.dateFin = dateFin;
+        this.nbrPlaces = nbrPlaces;
+        this.prix = prix;
+    }
+
     public Evenement() {
         this.titre = "";
         this.adresse = "";
         this.dateDebut = "";
         this.dateFin = "";
         this.prix = 0;
+        this.nbrPlaces = 0;
         LOGGER.log(Level.INFO, "Création d'un "+this.getClass().getTypeName());
     }
 
@@ -131,24 +152,56 @@ public class Evenement implements Serializable{
         return spectacles.get(i);
     }
 
+    /**
+     * Getter de l'attribut titre
+     * @return le titre de l'événement
+     */
     public String getTitre() {
         return titre;
     }
 
     /**
-     * Retourne le prix d'entrée de l'évènement.
-     * @return Le prix de l'événement.
+     * Getter de l'attribut prix
+     * @return le prix de l'événement
      */
     public float getPrix() {
         return prix;
     }
 
     /**
-     * Retourne la date de fin de l'événement.
-     * @param prix le prix pour accéder à l'évènement
+     * Setter de l'attribut titre
+     * @param prix le prix
      */
     public void setPrix(float prix){
         this.prix = prix;
+    }
+
+    /**
+     * Getter de l'attribut nbrPlaces
+     * @return le nombre de places
+     */
+    public int getNbrPlaces() {
+        return nbrPlaces;
+    }
+
+    /**
+     * Setter de l'attribut nbrPlaces
+     * @param nbrPlaces le nombre de places
+     */
+    public void setNbrPlaces(int nbrPlaces) {
+        this.nbrPlaces = nbrPlaces;
+    }
+
+    /**
+     * Récupère les commentaires liés à cet événement
+     * @return les commentaires de tous les spectacles de cet événement
+     */
+    public String getCommentaires() {
+        StringBuilder retours = new StringBuilder();
+        for (Spectacle s : spectacles) {
+            retours.append(s.getCommentaires());
+        }
+        return retours.toString();
     }
 
     @Override
@@ -156,12 +209,15 @@ public class Evenement implements Serializable{
         return titre;
     }
 
+    // Méthodes nécessaires pour la sérialisation et dé sérialisation de l'objet
+
     private void writeObject(ObjectOutputStream s) throws IOException {
         s.writeUTF(titre);
         s.writeUTF(adresse);
         s.writeUTF(dateDebut);
         s.writeUTF(dateFin);
         s.writeFloat(prix);
+        s.writeInt(nbrPlaces);
         s.writeObject(new ArrayList<>(spectacles));
     }
 
@@ -171,6 +227,7 @@ public class Evenement implements Serializable{
         dateDebut = s.readUTF();
         dateFin = s.readUTF();
         prix = s.readFloat();
+        nbrPlaces = s.readInt();
         spectacles = FXCollections.observableArrayList((ArrayList<Spectacle>) s.readObject());
     }
 }

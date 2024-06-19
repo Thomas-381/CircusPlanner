@@ -124,6 +124,25 @@ public class Numero implements Serializable {
         return acteurs;
     }
 
+    /**
+     * Récupère les commentaires liés à ce numéro
+     * @return les commentaires de tous les acteurs de ce numéro
+     */
+    public String getCommentaires() {
+        StringBuilder retours = new StringBuilder();
+        for (Acteur a : acteurs) {
+            retours.append(a.getCommentaires() + "\n");
+        }
+        return retours.toString();
+    }
+
+    @Override
+    public String toString() {
+        return titre;
+    }
+
+    // Méthodes nécessaires pour la sérialisation et dé sérialisation de l'objet
+
     private void writeObject(ObjectOutputStream s) throws IOException {
         s.writeUTF(titre);
         s.writeObject(new ArrayList<>(acteurs));
@@ -136,10 +155,5 @@ public class Numero implements Serializable {
         acteurs = FXCollections.observableArrayList((ArrayList<Acteur>) s.readObject());
         accessoires = FXCollections.observableArrayList((ArrayList<Accessoire>) s.readObject());
         animaux = FXCollections.observableArrayList((ArrayList<Animal>) s.readObject());
-    }
-
-    @Override
-    public String toString() {
-        return titre;
     }
 }
