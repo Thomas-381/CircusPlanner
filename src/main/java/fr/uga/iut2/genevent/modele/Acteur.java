@@ -1,5 +1,7 @@
 package fr.uga.iut2.genevent.modele;
 
+import javafx.scene.image.Image;
+
 /**
  * Représente un Acteur dans le système.
  */
@@ -8,7 +10,6 @@ public class Acteur {
     // Attributs
     private String surnom, nom, prenom, specialite;
     private String commentaires;
-
 
     /**
      * Construit un nouvel Acteur avec le surnom, le nom, le prénom et la spécialité donnés.
@@ -87,6 +88,31 @@ public class Acteur {
      */
     public String getCommentaires() {
         return commentaires;
+    }
+
+
+    /**
+     * Setter de l'attribut surnom
+     * @param surnom le surnom associé à l'acteur
+     */
+    public void setSurnom(String surnom) {
+        this.surnom = surnom;
+    }
+
+    /**
+     * Setter de l'attribut nom
+     * @param nom le nom associé à l'acteur
+     */
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    /**
+     * Setter de l'attribut prenom
+     * @param prenom le prenom associé à l'acteur
+     */
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
     }
 
     /**

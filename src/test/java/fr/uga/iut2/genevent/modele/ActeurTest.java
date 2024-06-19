@@ -2,6 +2,7 @@ package fr.uga.iut2.genevent.modele;
 
 import org.junit.jupiter.api.Test;
 
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class ActeurTest {
@@ -40,6 +41,28 @@ class ActeurTest {
     }
 
     @Test
+    void setSurnom() {
+        Acteur acteur = new Acteur("Lary", "Bellisant", "Pablo", "Clown");
+        acteur.setSurnom("Pablito");
+        assertEquals("Pablito", acteur.getSurnom());
+
+    }
+
+    @Test
+    void setNom() {
+        Acteur acteur = new Acteur("Lary", "Bellisant", "Pablo", "Clown");
+        acteur.setNom("Bellal");
+        assertEquals("Bellal", acteur.getNom());
+    }
+
+    @Test
+    void setPrenom() {
+        Acteur acteur = new Acteur("Lary", "Bellisant", "Pablo", "Clown");
+        acteur.setPrenom("Edgar");
+        assertEquals("Edgar", acteur.getPrenom());
+    }
+
+    @Test
     void setSpecialite() {
         Acteur acteur = new Acteur("Lary", "Bellisant", "Pablo", "Clown");
         acteur.setSpecialite("Acrobate");
@@ -52,5 +75,6 @@ class ActeurTest {
         acteur2.setSpecialite("Ne travaille pas les week-ends.");
         assertEquals("Ne travaille pas les week-ends.",acteur2.getSpecialite());
     }
+
 }
 
