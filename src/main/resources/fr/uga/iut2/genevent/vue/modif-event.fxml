@@ -44,11 +44,11 @@
             </columnConstraints>
             <rowConstraints>
                 <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="246.0" minHeight="20.0" prefHeight="228.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="314.0" minHeight="30.0" prefHeight="235.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="210.0" minHeight="20.0" prefHeight="200.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="200.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-                <VBox maxHeight="200.0" minHeight="150.0" minWidth="5.0" prefHeight="175.0" prefWidth="195.0" styleClass="infoSup" GridPane.rowIndex="1">
+                <VBox maxHeight="210.0" minHeight="150.0" minWidth="5.0" prefHeight="205.0" prefWidth="195.0" styleClass="infoSup" GridPane.rowIndex="1">
                     <children>
                         <Label text="Nom event">
                             <VBox.margin>
@@ -82,7 +82,7 @@
                         <Insets />
                     </opaqueInsets>
                 </VBox>
-                <VBox maxHeight="227.0" prefHeight="213.0" prefWidth="195.0" styleClass="infoSup" GridPane.rowIndex="2">
+                <VBox maxHeight="-Infinity" prefHeight="200.0" prefWidth="195.0" styleClass="infoSup" GridPane.rowIndex="2">
                     <children>
                         <Label prefHeight="27.0" prefWidth="120.0" text="Mes Spectacles">
                             <font>
@@ -91,14 +91,14 @@
                             <VBox.margin>
                                 <Insets left="2.0" />
                             </VBox.margin></Label>
-                  <ListView prefHeight="200.0" prefWidth="200.0" />
+                  <ListView prefHeight="122.0" prefWidth="183.0" />
                         <Button mnemonicParsing="false" styleClass="whiteBone" text="+ Créer Spectacle">
                             <VBox.margin>
                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                             </VBox.margin></Button>
                     </children>
                <GridPane.margin>
-                  <Insets />
+                  <Insets top="5.0" />
                </GridPane.margin></VBox>
                 <Button mnemonicParsing="false" style="-fx-background-color: #f7f4b0;" text="&lt;- Retour" />
             </children>
