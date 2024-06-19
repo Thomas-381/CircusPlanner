@@ -16,20 +16,20 @@ import java.io.IOException;
 
 public class ControleurMainView {
 
-    Application app;
+    private Application app;
 
     @FXML
-    ListView<Evenement> listeEvents;
+    private ListView<Evenement> listeEvents;
     @FXML
-    ListView<Spectacle> listeSpectacles;
+    private ListView<Spectacle> listeSpectacles;
     @FXML
-    ListView<Numero> listeNumeros;
+    private ListView<Numero> listeNumeros;
     @FXML
-    ListView<Acteur> listeActeurs;
+    private ListView<Acteur> listeActeurs;
     @FXML
-    Label previewTitre, previewDesc;
+    private Label previewTitre, previewDesc;
     @FXML
-    TextArea previewNotes;
+    private TextArea previewNotes;
 
     public ControleurMainView(Application app) {
         this.app = app;

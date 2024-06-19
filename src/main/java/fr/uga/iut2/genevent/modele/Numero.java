@@ -93,6 +93,14 @@ public class Numero implements Serializable {
     }
 
     /**
+     * Setter de l'attribut Titre
+     * @param titre le titre du numéro
+     */
+    public void setTitre(String titre) {
+        this.titre = titre;
+    }
+
+    /**
      * Getter de l'attribut titre
      * @return le titre du numéro
      */
