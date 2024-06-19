@@ -3,6 +3,8 @@ package fr.uga.iut2.genevent.modele;
 import javafx.scene.image.Image;
 
 import java.io.Serializable;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Représente un Acteur dans le système.
@@ -12,6 +14,11 @@ public class Acteur implements Serializable {
     // Attributs
     private String surnom, nom, prenom, specialite;
     private String commentaires;
+
+    /**
+     * LOGGER pour réaliser les logs de la classe
+     */
+    private static final Logger LOGGER =Logger.getLogger(Acteur.class.getPackageName());
 
     /**
      * Construit un nouvel Acteur avec le surnom, le nom, le prénom et la spécialité donnés.
@@ -26,6 +33,7 @@ public class Acteur implements Serializable {
         this.prenom = prenom;
         this.specialite = specialite;
         this.commentaires = "";
+        LOGGER.log(Level.INFO, "Création d'un "+this.getClass().getTypeName());
     }
 
     /**
@@ -42,6 +50,7 @@ public class Acteur implements Serializable {
         this.prenom = prenom;
         this.specialite = specialite;
         this.commentaires = commentaires;
+        LOGGER.log(Level.INFO, "Création d'un "+this.getClass().getTypeName());
     }
 
     public Acteur() {
@@ -50,6 +59,7 @@ public class Acteur implements Serializable {
         this.prenom = "";
         this.specialite = "";
         this.commentaires = "";
+        LOGGER.log(Level.INFO, "Création d'un "+this.getClass().getTypeName());
     }
 
     /**

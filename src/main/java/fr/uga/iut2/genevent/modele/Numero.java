@@ -8,6 +8,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Représente un Numéro dans le système.
@@ -17,6 +19,11 @@ public class Numero implements Serializable {
     private transient ObservableList<Animal> animaux;
     private transient ObservableList<Accessoire> accessoires;
     private transient ObservableList<Acteur> acteurs;
+
+    /**
+     * LOGGER pour réaliser les logs de la classe
+     */
+    private static final Logger LOGGER =Logger.getLogger(Numero.class.getPackageName());
 
     /**
      * Construits un nouveau Numéro avec le titre, les animaux, les accessoires, les acteurs et les organisateurs donnés.
@@ -31,6 +38,7 @@ public class Numero implements Serializable {
         this.animaux = animaux;
         this.accessoires = accessoires;
         this.acteurs = acteurs;
+        LOGGER.log(Level.INFO, "Création d'un "+this.getClass().getTypeName());
     }
 
     /**
@@ -43,6 +51,7 @@ public class Numero implements Serializable {
         this.animaux = FXCollections.observableArrayList();
         this.accessoires = FXCollections.observableArrayList();
         this.acteurs = FXCollections.observableArrayList();
+        LOGGER.log(Level.INFO, "Création d'un "+this.getClass().getTypeName());
     }
 
     public Numero() {
@@ -50,6 +59,7 @@ public class Numero implements Serializable {
         this.animaux = FXCollections.observableArrayList();
         this.accessoires = FXCollections.observableArrayList();
         this.acteurs = FXCollections.observableArrayList();
+        LOGGER.log(Level.INFO, "Création d'un "+this.getClass().getTypeName());
     }
 
     /**
@@ -59,6 +69,7 @@ public class Numero implements Serializable {
      */
     public void ajouterAnimal(Animal animal){
         this.animaux.add(animal);
+        LOGGER.log(Level.INFO, "Ajout d'un animal "+this.getClass().getTypeName()+" dans le numéro "+ getTitre());
     }
 
     /**
@@ -68,6 +79,7 @@ public class Numero implements Serializable {
      */
     public void ajouterAccessoire(Accessoire accessoire){
         this.accessoires.add(accessoire);
+        LOGGER.log(Level.INFO, "Ajout d'un accessoire "+this.getClass().getTypeName()+" dans le numéro "+ getTitre());
     }
 
     /**
@@ -77,6 +89,7 @@ public class Numero implements Serializable {
      */
     public void ajouterActeur(Acteur acteur){
         this.acteurs.add(acteur);
+        LOGGER.log(Level.INFO, "Ajout d'un acteur "+this.getClass().getTypeName()+" dans le numéro "+ getTitre());
     }
 
     /**

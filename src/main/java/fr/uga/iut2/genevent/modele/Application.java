@@ -9,6 +9,8 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Application implements Serializable {
 
@@ -19,6 +21,11 @@ public class Application implements Serializable {
     private ObservableList<Acteur> acteurs = FXCollections.observableArrayList();
     private ObservableList<Animal> animaux = FXCollections.observableArrayList();
     private ObservableList<Accessoire> accessoires = FXCollections.observableArrayList();
+
+    /**
+     * LOGGER pour réaliser les logs de la classe
+     */
+    private static final Logger LOGGER =Logger.getLogger(Accessoire.class.getPackageName());
 
     public Application() {
     }
@@ -124,6 +131,7 @@ public class Application implements Serializable {
      * @param evenement l'événement à supprimer.
      */
     public void removeEvenement(Evenement evenement) {
+        LOGGER.log(Level.INFO, "Suppresion de l'évènement "+evenement.getTitre());
         evenements.remove(evenement);
     }
 
@@ -132,6 +140,7 @@ public class Application implements Serializable {
      * @param spectacle le spectacle à supprimer.
      */
     public void removeSpectacle(Spectacle spectacle) {
+        LOGGER.log(Level.INFO, "Suppresion du spectacle "+spectacle.getNom());
         spectacles.remove(spectacle);
     }
 
@@ -140,6 +149,7 @@ public class Application implements Serializable {
      * @param numero le numéro à supprimer.
      */
     public void removeNumero(Numero numero) {
+        LOGGER.log(Level.INFO, "Suppresion du numéro "+numero.getTitre());
         numeros.remove(numero);
     }
 
@@ -148,6 +158,7 @@ public class Application implements Serializable {
      * @param acteur l'acteur à supprimer.
      */
     public void removeActeur(Acteur acteur) {
+        LOGGER.log(Level.INFO, "Suppresion de l'acteur "+ acteur.getSurnom());
         acteurs.remove(acteur);
     }
 
@@ -156,6 +167,7 @@ public class Application implements Serializable {
      * @param animal l'animal à supprimer.
      */
     public void removeAnimal(Animal animal) {
+        LOGGER.log(Level.INFO, "Suppresion de l'animal "+animal.getNom());
         animaux.remove(animal);
     }
 
@@ -164,6 +176,7 @@ public class Application implements Serializable {
      * @param accessoire l'accessoire à supprimer.
      */
     public void removeAccessoire(Accessoire accessoire) {
+        LOGGER.log(Level.INFO, "Suppresion de l'accessoire "+accessoire.getLabel());
         accessoires.remove(accessoire);
     }
 

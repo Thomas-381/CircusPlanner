@@ -1,6 +1,8 @@
 package fr.uga.iut2.genevent.modele;
 
 import java.io.Serializable;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Représente un Accessoire dans le système.
@@ -15,15 +17,22 @@ public class Accessoire implements Serializable {
     private String label;
 
     /**
+     * LOGGER pour réaliser les logs de la classe
+     */
+    private static final Logger LOGGER =Logger.getLogger(Accessoire.class.getPackageName());
+
+    /**
      * Construit un nouvel Accessoire avec l'identifiant et le libellé donnés.
      * @param label Le libellé de cet Accessoire.
      */
     public Accessoire(String label) {
         this.label = label;
+        LOGGER.log(Level.INFO, "Création d'un "+this.getClass().getTypeName());
     }
 
     public Accessoire() {
         this.label = "";
+        LOGGER.log(Level.INFO, "Création d'un "+this.getClass().getTypeName());
     }
 
     /**

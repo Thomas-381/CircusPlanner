@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Représente un Événement dans le système.
@@ -26,11 +28,17 @@ public class Evenement implements Serializable{
     private transient ObservableList<Spectacle> spectacles = FXCollections.observableArrayList();
 
     /**
+     * LOGGER pour réaliser les logs de la classe
+     */
+    private static final Logger LOGGER =Logger.getLogger(Evenement.class.getPackageName());
+
+    /**
      * Construit un nouvel Événement avec l'ID, le titre, l'adresse, la date de début et la date de fin donnés.
      * @param titre Le titre de l'Événement.
      * @param adresse L'adresse de l'Événement.
      * @param dateDebut La date de début de l'Événement.
      * @param dateFin La date de fin de l'Événement.
+     * @param nbrPlacesMax Le nombre de places disponibles pour l'évènement.
      */
     public Evenement(String titre, String adresse, String dateDebut, String dateFin, int nbrPlacesMax) {
         this.titre = titre;
@@ -38,6 +46,7 @@ public class Evenement implements Serializable{
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
         this.prix = 0;
+        LOGGER.log(Level.INFO, "Création d'un "+this.getClass().getTypeName());
     }
     public Evenement() {
         this.titre = "";
@@ -45,6 +54,7 @@ public class Evenement implements Serializable{
         this.dateDebut = "";
         this.dateFin = "";
         this.prix = 0;
+        LOGGER.log(Level.INFO, "Création d'un "+this.getClass().getTypeName());
     }
 
     /**
@@ -53,6 +63,7 @@ public class Evenement implements Serializable{
      */
     public void ajouterSpectacle(Spectacle spectacle){
         spectacles.add(spectacle);
+        LOGGER.log(Level.INFO, "Ajout d'un spectacle "+this.getClass().getTypeName()+" dans l'évènement "+ getTitre());
     }
 
     /**
@@ -124,10 +135,18 @@ public class Evenement implements Serializable{
         return titre;
     }
 
+    /**
+     * Retourne le prix d'entrée de l'évènement.
+     * @return Le prix de l'événement.
+     */
     public float getPrix() {
         return prix;
     }
 
+    /**
+     * Retourne la date de fin de l'événement.
+     * @param prix le prix pour accéder à l'évènement
+     */
     public void setPrix(float prix){
         this.prix = prix;
     }

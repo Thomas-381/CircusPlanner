@@ -10,6 +10,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Représente un Spectacle dans le système.
@@ -20,6 +22,11 @@ public class Spectacle implements Serializable {
     private transient ObservableList<Numero> numeros = FXCollections.observableArrayList();
 
     /**
+     * LOGGER pour réaliser les logs de la classe
+     */
+    private static final Logger LOGGER =Logger.getLogger(Spectacle.class.getPackageName());
+
+    /**
      * Construit un nouveau Spectacle avec le nom, le lieu.
      *
      * @param nom Le nom du Spectacle.
@@ -28,11 +35,13 @@ public class Spectacle implements Serializable {
     public Spectacle(String nom, String lieu) {
         this.nom = nom;
         this.lieu = lieu;
+        LOGGER.log(Level.INFO, "Création d'un "+this.getClass().getTypeName());
     }
 
     public Spectacle() {
         this.nom = "";
         this.lieu = "";
+        LOGGER.log(Level.INFO, "Création d'un "+this.getClass().getTypeName());
     }
 
     /**
@@ -73,6 +82,7 @@ public class Spectacle implements Serializable {
      */
     public void ajouterNumero(Numero numero) {
         numeros.add(numero);
+        LOGGER.log(Level.INFO, "Ajout d'un numéro "+this.getClass().getTypeName()+" dans le spectateur "+ getNom());
     }
 
     /**
