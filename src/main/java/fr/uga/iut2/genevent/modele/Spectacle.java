@@ -1,5 +1,6 @@
 package fr.uga.iut2.genevent.modele;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -7,11 +8,10 @@ import java.util.HashSet;
 /**
  * Représente un Spectacle dans le système.
  */
-public class Spectacle {
+public class Spectacle implements Serializable {
     private String nom;
     private String lieu;
     private ArrayList<Numero> numeros = new ArrayList<>();
-    private HashSet<Organisateur> organisateurs = new HashSet<>();
 
     /**
      * Construit un nouveau Spectacle avec le nom, le lieu.
@@ -28,8 +28,6 @@ public class Spectacle {
         this.nom = "";
         this.lieu = "";
     }
-
-
 
     /**
      * Définit le nom du Spectacle.
@@ -64,14 +62,6 @@ public class Spectacle {
     }
 
     /**
-     * Ajoute un organisateur au Spectacle.
-     * @param organisateur L'organisateur à ajouter.
-     */
-    public void ajouterOrganisateur(Organisateur organisateur){
-        organisateurs.add(organisateur);
-    }
-
-    /**
      * Ajoute un numéro au spectacle.
      * @param numero Le numéro à ajouter.
      */
@@ -86,15 +76,6 @@ public class Spectacle {
     public ArrayList<Numero> getNumeros() {
         return numeros;
     }
-
-    /**
-     * Getter de l'attribut organisateurs.
-     * @return la liste des organisateurs du spectacle.
-     */
-    public HashSet<Organisateur> getOrganisateurs() {
-        return organisateurs;
-    }
-
     @Override
     public String toString() {
         return nom;

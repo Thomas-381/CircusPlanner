@@ -1,16 +1,16 @@
 package fr.uga.iut2.genevent.modele;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Représente un Numéro dans le système.
  */
-public class Numero {
+public class Numero implements Serializable {
     private final String titre;
     private ArrayList<Animal> animaux;
     private ArrayList<Accessoire> accessoires;
     private ArrayList<Acteur> acteurs;
-    private ArrayList<Organisateur> organisateurs;
 
     /**
      * Construits un nouveau Numéro avec le titre, les animaux, les accessoires, les acteurs et les organisateurs donnés.
@@ -19,14 +19,12 @@ public class Numero {
      * @param animaux La liste des animaux du Numéro.
      * @param accessoires La liste des accessoires du Numéro.
      * @param acteurs La liste des acteurs du Numéro.
-     * @param organisateurs La liste des organisateurs du Numéro.
      */
-    public Numero(String titre, ArrayList<Animal> animaux, ArrayList<Accessoire> accessoires, ArrayList<Acteur> acteurs, ArrayList<Organisateur> organisateurs) {
+    public Numero(String titre, ArrayList<Animal> animaux, ArrayList<Accessoire> accessoires, ArrayList<Acteur> acteurs) {
         this.titre = titre;
         this.animaux = animaux;
         this.accessoires = accessoires;
         this.acteurs = acteurs;
-        this.organisateurs = organisateurs;
     }
 
     /**
@@ -39,7 +37,6 @@ public class Numero {
         this.animaux = new ArrayList<>();
         this.accessoires = new ArrayList<>();
         this.acteurs = new ArrayList<>();
-        this.organisateurs = new ArrayList<>();
     }
 
     public Numero() {
@@ -47,7 +44,6 @@ public class Numero {
         this.animaux = new ArrayList<>();
         this.accessoires = new ArrayList<>();
         this.acteurs = new ArrayList<>();
-        this.organisateurs = new ArrayList<>();
     }
 
     /**
@@ -75,15 +71,6 @@ public class Numero {
      */
     public void ajouterActeur(Acteur acteur){
         this.acteurs.add(acteur);
-    }
-
-    /**
-     * Ajoute un organisateur au Numéro.
-     *
-     * @param organisateur L'organisateur à ajouter.
-     */
-    public void ajouterOrganisateur(Organisateur organisateur){
-        this.organisateurs.add(organisateur);
     }
 
     /**
@@ -116,14 +103,6 @@ public class Numero {
      */
     public ArrayList<Acteur> getActeurs() {
         return acteurs;
-    }
-
-    /**
-     * Getter de l'attribut organisateurs
-     * @return la liste des organisateurs du numéro
-     */
-    public ArrayList<Organisateur> getOrganisateurs() {
-        return organisateurs;
     }
 
     @Override

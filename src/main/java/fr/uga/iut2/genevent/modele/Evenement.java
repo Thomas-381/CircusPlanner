@@ -1,5 +1,8 @@
 package fr.uga.iut2.genevent.modele;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -9,16 +12,13 @@ import java.util.Map;
 /**
  * Représente un Événement dans le système.
  */
-public class Evenement implements Serializable {
+public class Evenement implements Serializable{
 
     private String titre;
     private String adresse;
     private String dateDebut;
     private String dateFin;
-    private ArrayList<Spectacle> spectacles = new ArrayList<>();
-    private ArrayList<Organisateur> organisateurs = new ArrayList<>();
-    private int nbrPlacesMax;
-    private int placesNormales, placesVIP;
+    private ObservableList<Spectacle> spectacles = FXCollections.observableArrayList();
     private float prix;
 
     /**
@@ -33,14 +33,12 @@ public class Evenement implements Serializable {
         this.adresse = adresse;
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
-        this.nbrPlacesMax = nbrPlacesMax;
     }
     public Evenement() {
         this.titre = "";
         this.adresse = "";
         this.dateDebut = "";
         this.dateFin = "";
-        this.nbrPlacesMax = 0;
     }
 
     /**
@@ -108,36 +106,12 @@ public class Evenement implements Serializable {
     }
 
     /**
-     * Ajoute un organisateur à l'événement.
-     * @param organisateur L'organisateur à ajouter.
-     */
-    public void ajoutOrganisateur(Organisateur organisateur){
-        organisateurs.add(organisateur);
-    }
-
-    /**
      * Retourne le spectacle à l'index spécifié.
      * @param i L'index du spectacle à retourner.
      * @return Le spectacle à l'index spécifié.
      */
     public Spectacle getSpectacle(int i) {
         return spectacles.get(i);
-    }
-
-    public int getPlacesNormales() {
-        return placesNormales;
-    }
-
-    public int getPlacesVIP() {
-        return placesVIP;
-    }
-
-    public int getNbrPlacesDispos(){
-        return placesNormales + placesVIP * 2;
-    }
-
-    public void setNbrPlacesMax(int nbrPlacesMax){
-        this.nbrPlacesMax = nbrPlacesMax;
     }
 
     public String getTitre() {
@@ -150,43 +124,6 @@ public class Evenement implements Serializable {
 
     public void setPrix(float prix){
         this.prix = prix;
-    }
-
-    public float gainSpectacle(){
-        float total = 0;
-        total = getPrix() * getPlacesNormales();
-        total += getPrix() * 1.5 * getPlacesVIP();
-        return total;
-    }
-
-    /**
-     * Actualisation du nombre de spectateurs normaux qu'on ajoute à l'évènement.
-     * @param nbr Le nombre de spectateurs avec des places normales qu'on ajoute.
-     */
-    public boolean ajoutSpectateurNormaux(int nbr){
-        boolean placesDispo = nbr > getNbrPlacesDispos() ;
-        if(placesDispo){
-            placesNormales += nbr;
-        }
-        return placesDispo;
-    }
-
-    /**
-     * Actualisation du nombre de spectateurs VIP qu'on ajoute à l'évènement.
-     * @param nbr Le nombre de spectateurs avec des places normales qu'on ajoute.
-     * Ajoute le nombre de places prises par les nouveaux spectateurs
-     * Renvoie true si l'ajout a été effectué,  false sinon
-     */
-    public boolean ajoutSpectateurVIP(int nbr){
-        boolean placesDispo = nbr * 2 > getNbrPlacesDispos() ;
-        if(placesDispo){
-            placesVIP += nbr;
-        }
-        return placesDispo;
-    }
-
-    public Organisateur getOrganisateur(int i) {
-        return organisateurs.get(i);
     }
 
     @Override

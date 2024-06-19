@@ -14,17 +14,15 @@ class NumeroTest {
     private ArrayList<Animal> animaux;
     private ArrayList<Accessoire> accessoires;
     private ArrayList<Acteur> acteurs;
-    private ArrayList<Organisateur> organisateurs;
     @BeforeEach
     void setUp(){
         numeroChien = new Numero("Le chien qui parle");
         numeroClown = new Numero("Spectacle de clowns");
-        numeroChevauxComplet = new Numero("Spectacle de chevaux", new ArrayList<>(), new ArrayList<>(), new ArrayList<>(), new ArrayList<>() );
+        numeroChevauxComplet = new Numero("Spectacle de chevaux", new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
 
         accessoires = new ArrayList<>();
         animaux = new ArrayList<>();
         acteurs = new ArrayList<>();
-        organisateurs = new ArrayList<>();
     }
     @Test
     void ajouterAnimal() {
@@ -65,19 +63,6 @@ class NumeroTest {
         acteurs.add(acteur);
         assertEquals(acteurs, numeroClown.getActeurs());
         assertEquals(acteurs, numeroChevauxComplet.getActeurs());
-    }
-
-    @Test
-    void ajouterOrganisateur() {
-        assertEquals(organisateurs, numeroClown.getOrganisateurs());
-        assertEquals(organisateurs, numeroChevauxComplet.getOrganisateurs());
-
-        Organisateur organisateur = new Organisateur("Mathias");
-        numeroClown.ajouterOrganisateur(organisateur);
-        numeroChevauxComplet.ajouterOrganisateur(organisateur);
-        organisateurs.add(organisateur);
-        assertEquals(organisateurs, numeroClown.getOrganisateurs());
-        assertEquals(organisateurs, numeroChevauxComplet.getOrganisateurs());
     }
 
     @Test
@@ -142,24 +127,5 @@ class NumeroTest {
         acteurs.add(acteur2);
         assertNotEquals(acteurs, numeroChien.getActeurs());
         assertEquals(acteurs, numeroChevauxComplet.getActeurs());
-    }
-
-    @Test
-    void getOrganisateurs() {
-        assertEquals("Spectacle de clowns", numeroClown.getTitre());
-        assertEquals("Spectacle de chevaux", numeroChevauxComplet.getTitre());
-
-        Organisateur organisateur = new Organisateur("Mathias");
-        numeroClown.ajouterOrganisateur(organisateur);
-        numeroChevauxComplet.ajouterOrganisateur(organisateur);
-        organisateurs.add(organisateur);
-        assertEquals(organisateurs, numeroClown.getOrganisateurs());
-        assertEquals(organisateurs, numeroChevauxComplet.getOrganisateurs());
-
-        Organisateur organisateurNico = new Organisateur("Nico");
-        numeroClown.ajouterOrganisateur(organisateurNico);
-        organisateurs.add(organisateurNico);
-        assertEquals(organisateurs, numeroClown.getOrganisateurs());
-        assertNotEquals(organisateurs, numeroChevauxComplet.getOrganisateurs());
     }
 }
