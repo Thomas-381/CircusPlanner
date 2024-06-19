@@ -57,7 +57,7 @@
                             <VBox.margin>
                                 <Insets left="2.0" />
                             </VBox.margin></Label>
-                  <ListView prefHeight="200.0" prefWidth="200.0" />
+                  <ListView prefHeight="169.0" prefWidth="183.0" />
                     </children></VBox>
                 <Button mnemonicParsing="false" style="-fx-background-color: #f7f4b0;" text="&lt;- Retour" />
             </children>
