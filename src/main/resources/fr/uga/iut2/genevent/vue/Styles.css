@@ -1,86 +1,41 @@
-/* Styles.css */
 
-/* Style pour l'arrière-plan */
-.arrierePlan {
-    -fx-background-color: #ffffff;
+Button{
+    -fx-background-color: #2C88D9;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-margin: 5px;
 }
 
-/* Style pour le titre */
-.titre {
-    -fx-background-color: #644456;
-    -fx-text-fill: #ffffff;
-    -fx-padding: 10px;
-    -fx-spacing: 10px;
+ListView, TextArea{
+    -fx-border-radius: 3px;
+    -fx-background-radius: 3px;
+    -fx-margin: 3px;
+}
+.retour{
+    -fx-background-color:  #f7f4b0;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-margin: 5px;
 }
 
-.titre Label {
-    -fx-text-fill: #ffffff;
-    -fx-font-size: 26px;
+.whiteBone{
+    -fx-text-fill: #f9f6ee;
 }
 
-/* Style pour les sections d'information supplémentaire */
-.infoSup {
-    -fx-background-color: #dcdcdc;
-    -fx-padding: 10px;
-    -fx-spacing: 10px;
-    -fx-border-color: #616466;
+.titre{
+    -fx-background-color: #d9d0c1;
+}
+
+.infoSup{
+    -fx-background-color: #bbc9c6;
+    -fx-border-radius: 15px;
+    -fx-border-color: #f9f6ee;
     -fx-border-width: 1px;
-    -fx-background-radius:20px;
+    -fx-background-radius: 15px;
+    -fx-padding: 5px;
+    
 }
 
-.infoSup Label {
-    -fx-text-fill: #343a40;
-}
-
-/* Style pour les boutons */
-.whiteBone {
-    -fx-background-color: #ffffff;
-    -fx-text-fill: #343a40;
-    -fx-border-color: #343a40;
-    -fx-border-width: 1px;
-    -fx-padding: 5px 10px;
-    -fx-cursor: pointer;
-}
-
-.whiteBone:hover {
-    -fx-background-color: #dcdcdc;
-}
-
-/* Style pour les listes */
-.listeAjout {
-    -fx-background-color: #ffffff;
-    -fx-padding: 10px;
-    -fx-spacing: 10px;
-    -fx-border-color: #343a40;
-    -fx-border-width: 1px;
-}
-
-.listeAjout Label {
-    -fx-text-fill: #343a40;
-}
-
-/* Style pour le bas de page */
-.bottom Label {
-    -fx-text-fill: #343a40;
-    -fx-font-size: 8px;
-}
-
-/* Style pour le centre */
-.center {
-    -fx-background-color: #ffffff;
-}
-
-.center VBox {
-    -fx-spacing: 10px;
-    -fx-padding: 20px;
-}
-
-.center Label {
-    -fx-text-fill: #343a40;
-    -fx-font-size: 18px;
-}
-
-.center ListView {
-    -fx-border-color: #343a40;
-    -fx-border-width: 1px;
+.arrierePlan{
+    -fx-background-color: #f7d7ad;
 }
