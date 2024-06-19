@@ -4,13 +4,16 @@ import fr.uga.iut2.genevent.modele.Acteur;
 import fr.uga.iut2.genevent.modele.Evenement;
 import fr.uga.iut2.genevent.modele.Numero;
 import fr.uga.iut2.genevent.modele.Spectacle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -93,4 +96,5 @@ public class ControleurCreation {
         Spectacle spectacle = new Spectacle(nom, lieu);
         spectacles.add(spectacle);
     }
+
 }
