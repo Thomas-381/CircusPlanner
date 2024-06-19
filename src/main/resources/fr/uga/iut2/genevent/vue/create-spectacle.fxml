@@ -159,7 +159,7 @@
                   <Image url="@Img/image-defaut.png" />
                </image>
                 </ImageView>
-                <VBox alignment="CENTER" prefHeight="167.0" prefWidth="350.0" style="-fx-background-color: #ffffff;">
+                <VBox alignment="CENTER" prefHeight="167.0" prefWidth="350.0" styleClass="arrierePlan">
                     <children>
                         <Button mnemonicParsing="false" styleClass="whiteBone" text="+ Ajouter Numéro" />
                     </children>
