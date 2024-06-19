@@ -39,7 +39,7 @@
 <?import javafx.scene.text.*?>
 <?scenebuilder-stylesheet Styles.css ?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="725.0" prefWidth="600.0" styleClass="arrierePlan" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.uga.iut2.genevent.controleur.ControleurMainView">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="725.0" prefWidth="600.0" styleClass="arrierePlan" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
    <top>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="titre" BorderPane.alignment="CENTER">
          <ImageView fx:id="logo" accessibleHelp="LOGO" accessibleRoleDescription="LOGO" accessibleText="LOGO" fitHeight="80.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
@@ -68,25 +68,18 @@
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints maxHeight="259.0" minHeight="10.0" prefHeight="259.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="410.0" minHeight="10.0" prefHeight="161.0" vgrow="NEVER" />
+          <RowConstraints maxHeight="280.0" minHeight="10.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="410.0" minHeight="80.0" prefHeight="110.0" vgrow="NEVER" />
         </rowConstraints>
-         <VBox maxHeight="266.0" prefHeight="266.0" prefWidth="180.0" style="-fx-background-color: yellow;" styleClass="infoSup">
-            <Label fx:id="previewTitre" style="-fx-font-weight: bolder;">
+         <VBox maxHeight="266.0" prefHeight="266.0" prefWidth="180.0" styleClass="infoSup" stylesheets="@Styles.css">
+            <Label text="Nom événement" />
+            <Label text="dates" />
+            <Label text="Localisation" />
+            <CheckBox mnemonicParsing="false" text="Evenement terminé">
                <VBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </VBox.margin></Label>
-            <Label fx:id="previewDesc" alignment="TOP_LEFT" prefHeight="200.0" wrapText="true">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-            </Label>
-            <Label text="Notes :" />
-            <TextArea fx:id="previewNotes" editable="false" prefHeight="200.0" prefWidth="200.0">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-            </TextArea>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin></CheckBox>
+            <TextArea prefHeight="111.0" prefWidth="180.0" promptText="notes ..." />
             <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="whiteBone" text="Modifier">
                <VBox.margin>
                   <Insets top="10.0" />
@@ -95,16 +88,19 @@
                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
             </padding>
          </VBox>
-         <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+         <VBox maxHeight="410.0" minHeight="80.0" prefHeight="110.0" prefWidth="180.0" styleClass="infoSup" GridPane.rowIndex="1">
             <Label text="Mes acteurs">
                <VBox.margin>
-                  <Insets top="25.0" />
+                  <Insets />
                </VBox.margin>
             </Label>
-            <ListView fx:id="listeActeurs" prefHeight="200.0" prefWidth="200.0" />
+            <ListView fx:id="lstActeur" prefHeight="68.0" prefWidth="170.0" />
+            <padding>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
          </VBox>
          <BorderPane.margin>
-            <Insets left="5.0" right="15.0" top="20.0" />
+            <Insets left="5.0" right="5.0" top="20.0" />
          </BorderPane.margin>
       </GridPane>
    </left>
@@ -119,28 +115,37 @@
       <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #f7d7ad;" BorderPane.alignment="CENTER">
          <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
             <Label prefHeight="18.0" prefWidth="499.0" text="Evenements" />
-            <ListView fx:id="listeEvents" prefHeight="200.0" prefWidth="200.0">
+            <ListView prefHeight="200.0" prefWidth="200.0">
                <VBox.margin>
                   <Insets bottom="10.0" />
                </VBox.margin></ListView>
-            <Button fx:id="nouveauEventC" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="whiteBone" text="+ Nouvel evenement" textAlignment="CENTER" />
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="whiteBone" text="+ Nouvel evenement" textAlignment="CENTER" />
+            <VBox.margin>
+               <Insets />
+            </VBox.margin>
          </VBox>
          <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
             <Label prefHeight="18.0" prefWidth="500.0" text="Spectacles" />
-            <ListView fx:id="listeSpectacles" prefHeight="200.0" prefWidth="200.0">
+            <ListView prefHeight="200.0" prefWidth="200.0">
                <VBox.margin>
                   <Insets bottom="10.0" />
                </VBox.margin></ListView>
-            <Button fx:id="nouveauSpectacleC" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="whiteBone" text="+ Nouveau spectacle" textAlignment="CENTER" />
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="whiteBone" text="+ Nouveau spectacle" textAlignment="CENTER" />
          </VBox>
          <VBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="100.0">
             <Label prefHeight="18.0" prefWidth="500.0" text="Numéros" />
-            <ListView fx:id="listeNumeros" prefHeight="200.0" prefWidth="200.0">
+            <ListView prefHeight="200.0" prefWidth="200.0">
                <VBox.margin>
                   <Insets bottom="10.0" />
                </VBox.margin></ListView>
-            <Button fx:id="nouveaunumeroC" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="whiteBone" text="+ Nouveau numéro" textAlignment="CENTER" />
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="whiteBone" text="+ Nouveau numéro" textAlignment="CENTER" />
          </VBox>
+         <BorderPane.margin>
+            <Insets bottom="5.0" right="5.0" top="5.0" />
+         </BorderPane.margin>
+         <padding>
+            <Insets right="10.0" />
+         </padding>
       </VBox>
    </center>
 </BorderPane>

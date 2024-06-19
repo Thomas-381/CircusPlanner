@@ -6,9 +6,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" styleClass="arrierePlan" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
     <top>
-        <HBox alignment="CENTER" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #d9d0c1;" BorderPane.alignment="CENTER">
+        <HBox alignment="CENTER" prefHeight="30.0" prefWidth="200.0" styleClass="titre" BorderPane.alignment="CENTER">
             <children>
                 <ImageView fx:id="logo" accessibleHelp="LOGO" accessibleRoleDescription="LOGO" accessibleText="LOGO" fitHeight="80.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
                     <HBox.margin>
@@ -43,12 +43,12 @@
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             </columnConstraints>
             <rowConstraints>
-                <RowConstraints maxHeight="198.0" minHeight="4.0" prefHeight="4.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="418.0" minHeight="20.0" prefHeight="418.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="50.0" minHeight="4.0" prefHeight="4.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="240.0" minHeight="20.0" prefHeight="240.0" vgrow="SOMETIMES" />
 
             </rowConstraints>
             <children>
-                <VBox prefHeight="208.0" prefWidth="100.0" style="-fx-background-color: #f7edef;" GridPane.rowIndex="1">
+                <VBox prefHeight="241.0" prefWidth="195.0" styleClass="infoSup" GridPane.rowIndex="1">
                     <children>
                         <Label prefHeight="27.0" prefWidth="120.0" text="Mes Artistes">
                             <font>
@@ -57,22 +57,9 @@
                             <VBox.margin>
                                 <Insets left="2.0" />
                             </VBox.margin></Label>
-                        <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #f7f4b0;" text="Artiste1">
-                            <VBox.margin>
-                                <Insets bottom="10.0" left="2.0" right="5.0" top="10.0" />
-                            </VBox.margin>
-                            <graphic>
-                                <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" />
-                            </graphic></Button>
-                        <Button fx:id="BtnRetour" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #f7cdd3;" text="Artiste2">
-                            <graphic>
-                                <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" />
-                            </graphic>
-                            <VBox.margin>
-                                <Insets bottom="10.0" left="2.0" right="5.0" />
-                            </VBox.margin></Button>
+                  <ListView prefHeight="169.0" prefWidth="183.0" />
                     </children></VBox>
-                <Button fx:id="retour" mnemonicParsing="false" style="-fx-background-color: #f7f4b0;" text="&lt;- Retour" />
+                <Button mnemonicParsing="false" style="-fx-background-color: #f7f4b0;" text="&lt;- Retour" />
             </children>
             <padding>
                 <Insets bottom="5.0" left="5.0" />
@@ -101,22 +88,22 @@
                   </ImageView>
                   <VBox prefHeight="200.0" prefWidth="100.0">
                      <children>
-                        <TextField fx:id="nomC" promptText="Nom">
+                        <TextField promptText="Nom">
                            <VBox.margin>
                               <Insets bottom="8.0" top="5.0" />
                            </VBox.margin>
                         </TextField>
-                        <TextField fx:id="prenomC" promptText="Prenom">
+                        <TextField promptText="Prenom">
                            <VBox.margin>
                               <Insets bottom="8.0" />
                            </VBox.margin>
                         </TextField>
-                        <TextField fx:id="surnomC" promptText="Surnom">
+                        <TextField promptText="Surnom">
                            <VBox.margin>
                               <Insets bottom="8.0" />
                            </VBox.margin>
                         </TextField>
-                        <TextField fx:id="specialiteC" promptText="Spécialité" />
+                        <TextField promptText="Spécialité" />
                      </children>
                      <HBox.margin>
                         <Insets left="5.0" />
@@ -127,7 +114,7 @@
                   <Insets top="10.0" />
                </VBox.margin>
             </HBox>
-            <Button fx:id="creerArtisteC" mnemonicParsing="false" text="+ Créer artiste">
+            <Button mnemonicParsing="false" styleClass="whiteBone" text="+ Ajouter artiste">
                <VBox.margin>
                   <Insets left="275.0" top="50.0" />
                </VBox.margin></Button>
