@@ -82,7 +82,7 @@
                         <Insets />
                     </opaqueInsets>
                 </VBox>
-                <VBox maxHeight="175.0" prefHeight="175.0" prefWidth="100.0" styleClass="infoSup" GridPane.rowIndex="2">
+                <VBox maxHeight="227.0" prefHeight="213.0" prefWidth="195.0" styleClass="infoSup" GridPane.rowIndex="2">
                     <children>
                         <Label prefHeight="27.0" prefWidth="120.0" text="Mes Spectacles">
                             <font>
