@@ -1,5 +1,11 @@
 package fr.uga.iut2.genevent.modele;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,7 +17,7 @@ import java.util.HashSet;
 public class Spectacle implements Serializable {
     private String nom;
     private String lieu;
-    private ArrayList<Numero> numeros = new ArrayList<>();
+    private transient ObservableList<Numero> numeros = FXCollections.observableArrayList();
 
     /**
      * Construit un nouveau Spectacle avec le nom, le lieu.
@@ -73,9 +79,22 @@ public class Spectacle implements Serializable {
      * Getter de l'attribut numeros.
      * @return la liste ordonnée des numéros composants le spectacle.
      */
-    public ArrayList<Numero> getNumeros() {
+    public ObservableList<Numero> getNumeros() {
         return numeros;
     }
+
+    private void writeObject(ObjectOutputStream s) throws IOException {
+        s.writeUTF(nom);
+        s.writeUTF(lieu);
+        s.writeObject(new ArrayList<>(numeros));
+    }
+
+    private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
+        nom = s.readUTF();
+        lieu = s.readUTF();
+        numeros = FXCollections.observableArrayList((ArrayList<Numero>) s.readObject());
+    }
+
     @Override
     public String toString() {
         return nom;

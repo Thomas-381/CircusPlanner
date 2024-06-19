@@ -3,9 +3,14 @@ package fr.uga.iut2.genevent.modele;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-import java.util.HashSet;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Application {
+public class Application implements Serializable {
 
     // Attributs
     private ObservableList<Evenement> evenements = FXCollections.observableArrayList();
@@ -160,5 +165,24 @@ public class Application {
      */
     public void removeAccessoire(Accessoire accessoire) {
         accessoires.remove(accessoire);
+    }
+
+    private void writeObject(ObjectOutputStream s) throws IOException {
+        s.writeObject(new ArrayList<>(evenements));
+        s.writeObject(new ArrayList<>(spectacles));
+        s.writeObject(new ArrayList<>(numeros));
+        s.writeObject(new ArrayList<>(acteurs));
+        s.writeObject(new ArrayList<>(accessoires));
+        s.writeObject(new ArrayList<>(animaux));
+    }
+
+    private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
+        evenements = FXCollections.observableArrayList((List<Evenement>) s.readObject());
+        spectacles = FXCollections.observableArrayList((List<Spectacle>) s.readObject());
+        numeros = FXCollections.observableArrayList((List<Numero>) s.readObject());
+        acteurs = FXCollections.observableArrayList((List<Acteur>) s.readObject());
+        accessoires = FXCollections.observableArrayList((List<Accessoire>) s.readObject());
+        animaux = FXCollections.observableArrayList((List<Animal>) s.readObject());
+
     }
 }

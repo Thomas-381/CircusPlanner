@@ -1,9 +1,11 @@
 package fr.uga.iut2.genevent.modele;
 
+import java.io.Serializable;
+
 /**
  * Représente un Animal dans le système.
  */
-public class Animal {
+public class Animal implements Serializable {
 
     // Attributs
     private final String nom;

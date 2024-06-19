@@ -2,10 +2,12 @@ package fr.uga.iut2.genevent.modele;
 
 import javafx.scene.image.Image;
 
+import java.io.Serializable;
+
 /**
  * Représente un Acteur dans le système.
  */
-public class Acteur {
+public class Acteur implements Serializable {
 
     // Attributs
     private String surnom, nom, prenom, specialite;

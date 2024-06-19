@@ -1,5 +1,11 @@
 package fr.uga.iut2.genevent.modele;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -7,10 +13,10 @@ import java.util.ArrayList;
  * Représente un Numéro dans le système.
  */
 public class Numero implements Serializable {
-    private final String titre;
-    private ArrayList<Animal> animaux;
-    private ArrayList<Accessoire> accessoires;
-    private ArrayList<Acteur> acteurs;
+    private String titre;
+    private transient ObservableList<Animal> animaux;
+    private transient ObservableList<Accessoire> accessoires;
+    private transient ObservableList<Acteur> acteurs;
 
     /**
      * Construits un nouveau Numéro avec le titre, les animaux, les accessoires, les acteurs et les organisateurs donnés.
@@ -20,7 +26,7 @@ public class Numero implements Serializable {
      * @param accessoires La liste des accessoires du Numéro.
      * @param acteurs La liste des acteurs du Numéro.
      */
-    public Numero(String titre, ArrayList<Animal> animaux, ArrayList<Accessoire> accessoires, ArrayList<Acteur> acteurs) {
+    public Numero(String titre, ObservableList<Animal> animaux, ObservableList<Accessoire> accessoires, ObservableList<Acteur> acteurs) {
         this.titre = titre;
         this.animaux = animaux;
         this.accessoires = accessoires;
@@ -34,16 +40,16 @@ public class Numero implements Serializable {
      */
     public Numero(String titre) {
         this.titre = titre;
-        this.animaux = new ArrayList<>();
-        this.accessoires = new ArrayList<>();
-        this.acteurs = new ArrayList<>();
+        this.animaux = FXCollections.observableArrayList();
+        this.accessoires = FXCollections.observableArrayList();
+        this.acteurs = FXCollections.observableArrayList();
     }
 
     public Numero() {
         this.titre = "";
-        this.animaux = new ArrayList<>();
-        this.accessoires = new ArrayList<>();
-        this.acteurs = new ArrayList<>();
+        this.animaux = FXCollections.observableArrayList();
+        this.accessoires = FXCollections.observableArrayList();
+        this.acteurs = FXCollections.observableArrayList();
     }
 
     /**
@@ -85,7 +91,7 @@ public class Numero implements Serializable {
      * Getter de l'attribut animaux
      * @return la liste des animaux du numéro
      */
-    public ArrayList<Animal> getAnimaux() {
+    public ObservableList<Animal> getAnimaux() {
         return animaux;
     }
 
@@ -93,7 +99,7 @@ public class Numero implements Serializable {
      * Getter de l'attribut accessoires
      * @return la liste des accessoires du numéro
      */
-    public ArrayList<Accessoire> getAccessoires() {
+    public ObservableList<Accessoire> getAccessoires() {
         return accessoires;
     }
 
@@ -101,8 +107,22 @@ public class Numero implements Serializable {
      * Getter de l'attribut acteurs
      * @return la liste des acteurs du numéro
      */
-    public ArrayList<Acteur> getActeurs() {
+    public ObservableList<Acteur> getActeurs() {
         return acteurs;
+    }
+
+    private void writeObject(ObjectOutputStream s) throws IOException {
+        s.writeUTF(titre);
+        s.writeObject(new ArrayList<>(acteurs));
+        s.writeObject(new ArrayList<>(accessoires));
+        s.writeObject(new ArrayList<>(animaux));
+    }
+
+    private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
+        titre = s.readUTF();
+        acteurs = FXCollections.observableArrayList((ArrayList<Acteur>) s.readObject());
+        accessoires = FXCollections.observableArrayList((ArrayList<Accessoire>) s.readObject());
+        animaux = FXCollections.observableArrayList((ArrayList<Animal>) s.readObject());
     }
 
     @Override

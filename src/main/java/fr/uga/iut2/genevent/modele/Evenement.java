@@ -3,10 +3,14 @@ package fr.uga.iut2.genevent.modele;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -18,8 +22,8 @@ public class Evenement implements Serializable{
     private String adresse;
     private String dateDebut;
     private String dateFin;
-    private ObservableList<Spectacle> spectacles = FXCollections.observableArrayList();
     private float prix;
+    private transient ObservableList<Spectacle> spectacles = FXCollections.observableArrayList();
 
     /**
      * Construit un nouvel Événement avec l'ID, le titre, l'adresse, la date de début et la date de fin donnés.
@@ -33,12 +37,14 @@ public class Evenement implements Serializable{
         this.adresse = adresse;
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
+        this.prix = 0;
     }
     public Evenement() {
         this.titre = "";
         this.adresse = "";
         this.dateDebut = "";
         this.dateFin = "";
+        this.prix = 0;
     }
 
     /**
@@ -129,5 +135,23 @@ public class Evenement implements Serializable{
     @Override
     public String toString() {
         return titre;
+    }
+
+    private void writeObject(ObjectOutputStream s) throws IOException {
+        s.writeUTF(titre);
+        s.writeUTF(adresse);
+        s.writeUTF(dateDebut);
+        s.writeUTF(dateFin);
+        s.writeFloat(prix);
+        s.writeObject(new ArrayList<>(spectacles));
+    }
+
+    private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
+        titre = s.readUTF();
+        adresse = s.readUTF();
+        dateDebut = s.readUTF();
+        dateFin = s.readUTF();
+        prix = s.readFloat();
+        spectacles = FXCollections.observableArrayList((ArrayList<Spectacle>) s.readObject());
     }
 }

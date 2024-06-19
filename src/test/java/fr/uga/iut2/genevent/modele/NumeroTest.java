@@ -1,5 +1,6 @@
 package fr.uga.iut2.genevent.modele;
 
+import javafx.collections.FXCollections;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -18,7 +19,7 @@ class NumeroTest {
     void setUp(){
         numeroChien = new Numero("Le chien qui parle");
         numeroClown = new Numero("Spectacle de clowns");
-        numeroChevauxComplet = new Numero("Spectacle de chevaux", new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
+        numeroChevauxComplet = new Numero("Spectacle de chevaux", FXCollections.observableArrayList(), FXCollections.observableArrayList(), FXCollections.observableArrayList());
 
         accessoires = new ArrayList<>();
         animaux = new ArrayList<>();

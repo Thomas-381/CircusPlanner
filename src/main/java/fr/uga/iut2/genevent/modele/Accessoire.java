@@ -1,9 +1,11 @@
 package fr.uga.iut2.genevent.modele;
 
+import java.io.Serializable;
+
 /**
  * Représente un Accessoire dans le système.
  */
-public class Accessoire {
+public class Accessoire implements Serializable {
 
 
 
