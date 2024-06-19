@@ -1,12 +1,14 @@
 package fr.uga.iut2.genevent.modele;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * Représente un Organisateur dans le système.
  */
 public class Organisateur {
     private String nom;
+    private long id;
     private ArrayList<Evenement> evenements;
     private ArrayList<Spectacle> spectacles;
 
@@ -17,6 +19,9 @@ public class Organisateur {
      */
     public Organisateur(String nom) {
         this.nom = nom;
+        this.id = id;
+        this.evenements = new ArrayList<>();
+        this.spectacles = new ArrayList<>();
     }
 
     public Organisateur() {
