@@ -11,7 +11,7 @@
         <HBox alignment="CENTER" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #d9d0c1;" BorderPane.alignment="CENTER">
                 <ImageView fx:id="logo" accessibleHelp="LOGO" accessibleRoleDescription="LOGO" accessibleText="LOGO" fitHeight="80.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
                     <HBox.margin>
-                        <Insets right="65.0" />
+                        <Insets right="110.0" />
                     </HBox.margin>
                     <image>
                         <Image url="@Img/logo.png" />
@@ -23,7 +23,7 @@
             </Label>
             <ImageView fitHeight="75.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                 <HBox.margin>
-                    <Insets left="40.0" />
+                    <Insets left="110.0" />
                 </HBox.margin>
                 <image>
                     <Image url="@Img/profilN.png" />
@@ -76,7 +76,7 @@
                             </VBox.margin></Button>
                     </children>
                     <GridPane.margin>
-                        <Insets bottom="10.0" />
+                        <Insets top="5.0" />
                     </GridPane.margin>
                 </VBox>
                 <VBox prefHeight="208.0" prefWidth="100.0" styleClass="infoSup" GridPane.rowIndex="2">
@@ -93,8 +93,11 @@
                             <VBox.margin>
                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                             </VBox.margin></Button>
-                    </children></VBox>
-                <Button mnemonicParsing="false" style="-fx-background-color: #f7f4b0;" text="&lt;- Retour" />
+                    </children>
+               <GridPane.margin>
+                  <Insets top="5.0" />
+               </GridPane.margin></VBox>
+                <Button mnemonicParsing="false" styleClass="retour" text="&lt;- Retour" />
             </children>
             <padding>
                 <Insets bottom="5.0" left="5.0" />
