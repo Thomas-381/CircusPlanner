@@ -1,5 +1,6 @@
 package fr.uga.iut2.genevent.controleur;
 
+import fr.uga.iut2.genevent.modele.Application;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -10,9 +11,12 @@ import javafx.stage.Stage;
 import java.io.File;
 
 public class Controleur_create_num {
+    Application app;
     @FXML
     private ImageView imgNumeroC;
-
+    public Controleur_create_num(Application app) {
+        this.app = app;
+    }
     @FXML
     private void initialize() {
         // Ajoutez ici toutes les ImageView pour lesquelles vous souhaitez appliquer la méthode de gestion des clics

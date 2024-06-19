@@ -39,7 +39,7 @@
 <?import javafx.scene.text.*?>
 <?scenebuilder-stylesheet Styles.css ?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="725.0" prefWidth="600.0" styleClass="arrierePlan" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="725.0" prefWidth="600.0" styleClass="arrierePlan" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
    <top>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="titre" BorderPane.alignment="CENTER">
          <ImageView fx:id="logo" accessibleHelp="LOGO" accessibleRoleDescription="LOGO" accessibleText="LOGO" fitHeight="80.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
@@ -89,7 +89,7 @@
             </TextArea>
             <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="whiteBone" text="Modifier">
                <VBox.margin>
-                  <Insets top="10.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
                </VBox.margin></Button>
             <padding>
                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -102,9 +102,17 @@
                </VBox.margin>
             </Label>
             <ListView fx:id="listeActeurs" prefHeight="68.0" prefWidth="170.0" />
+            <Button fx:id="btnAjouterActeur" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="whiteBone" text="+ Acteurs">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
+               </VBox.margin>
+            </Button>
             <padding>
                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
             </padding>
+            <GridPane.margin>
+               <Insets top="5.0" />
+            </GridPane.margin>
          </VBox>
          <BorderPane.margin>
             <Insets left="5.0" right="5.0" top="20.0" />
@@ -126,7 +134,7 @@
                <VBox.margin>
                   <Insets bottom="10.0" />
                </VBox.margin></ListView>
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="whiteBone" text="+ Nouvel evenement" textAlignment="CENTER" />
+            <Button fx:id="btnAjouterEvent" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleAjouterEvent" styleClass="whiteBone" text="+ Nouvel evenement" textAlignment="CENTER" />
             <VBox.margin>
                <Insets />
             </VBox.margin>
@@ -137,7 +145,7 @@
                <VBox.margin>
                   <Insets bottom="10.0" />
                </VBox.margin></ListView>
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="whiteBone" text="+ Nouveau spectacle" textAlignment="CENTER" />
+            <Button fx:id="btnAjouterSpectacle" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="whiteBone" text="+ Nouveau spectacle" textAlignment="CENTER" />
          </VBox>
          <VBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="100.0">
             <Label prefHeight="18.0" prefWidth="500.0" text="Numéros" />
@@ -145,7 +153,7 @@
                <VBox.margin>
                   <Insets bottom="10.0" />
                </VBox.margin></ListView>
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="whiteBone" text="+ Nouveau numéro" textAlignment="CENTER" />
+            <Button fx:id="btnAjouterNumero" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="whiteBone" text="+ Nouveau numéro" textAlignment="CENTER" />
          </VBox>
          <BorderPane.margin>
             <Insets bottom="5.0" right="5.0" top="5.0" />

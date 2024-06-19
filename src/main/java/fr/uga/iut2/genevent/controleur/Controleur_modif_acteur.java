@@ -1,5 +1,6 @@
 package fr.uga.iut2.genevent.controleur;
 
+import fr.uga.iut2.genevent.modele.Application;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
@@ -11,11 +12,16 @@ import javafx.stage.Stage;
 import java.io.File;
 
 public class Controleur_modif_acteur {
+    Application app;
+
     @FXML
     private ImageView imgArtisteM;
     @FXML
     private Button BtnRetour;
 
+    public Controleur_modif_acteur(Application app) {
+        this.app = app;
+    }
     @FXML
     private void initialize() {
         // Ajoutez ici toutes les ImageView pour lesquelles vous souhaitez appliquer la méthode de gestion des clics
