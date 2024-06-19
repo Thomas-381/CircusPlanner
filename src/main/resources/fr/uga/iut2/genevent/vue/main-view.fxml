@@ -75,13 +75,16 @@
             <Label fx:id="previewTitre" text="Nom événement" />
             <Label fx:id="previewDate" text="dates" />
             <Label fx:id="previewLoc" text="Localisation" />
-            <TextArea prefHeight="111.0" prefWidth="180.0" promptText="notes ..." />
+            <TextArea prefHeight="111.0" prefWidth="180.0" promptText="notes ...">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></TextArea>
             <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="whiteBone" text="Modifier">
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin></Button>
          </VBox>
-         <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+         <VBox prefHeight="200.0" prefWidth="100.0" styleClass="listeAjout" GridPane.rowIndex="1">
             <Label text="Mes acteurs">
                <VBox.margin>
                   <Insets top="25.0" />

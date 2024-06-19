@@ -10,7 +10,7 @@ public class MainView extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         FXMLLoader mainViewLoader = new FXMLLoader(getClass().getResource("main-view.fxml"));
-        Scene scene = new Scene(mainViewLoader.load());
+        Scene scene = new Scene(mainViewLoader.load(),800,800);
 
         stage.setTitle("CircusPlanner");
         stage.setScene(scene);
