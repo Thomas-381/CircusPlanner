@@ -1,6 +1,7 @@
 package fr.uga.iut2.genevent.controleur;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -12,6 +13,8 @@ import java.io.File;
 public class Controleur_modif_acteur {
     @FXML
     private ImageView imgArtisteM;
+    @FXML
+    private Button BtnRetour;
 
     @FXML
     private void initialize() {
@@ -40,5 +43,9 @@ public class Controleur_modif_acteur {
             Image image = new Image(selectedFile.toURI().toString());
             imageView.setImage(image);
         }
+    }
+    private void handleBtnRetour() {
+        Stage stage = (Stage) BtnRetour.getScene().getWindow();
+        stage.close();
     }
 }
