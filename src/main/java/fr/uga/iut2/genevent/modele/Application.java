@@ -25,7 +25,7 @@ public class Application implements Serializable {
     /**
      * LOGGER pour réaliser les logs de la classe
      */
-    private static final Logger LOGGER =Logger.getLogger(Accessoire.class.getPackageName());
+    private static final Logger LOGGER =Logger.getLogger(Application.class.getPackageName());
 
     public Application() {
     }
