@@ -1,15 +1,86 @@
-.arrierePlan{
-    -fx-background-color:  #f7d7ad;
+/* Styles.css */
+
+/* Style pour l'arrière-plan */
+.arrierePlan {
+    -fx-background-color: #ffffff;
 }
-Button{
-    -fx-background-color: #2C88D9;
+
+/* Style pour le titre */
+.titre {
+    -fx-background-color: #644456;
+    -fx-text-fill: #ffffff;
+    -fx-padding: 10px;
+    -fx-spacing: 10px;
 }
-.whiteBone{
-    -fx-text-fill: #f9f6ee;
+
+.titre Label {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 26px;
 }
-.titre{
-    -fx-background-color:  #d9d0c1;
+
+/* Style pour les sections d'information supplémentaire */
+.infoSup {
+    -fx-background-color: #dcdcdc;
+    -fx-padding: 10px;
+    -fx-spacing: 10px;
+    -fx-border-color: #616466;
+    -fx-border-width: 1px;
+    -fx-background-radius:20px;
 }
-.infoSup{
-    -fx-background-color: 
+
+.infoSup Label {
+    -fx-text-fill: #343a40;
+}
+
+/* Style pour les boutons */
+.whiteBone {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #343a40;
+    -fx-border-color: #343a40;
+    -fx-border-width: 1px;
+    -fx-padding: 5px 10px;
+    -fx-cursor: pointer;
+}
+
+.whiteBone:hover {
+    -fx-background-color: #dcdcdc;
+}
+
+/* Style pour les listes */
+.listeAjout {
+    -fx-background-color: #ffffff;
+    -fx-padding: 10px;
+    -fx-spacing: 10px;
+    -fx-border-color: #343a40;
+    -fx-border-width: 1px;
+}
+
+.listeAjout Label {
+    -fx-text-fill: #343a40;
+}
+
+/* Style pour le bas de page */
+.bottom Label {
+    -fx-text-fill: #343a40;
+    -fx-font-size: 8px;
+}
+
+/* Style pour le centre */
+.center {
+    -fx-background-color: #ffffff;
+}
+
+.center VBox {
+    -fx-spacing: 10px;
+    -fx-padding: 20px;
+}
+
+.center Label {
+    -fx-text-fill: #343a40;
+    -fx-font-size: 18px;
+}
+
+.center ListView {
+    -fx-border-color: #343a40;
+    -fx-border-width: 1px;
 }
