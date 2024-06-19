@@ -71,15 +71,29 @@
           <RowConstraints maxHeight="259.0" minHeight="10.0" prefHeight="259.0" vgrow="SOMETIMES" />
           <RowConstraints maxHeight="410.0" minHeight="10.0" prefHeight="161.0" vgrow="NEVER" />
         </rowConstraints>
-         <VBox maxHeight="266.0" prefHeight="266.0" prefWidth="180.0" styleClass="infoSup">
-            <Label fx:id="previewTitre" text="Nom événement" />
-            <Label fx:id="previewDate" text="dates" />
-            <Label fx:id="previewLoc" text="Localisation" />
-            <TextArea prefHeight="111.0" prefWidth="180.0" promptText="notes ..." />
+         <VBox maxHeight="266.0" prefHeight="266.0" prefWidth="180.0" style="-fx-background-color: yellow;" styleClass="infoSup">
+            <Label fx:id="previewTitre" style="-fx-font-weight: bolder;">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin></Label>
+            <Label fx:id="previewDesc" alignment="TOP_LEFT" prefHeight="200.0" wrapText="true">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Label>
+            <Label text="Notes :" />
+            <TextArea fx:id="previewNotes" editable="false" prefHeight="200.0" prefWidth="200.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </TextArea>
             <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="whiteBone" text="Modifier">
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin></Button>
+            <padding>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
          </VBox>
          <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
             <Label text="Mes acteurs">
