@@ -16,27 +16,55 @@ import javafx.stage.Stage;
 
 import java.io.File;
 
+
+/**
+ * Contrôleur pour la vue de création d'un acteur.
+ */
 public class Controleur_create_acteur {
+    /**
+     * Application associée au contrôleur.
+     */
     Application app;
 
+    /**
+     * ImageView pour l'image de l'artiste.
+     */
     @FXML
     private ImageView imgArtisteM;
+    /**
+     * Bouton pour retourner à la vue précédente.
+     */
     @FXML
     private Button BtnRetour;
 
-    // Liste des acteurs
+
+    /**
+     * Liste des acteurs.
+     */
     @FXML
     ListView<Acteur> listeActeurs;
 
-    // Infos nouvel acteur
+    /**
+     * Champs de texte pour les informations du nouvel acteur.
+     */
     @FXML
     TextField tfSurnom, tfNom, tfPrenom, tfSpe;
+    /**
+     * Zone de texte pour les notes sur le nouvel acteur.
+     */
     @FXML
     TextArea taNotes;
 
+    /**
+     * Constructeur du contrôleur.
+     * @param app L'application associée au contrôleur.
+     */
     public Controleur_create_acteur(Application app) {
         this.app = app;
     }
+    /**
+     * Initialisation du contrôleur.
+     */
     @FXML
     private void initialize() {
         // Ajoutez ici toutes les ImageView pour lesquelles vous souhaitez appliquer la méthode de gestion des clics
@@ -47,6 +75,10 @@ public class Controleur_create_acteur {
         listeActeurs.setItems(app.getActeurs());
     }
 
+    /**
+     * Configuration du gestionnaire de clics pour les ImageView.
+     * @param imageViews Les ImageView à configurer.
+     */
     private void setupImageViewClickHandler(ImageView... imageViews) {
         for (ImageView imageView : imageViews) {
             imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
@@ -55,6 +87,10 @@ public class Controleur_create_acteur {
         }
     }
 
+    /**
+     * Gestion du clic sur une ImageView.
+     * @param imageView L'ImageView sur laquelle le clic a été effectué.
+     */
     private void handleImageClick(ImageView imageView) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().add(
@@ -68,12 +104,20 @@ public class Controleur_create_acteur {
             imageView.setImage(image);
         }
     }
+    /**
+     * Gestion du clic sur le bouton de retour.
+     * @param event L'événement de clic.
+     */
     @FXML
     public void handleBtnRetour(ActionEvent event) {
         Stage stage = (Stage) BtnRetour.getScene().getWindow();
         stage.close();
     }
 
+    /**
+     * Gestion du clic sur le bouton de création.
+     * @param event L'événement de clic.
+     */
     @FXML
     public void handleBtnCreate(ActionEvent event) {
         if (!tfSurnom.getText().isBlank() && !tfNom.getText().isBlank()

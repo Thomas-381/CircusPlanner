@@ -2,6 +2,8 @@ package fr.uga.iut2.genevent.controleur;
 
 import fr.uga.iut2.genevent.modele.*;
 import fr.uga.iut2.genevent.vue.MainView;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,11 +19,17 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * Contrôleur pour la vue de création d'un numéro.
+ */
 public class Controleur_create_num {
 
     // Custom DataFormat pour le Drag N Drop des acteurs
     private static final DataFormat acteurFormat = new DataFormat("Acteur.custom");
 
+    /**
+     * Application associée au contrôleur.
+     */
     Application app;
 
     @FXML
@@ -43,19 +51,28 @@ public class Controleur_create_num {
     @FXML
     private ChoiceBox<Acteur> cbActeurs;
     @FXML
-    private Button btnAddActeur, BtnRetour;
+    private Button btnAddActeur;
     @FXML
     private ListView<Accessoire> listeAccessoires;
     @FXML
     private ListView<Animal> listeAnimaux;
+    @FXML
+    private Button BtnRetour;
 
     // Nouveau numéro vide
     private Numero numero = new Numero();
 
+    /**
+     * Constructeur du contrôleur.
+     * @param app L'application associée au contrôleur.
+     */
     public Controleur_create_num(Application app) {
         this.app = app;
     }
 
+    /**
+     * Initialisation du contrôleur.
+     */
     @FXML
     private void initialize() {
         // Ajoutez ici toutes les ImageView pour lesquelles vous souhaitez appliquer la méthode de gestion des clics
@@ -87,6 +104,10 @@ public class Controleur_create_num {
         listeAnimaux.setItems(numero.getAnimaux());
     }
 
+    /**
+     * Configuration du gestionnaire de clics pour les ImageView.
+     * @param imageViews Les ImageView à configurer.
+     */
     private void setupImageViewClickHandler(ImageView... imageViews) {
         for (ImageView imageView : imageViews) {
             imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
@@ -95,6 +116,10 @@ public class Controleur_create_num {
         }
     }
 
+    /**
+     * Gestion du clic sur une ImageView.
+     * @param imageView L'ImageView sur laquelle le clic a été effectué.
+     */
     private void handleImageClick(ImageView imageView) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().add(
@@ -109,6 +134,10 @@ public class Controleur_create_num {
         }
     }
 
+    /**
+     * Gestion du clic sur le bouton de création d'un acteur.
+     * @param event L'événement de clic.
+     */
     @FXML
     public void handleCreerActeur(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(MainView.class.getResource("create-artiste.fxml"));
@@ -120,6 +149,10 @@ public class Controleur_create_num {
         window.show();
     }
 
+    /**
+     * Gestion du clic sur le bouton d'ajout d'un acteur.
+     * @param event L'événement de clic.
+     */
     @FXML
     public void handleAjouterActeur(ActionEvent event) {
         numero.ajouterActeur(cbActeurs.getValue());
@@ -127,6 +160,10 @@ public class Controleur_create_num {
         btnAddActeur.setDisable(true);
     }
 
+    /**
+     * Gestion du clic sur le bouton de fin.
+     * @param event L'événement de clic.
+     */
     @FXML
     public void handleFinish(ActionEvent event) {
         if (!tfTitre.getText().isBlank()) {
@@ -139,6 +176,10 @@ public class Controleur_create_num {
         }
     }
 
+    /**
+     * Gestion du clic sur le bouton de retour.
+     * @param event L'événement de clic.
+     */
     @FXML
     public void handleBtnRetour(ActionEvent event) {
         Stage stage = (Stage) BtnRetour.getScene().getWindow();
@@ -148,6 +189,10 @@ public class Controleur_create_num {
 
     // Méthodes pour le drag and drop des acteurs
 
+    /**
+     * Gestion de la détection du drag d'un acteur.
+     * @param event L'événement de drag.
+     */
     @FXML
     public void dragDetectedActeur(MouseEvent event) {
         Dragboard db = listeActeurs.startDragAndDrop(TransferMode.COPY);
@@ -156,27 +201,49 @@ public class Controleur_create_num {
         db.setContent(content);
     }
 
+    /**
+     * Gestion de l'entrée du drag d'un acteur dans la liste des acteurs sélectionnés.
+     * @param event L'événement de drag.
+     */
     @FXML
     public void dragEnteredActeurSelect(DragEvent event) {
         listeActeursSelect.setBlendMode(BlendMode.DIFFERENCE);
     }
 
+    /**
+     * Gestion de la sortie du drag d'un acteur de la liste des acteurs sélectionnés.
+     * @param event L'événement de drag.
+     */
     @FXML
     public void dragExitedActeurSelect(DragEvent event) {
         listeActeursSelect.setBlendMode(null);
     }
 
+    /**
+     * Gestion du survol du drag d'un acteur sur la liste des acteurs sélectionnés.
+     * @param event L'événement de drag.
+     */
     @FXML
     public void dragOverActeurSelect(DragEvent event) {
         event.acceptTransferModes(TransferMode.COPY);
     }
 
+    /**
+     * Gestion du drop d'un acteur dans la liste des acteurs sélectionnés.
+     * @param event L'événement de drop.
+     */
     @FXML
     public void dragDroppedActeurSelect(DragEvent event) {
         Dragboard db = event.getDragboard();
         numero.ajouterActeur((Acteur) db.getContent(acteurFormat));
         event.setDropCompleted(true);
     }
+    /**
+     * Gestion du clic sur le bouton d'ajout d'un accessoire.
+     * Ouvre une nouvelle fenêtre avec la vue "choose-accessoire.fxml" et définit son contrôleur.
+     * @param event L'événement de clic.
+     * @throws IOException Si le chargement de la vue échoue.
+     */
     @FXML
     public void handleAjouterAccessoire(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(MainView.class.getResource("choose-accessoire.fxml"));
@@ -188,6 +255,12 @@ public class Controleur_create_num {
         window.show();
     }
 
+    /**
+     * Gestion du clic sur le bouton d'ajout d'un animal.
+     * Ouvre une nouvelle fenêtre avec la vue "choose-accessoire.fxml" et définit son contrôleur.
+     * @param event L'événement de clic.
+     * @throws IOException Si le chargement de la vue échoue.
+     */
     @FXML
     public void handleAjouterAnimaux(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(MainView.class.getResource("choose-annimaux.fxml"));
