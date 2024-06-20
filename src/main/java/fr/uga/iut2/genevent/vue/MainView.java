@@ -26,7 +26,6 @@ public class MainView extends Application {
         FXMLLoader mainViewLoader = new FXMLLoader(getClass().getResource("main-view.fxml"));
         mainViewLoader.setController(new ControleurMainView(app));
         Scene scene = new Scene(mainViewLoader.load());
-
         stage.setTitle("CircusPlanner");
         stage.setScene(scene);
         stage.show();
