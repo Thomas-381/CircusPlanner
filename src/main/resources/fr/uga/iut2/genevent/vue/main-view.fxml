@@ -87,7 +87,7 @@
                   <Insets />
                </VBox.margin>
             </TextArea>
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="whiteBone" text="Modifier">
+            <Button fx:id="btnModifier" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleBtnModifier" styleClass="whiteBone" text="Modifier">
                <VBox.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
                </VBox.margin></Button>
