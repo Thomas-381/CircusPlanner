@@ -102,7 +102,7 @@
                </VBox.margin>
             </Label>
             <ListView fx:id="listeActeurs" prefHeight="68.0" prefWidth="170.0" styleClass="listeViewCote" />
-            <Button fx:id="btnAjouterActeur" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleAjouterActeur" styleClass="whiteBone" text="+ Acteurs">
+            <Button fx:id="btnAjouterActeur" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleAjouterActeur" styleClass="whiteBone" text="+ Nouvel acteur">
                <VBox.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
                </VBox.margin>
@@ -129,12 +129,12 @@
    <center>
       <VBox prefHeight="200.0" prefWidth="100.0" styleClass="ArriereCentre" BorderPane.alignment="CENTER">
          <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
-            <Label prefHeight="18.0" prefWidth="499.0" text="Evenements" />
+            <Label prefHeight="18.0" prefWidth="499.0" text="Évènements" />
             <ListView fx:id="listeEvents" prefHeight="200.0" prefWidth="200.0">
                <VBox.margin>
                   <Insets bottom="10.0" />
                </VBox.margin></ListView>
-            <Button fx:id="btnAjouterEvent" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleAjouterEvent" styleClass="whiteBone" text="+ Nouvel evenement" textAlignment="CENTER" />
+            <Button fx:id="btnAjouterEvent" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleAjouterEvent" styleClass="whiteBone" text="+ Nouvel évènement" textAlignment="CENTER" />
             <VBox.margin>
                <Insets />
             </VBox.margin>

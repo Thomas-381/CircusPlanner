@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
   <columnConstraints>
     <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
   </columnConstraints>
@@ -13,6 +13,6 @@
   </rowConstraints>
    <children>
       <ChoiceBox fx:id="ChoiceBoxAccessoire" prefWidth="150.0" />
-      <Button fx:id="BtnAddAccessoire" mnemonicParsing="false" onAction="#handleCreeAccessoire" styleClass="whiteBone" text="+ Ajouter Accessoire" GridPane.rowIndex="1" />
+      <Button fx:id="BtnAddAccessoire" mnemonicParsing="false" onAction="#handleCreeAccessoire" styleClass="whiteBone" text="+ Ajouter accessoire" GridPane.rowIndex="1" />
    </children>
 </GridPane>

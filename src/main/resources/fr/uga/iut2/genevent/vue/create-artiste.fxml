@@ -93,7 +93,7 @@
                               <Insets bottom="8.0" top="5.0" />
                            </VBox.margin>
                         </TextField>
-                        <TextField fx:id="tfPrenom" promptText="Prenom">
+                        <TextField fx:id="tfPrenom" promptText="Prénom">
                            <VBox.margin>
                               <Insets bottom="8.0" />
                            </VBox.margin>

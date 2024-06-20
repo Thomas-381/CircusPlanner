@@ -50,7 +50,7 @@
             <children>
                 <VBox prefHeight="138.0" prefWidth="195.0" styleClass="infoSup" GridPane.rowIndex="1">
                     <children>
-                        <Label prefHeight="27.0" prefWidth="120.0" text="Mes Annimaux">
+                        <Label prefHeight="27.0" prefWidth="120.0" text="Mes Animaux">
                             <font>
                                 <Font size="15.0" />
                             </font>
@@ -76,12 +76,12 @@
                     <VBox.margin>
                         <Insets left="5.0" top="10.0" />
                     </VBox.margin></TextField>
-            <TextField fx:id="tfSurnom1" layoutX="15.0" layoutY="20.0" maxWidth="185.0" minWidth="50.0" prefHeight="26.0" prefWidth="110.0" promptText="Espece">
+            <TextField fx:id="tfSurnom1" layoutX="15.0" layoutY="20.0" maxWidth="185.0" minWidth="50.0" prefHeight="26.0" prefWidth="110.0" promptText="Espèce">
                <VBox.margin>
                   <Insets left="5.0" top="10.0" />
                </VBox.margin>
             </TextField>
-            <Button mnemonicParsing="false" onAction="#handleBtnCreate" styleClass="whiteBone" text="+ Annimaux">
+            <Button mnemonicParsing="false" onAction="#handleBtnCreate" styleClass="whiteBone" text="+ Animaux">
                <VBox.margin>
                   <Insets bottom="5.0" left="15.0" right="5.0" top="10.0" />
                </VBox.margin></Button>
