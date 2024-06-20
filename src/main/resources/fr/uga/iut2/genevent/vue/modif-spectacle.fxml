@@ -17,7 +17,7 @@
                     <image>
                         <Image url="@Img/logo.png" />
                     </image></ImageView>
-                <Label alignment="CENTER" contentDisplay="CENTER" minWidth="350.0" prefHeight="24.0" prefWidth="233.0" text="Plannifiez l'emerveillement !" textFill="WHITE">
+                <Label alignment="CENTER" contentDisplay="CENTER" minWidth="350.0" prefHeight="24.0" prefWidth="233.0" text="Planifier l'émerveillement !" textFill="WHITE">
                     <font>
                         <Font size="26.0" />
                     </font></Label>

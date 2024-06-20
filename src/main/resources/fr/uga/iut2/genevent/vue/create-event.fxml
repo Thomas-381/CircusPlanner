@@ -17,7 +17,7 @@
                     <image>
                         <Image url="@Img/logo.png" />
                     </image></ImageView>
-                <Label alignment="CENTER" contentDisplay="CENTER" minWidth="350.0" prefHeight="24.0" prefWidth="310.0" text="Plannifiez l'emerveillement !" textFill="WHITE">
+                <Label alignment="CENTER" contentDisplay="CENTER" minWidth="350.0" prefHeight="24.0" prefWidth="310.0" text="Planifier l'émerveillement !" textFill="WHITE">
                <font>
                   <Font size="26.0" />
                </font></Label>
@@ -136,7 +136,7 @@
                <children>
                   <TextField fx:id="tfNbrPlaces" prefHeight="26.0" prefWidth="85.0" promptText="Nombre Places">
                   <HBox.margin>
-                     <Insets right="10.0" />
+                     <Insets left="2.0" right="10.0" />
                   </HBox.margin></TextField>
                <TextField fx:id="tfPrix" prefHeight="26.0" prefWidth="85.0" promptText="Prix">
                   <HBox.margin>

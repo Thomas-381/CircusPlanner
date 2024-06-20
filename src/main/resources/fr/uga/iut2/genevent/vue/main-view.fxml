@@ -49,7 +49,7 @@
             <image>
                <Image url="@Img/logo.png" />
             </image></ImageView>
-         <Label maxWidth="360.0" minWidth="330.0" prefWidth="350.0" text="Plannifiez l'emerveillement !" textFill="WHITE">
+         <Label maxWidth="360.0" minWidth="330.0" prefWidth="350.0" text="Planifier l'émerveillement !" textFill="WHITE">
             <font>
                <Font size="26.0" />
             </font></Label>
