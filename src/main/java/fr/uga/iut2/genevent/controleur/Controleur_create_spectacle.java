@@ -53,6 +53,10 @@ public class Controleur_create_spectacle {
     @FXML
     private Button btnAddNum;
 
+    // Label de la page d'erreur
+    @FXML
+    private Label labelError;
+
     // spectacle chargé par le contrôleur
     private final Spectacle spectacle;
     // booléen indiquant si la fenêtre est ouverte en mode modification
@@ -212,7 +216,7 @@ public class Controleur_create_spectacle {
      * @param event L'événement de clic.
      */
     @FXML
-    public void handleFinish(ActionEvent event) {
+    public void handleFinish(ActionEvent event) throws IOException {
         if (!tfTitre.getText().isBlank() && !tfLieu.getText().isBlank()) {
             spectacle.setNom(tfTitre.getText());
             spectacle.setLieu(tfLieu.getText());
@@ -224,6 +228,17 @@ public class Controleur_create_spectacle {
             // fermeture de la fenêtre
             Stage window = (Stage) tfTitre.getScene().getWindow();
             window.close();
+        } else {
+            FXMLLoader errorLoader = new FXMLLoader(MainView.class.getResource("error.fxml"));
+            errorLoader.setController(this);
+            Stage window = new Stage();
+            window.setTitle("Erreur");
+            Scene scene = new Scene(errorLoader.load());
+
+            labelError.setText("Veuillez remplir tous les champs");
+
+            window.setScene(scene);
+            window.show();
         }
     }
 
@@ -277,5 +292,15 @@ public class Controleur_create_spectacle {
         Dragboard db = event.getDragboard();
         spectacle.ajouterNumero((Numero) db.getContent(numeroFormat));
         event.setDropCompleted(true);
+    }
+
+    /**
+     * Handler du bouton de fermeture de la page d'erreur
+     * @param event
+     */
+    @FXML
+    public void handleCloseError(ActionEvent event) {
+        Stage window = (Stage) labelError.getScene().getWindow();
+        window.close();
     }
 }

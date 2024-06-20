@@ -52,6 +52,10 @@ public class Controleur_create_event {
     @FXML
     private Button btnAddSpectacle;
 
+    // Label de la page d'erreur
+    @FXML
+    private Label labelError;
+
     // l'événement chargé par le contrôleur
     private final Evenement evenement;
     // booléen indiquant si la fenêtre est ouverte en mode modification
@@ -204,10 +208,12 @@ public class Controleur_create_event {
     }
 
     @FXML
-    public void handleFinish(ActionEvent event) {
+    public void handleFinish(ActionEvent event) throws IOException {
         if (!tfTitre.getText().isBlank() && !tfLieu.getText().isBlank()
                 && !tfDateDeb.getText().isBlank() && !tfDateFin.getText().isBlank()
-                && !tfNbrPlaces.getText().isBlank() && !tfPrix.getText().isBlank()) {
+                && !tfNbrPlaces.getText().isBlank() && !tfPrix.getText().isBlank()
+                && isValidDate(tfDateDeb.getText()) && isValidDate(tfDateFin.getText())
+                && isFinApresDebut(tfDateDeb.getText(), tfDateFin.getText())) {
             evenement.setTitre(tfTitre.getText());
             evenement.setAdresse(tfLieu.getText());
             evenement.setDateDebut(tfDateDeb.getText());
@@ -222,6 +228,17 @@ public class Controleur_create_event {
             // fermeture de la fenêtre
             Stage window = (Stage) tfTitre.getScene().getWindow();
             window.close();
+        } else {
+            FXMLLoader errorLoader = new FXMLLoader(MainView.class.getResource("error.fxml"));
+            errorLoader.setController(this);
+            Stage window = new Stage();
+            window.setTitle("Erreur");
+            Scene scene = new Scene(errorLoader.load());
+
+            labelError.setText("Veuillez remplir tous les champs");
+
+            window.setScene(scene);
+            window.show();
         }
     }
 
@@ -319,9 +336,7 @@ public class Controleur_create_event {
             else{
                 labelErrorFin.setText("Fin avant début");
             }
-
         }
-
     }
 
     /**
@@ -388,6 +403,15 @@ public class Controleur_create_event {
                 return false;
             }
         }
+    }
 
+    /**
+     * Handler du bouton de fermeture de la page d'erreur
+     * @param event
+     */
+    @FXML
+    public void handleCloseError(ActionEvent event) {
+        Stage window = (Stage) labelError.getScene().getWindow();
+        window.close();
     }
 }

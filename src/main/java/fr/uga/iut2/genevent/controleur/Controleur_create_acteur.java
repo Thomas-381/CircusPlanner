@@ -2,12 +2,12 @@ package fr.uga.iut2.genevent.controleur;
 
 import fr.uga.iut2.genevent.modele.Acteur;
 import fr.uga.iut2.genevent.modele.Application;
+import fr.uga.iut2.genevent.vue.MainView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -15,6 +15,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.IOException;
 
 
 /**
@@ -54,6 +55,10 @@ public class Controleur_create_acteur {
      */
     @FXML
     private TextArea taNotes;
+
+    // Label de la page d'erreur
+    @FXML
+    private Label labelError;
 
     // L'acteur chargé par le controleur
     private final Acteur acteur;
@@ -147,9 +152,9 @@ public class Controleur_create_acteur {
      * @param event L'événement de clic.
      */
     @FXML
-    public void handleBtnCreate(ActionEvent event) {
+    public void handleBtnCreate(ActionEvent event) throws IOException {
         if (!tfSurnom.getText().isBlank() && !tfNom.getText().isBlank()
-            && !tfPrenom.getText().isBlank() && !tfSpe.getText().isBlank()) {
+                && !tfPrenom.getText().isBlank() && !tfSpe.getText().isBlank()) {
             // enregistrement des informations
             acteur.setSurnom(tfSurnom.getText());
             acteur.setNom(tfNom.getText());
@@ -163,6 +168,27 @@ public class Controleur_create_acteur {
             // fermeture de la fenêtre
             Stage window = (Stage) tfSurnom.getScene().getWindow();
             window.close();
+        } else {
+            FXMLLoader errorLoader = new FXMLLoader(MainView.class.getResource("error.fxml"));
+            errorLoader.setController(this);
+            Stage window = new Stage();
+            window.setTitle("Erreur");
+            Scene scene = new Scene(errorLoader.load());
+
+            labelError.setText("Veuillez remplir tous les champs");
+
+            window.setScene(scene);
+            window.show();
         }
+    }
+
+    /**
+     * Handler du bouton de fermeture de la page d'erreur
+     * @param event
+     */
+    @FXML
+    public void handleCloseError(ActionEvent event) {
+        Stage window = (Stage) labelError.getScene().getWindow();
+        window.close();
     }
 }
