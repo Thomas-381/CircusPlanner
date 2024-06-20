@@ -70,9 +70,10 @@
                                 <Insets />
                             </VBox.margin></TextArea>
                         <Button fx:id="btnModifier" mnemonicParsing="false" onAction="#handleModifierSpectacle" styleClass="whiteBone" text="Modifier">
-                            <VBox.margin>
-                                <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
-                            </VBox.margin></Button>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
                     </children>
                     <GridPane.margin>
                         <Insets bottom="2.0" />

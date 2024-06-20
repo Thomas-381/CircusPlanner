@@ -87,10 +87,19 @@
                   <Insets />
                </VBox.margin>
             </TextArea>
-            <Button fx:id="btnModifier" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleBtnModifier" styleClass="whiteBone" text="Modifier">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="btnModifier" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleBtnModifier" styleClass="whiteBone" text="Modifier">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnSupprimer" mnemonicParsing="false" onAction="#handleBtnSuppr" styleClass="whiteBone" text="Suprimmer" />
+               </children>
                <VBox.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
-               </VBox.margin></Button>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+            </HBox>
             <padding>
                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
             </padding>
