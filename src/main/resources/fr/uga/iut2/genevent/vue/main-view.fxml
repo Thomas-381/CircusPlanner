@@ -156,10 +156,10 @@
             <Button fx:id="btnAjouterNumero" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleAjouterNumero" styleClass="whiteBone" text="+ Nouveau numéro" textAlignment="CENTER" />
          </VBox>
          <BorderPane.margin>
-            <Insets bottom="5.0" right="5.0" top="5.0" />
+            <Insets bottom="5.0" />
          </BorderPane.margin>
          <padding>
-            <Insets right="10.0" />
+            <Insets left="5.0" right="10.0" />
          </padding>
       </VBox>
    </center>

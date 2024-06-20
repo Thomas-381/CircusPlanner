@@ -238,5 +238,25 @@ public class Controleur_create_num {
         numero.ajouterActeur((Acteur) db.getContent(acteurFormat));
         event.setDropCompleted(true);
     }
+    @FXML
+    public void handleAjouterAccessoire(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(MainView.class.getResource("choose-accessoire.fxml"));
+        loader.setController(new Controleur_create_num(app));
+        Stage window = new Stage();
+        Scene scene = new Scene(loader.load());
 
+        window.setScene(scene);
+        window.show();
+    }
+
+    @FXML
+    public void handleAjouterAnimaux(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(MainView.class.getResource("choose-accessoire.fxml"));
+        loader.setController(new Controleur_create_num(app));
+        Stage window = new Stage();
+        Scene scene = new Scene(loader.load());
+
+        window.setScene(scene);
+        window.show();
+    }
 }

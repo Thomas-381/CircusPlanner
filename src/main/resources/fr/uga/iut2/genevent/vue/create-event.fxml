@@ -113,7 +113,7 @@
     <center>
         <VBox prefHeight="524.0" prefWidth="400.0" style="-fx-background-color: #f7d7ad;" BorderPane.alignment="CENTER">
             <BorderPane.margin>
-                <Insets bottom="5.0" right="5.0" top="5.0" />
+                <Insets bottom="5.0" />
             </BorderPane.margin>
             <TextField minWidth="50.0" prefHeight="26.0" prefWidth="50.0" promptText="Titre">
                 <VBox.margin>
@@ -163,6 +163,9 @@
                     <Insets bottom="5.0" left="320.0" right="5.0" top="5.0" />
                 </VBox.margin>
             </Button>
+         <padding>
+            <Insets right="5.0" top="5.0" />
+         </padding>
         </VBox>
     </center>
 </BorderPane>
