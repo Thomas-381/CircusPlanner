@@ -238,6 +238,12 @@ public class Controleur_create_num {
         numero.ajouterActeur((Acteur) db.getContent(acteurFormat));
         event.setDropCompleted(true);
     }
+    /**
+     * Gestion du clic sur le bouton d'ajout d'un accessoire.
+     * Ouvre une nouvelle fenêtre avec la vue "choose-accessoire.fxml" et définit son contrôleur.
+     * @param event L'événement de clic.
+     * @throws IOException Si le chargement de la vue échoue.
+     */
     @FXML
     public void handleAjouterAccessoire(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(MainView.class.getResource("choose-accessoire.fxml"));
@@ -249,6 +255,12 @@ public class Controleur_create_num {
         window.show();
     }
 
+    /**
+     * Gestion du clic sur le bouton d'ajout d'un animal.
+     * Ouvre une nouvelle fenêtre avec la vue "choose-accessoire.fxml" et définit son contrôleur.
+     * @param event L'événement de clic.
+     * @throws IOException Si le chargement de la vue échoue.
+     */
     @FXML
     public void handleAjouterAnimaux(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(MainView.class.getResource("choose-accessoire.fxml"));
