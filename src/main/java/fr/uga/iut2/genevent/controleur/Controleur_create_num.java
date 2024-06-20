@@ -30,7 +30,7 @@ public class Controleur_create_num {
     /**
      * Application associée au contrôleur.
      */
-    Application app;
+    private Application app;
 
     @FXML
     private ImageView imgNumeroC;
@@ -57,10 +57,12 @@ public class Controleur_create_num {
     @FXML
     private ListView<Animal> listeAnimaux;
     @FXML
-    private Button BtnRetour;
+    private Button BtnRetour, btnModifier, btnFinish;
 
-    // Nouveau numéro vide
-    private Numero numero = new Numero();
+    // numéro chargé par le contrôleur
+    private Numero numero;
+    // booléen indiquant si la fenêtre est ouverte en mode modification
+    private boolean modification;
 
     /**
      * Constructeur du contrôleur.
@@ -68,6 +70,19 @@ public class Controleur_create_num {
      */
     public Controleur_create_num(Application app) {
         this.app = app;
+        this.numero = new Numero();
+        modification = false;
+    }
+
+    /**
+     * Constructeur prenant un numéro existant
+     * @param app l'application
+     * @param numero le numero à charger
+     */
+    public Controleur_create_num(Application app, Numero numero) {
+        this.app = app;
+        this.numero = numero;
+        modification = true;
     }
 
     /**
@@ -78,6 +93,9 @@ public class Controleur_create_num {
         // Ajoutez ici toutes les ImageView pour lesquelles vous souhaitez appliquer la méthode de gestion des clics
         ImageView[] imageViews = { imgNumeroC/* Ajoutez ici d'autres ImageView */ };
         setupImageViewClickHandler(imageViews);
+
+        btnModifier.setDisable(true);
+        previewNotes.setDisable(true);
 
         // remplit la liste des acteurs
         listeActeurs.setItems(app.getActeurs());
@@ -90,6 +108,8 @@ public class Controleur_create_num {
                     previewDesc.setText("NOM COMPLET : " + t1.getPrenom() + " " + t1.getNom() + "\nSPECIALITE : " + t1.getSpecialite());
                     previewNotes.setText(t1.getCommentaires());
                     previewNotes.setText(t1.getCommentaires());
+                    btnModifier.setDisable(false);
+                    previewNotes.setDisable(false);
                 })
         );
         // Active le bouton Ajouter Acteur quand un acteur est sélectionné dans la choicebox
@@ -98,10 +118,17 @@ public class Controleur_create_num {
                 (observableValue, acteur, t1) -> btnAddActeur.setDisable(false)
         );
 
+        if (modification) {
+            btnFinish.setText("Modifier");
+        }
+
         // Lie les ViewList des acteurs, accessoires et animaux avec le nouveau Numéro
         listeActeursSelect.setItems(numero.getActeurs());
         listeAccessoires.setItems(numero.getAccessoires());
         listeAnimaux.setItems(numero.getAnimaux());
+
+        // remplit les champs avec les infos du numéro
+        tfTitre.setText(numero.getTitre());
     }
 
     /**
@@ -132,6 +159,22 @@ public class Controleur_create_num {
             Image image = new Image(selectedFile.toURI().toString());
             imageView.setImage(image);
         }
+    }
+
+    /**
+     * Gestion du bouton Modifier
+     * @param event l'événement du clic
+     * @throws IOException
+     */
+    @FXML
+    public void handleModifierActeur(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(MainView.class.getResource("create-artiste.fxml"));
+        loader.setController(new Controleur_create_acteur(app, listeActeurs.getSelectionModel().getSelectedItem()));
+        Stage window = new Stage();
+        Scene scene = new Scene(loader.load());
+
+        window.setScene(scene);
+        window.show();
     }
 
     /**
@@ -168,7 +211,10 @@ public class Controleur_create_num {
     public void handleFinish(ActionEvent event) {
         if (!tfTitre.getText().isBlank()) {
             numero.setTitre(tfTitre.getText());
-            app.ajouterNumero(numero);
+            // on n'enregistre pas de nouveau numéro si la fenêtre est en mode modification
+            if (modification) {
+                app.ajouterNumero(numero);
+            }
 
             // fermeture de la fenêtre
             Stage window = (Stage) tfTitre.getScene().getWindow();

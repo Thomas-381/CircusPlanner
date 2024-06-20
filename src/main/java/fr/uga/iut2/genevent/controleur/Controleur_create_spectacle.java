@@ -31,7 +31,7 @@ public class Controleur_create_spectacle {
     /**
      * Application associée au contrôleur.
      */
-    Application app;
+    private Application app;
 
     @FXML
     private ImageView imgSpectacleC;
@@ -53,11 +53,13 @@ public class Controleur_create_spectacle {
     @FXML
     private Button btnAddNum;
 
-    // Nouveau spectacle
-    Spectacle spectacle = new Spectacle();
+    // spectacle chargé par le contrôleur
+    private Spectacle spectacle;
+    // booléen indiquant si la fenêtre est ouverte en mode modification
+    private boolean modification;
 
     @FXML
-    private Button BtnRetour;
+    private Button BtnRetour, btnModifier, btnFinish;
 
     /**
      * Constructeur du contrôleur.
@@ -65,6 +67,19 @@ public class Controleur_create_spectacle {
      */
     public Controleur_create_spectacle(Application app) {
         this.app = app;
+        this.spectacle = new Spectacle();
+        modification = false;
+    }
+
+    /**
+     * Constructeur prenant un spectacle existant
+     * @param app l'application
+     * @param spectacle le spectacle à charger
+     */
+    public Controleur_create_spectacle(Application app, Spectacle spectacle) {
+        this.app = app;
+        this.spectacle = spectacle;
+        modification = true;
     }
 
     /**
@@ -76,6 +91,9 @@ public class Controleur_create_spectacle {
         ImageView[] imageViews = { imgSpectacleC/* Ajoutez ici d'autres ImageView */ };
         setupImageViewClickHandler(imageViews);
 
+        btnModifier.setDisable(true);
+        previewNotes.setDisable(true);
+
         // remplit la liste des numéros
         listeNumeros.setItems(app.getNumeros());
         cbNumeros.setItems(app.getNumeros());
@@ -86,6 +104,8 @@ public class Controleur_create_spectacle {
                     previewTitre.setText(t1.getTitre());
                     previewDesc.setText("");
                     previewNotes.setText(t1.getCommentaires());
+                    btnModifier.setDisable(false);
+                    previewNotes.setDisable(false);
                 })
         );
         // Active le bouton Ajouter Acteur quand un acteur est sélectionné dans la choicebox
@@ -94,8 +114,15 @@ public class Controleur_create_spectacle {
                 (observableValue, numero, t1) -> btnAddNum.setDisable(false)
         );
 
+        if (modification) {
+            btnFinish.setText("Modifier");
+        }
+
         // Lie les ViewList des numeros au nouveau spectacle
         listeNumerosSelect.setItems(spectacle.getNumeros());
+        // remplit les champs avec les infos du spectacle
+        tfTitre.setText(spectacle.getNom());
+        tfLieu.setText(spectacle.getLieu());
     }
 
     /**
@@ -139,6 +166,22 @@ public class Controleur_create_spectacle {
     }
 
     /**
+     * Gestion du bouton Modifier
+     * @param event l'événement du clic
+     * @throws IOException
+     */
+    @FXML
+    public void handleModifierNumero(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(MainView.class.getResource("create-numero.fxml"));
+        loader.setController(new Controleur_create_num(app, listeNumeros.getSelectionModel().getSelectedItem()));
+        Stage window = new Stage();
+        Scene scene = new Scene(loader.load());
+
+        window.setScene(scene);
+        window.show();
+    }
+
+    /**
      * Gestion du clic sur le bouton de création d'un numéro.
      * @param event L'événement de clic.
      */
@@ -173,7 +216,10 @@ public class Controleur_create_spectacle {
         if (!tfTitre.getText().isBlank() && !tfLieu.getText().isBlank()) {
             spectacle.setNom(tfTitre.getText());
             spectacle.setLieu(tfLieu.getText());
-            app.ajouterSpectacle(spectacle);
+            // on n'enregistre pas de nouveau spectacle si la fenêtre est en mode modification
+            if (modification) {
+                app.ajouterSpectacle(spectacle);
+            }
 
             // fermeture de la fenêtre
             Stage window = (Stage) tfTitre.getScene().getWindow();

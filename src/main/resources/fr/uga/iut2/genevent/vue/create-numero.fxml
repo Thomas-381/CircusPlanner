@@ -66,7 +66,7 @@
                             <VBox.margin>
                                 <Insets />
                             </VBox.margin></TextArea>
-                        <Button mnemonicParsing="false" styleClass="whiteBone" text="Modifier">
+                        <Button fx:id="btnModifier" mnemonicParsing="false" onAction="#handleModifierActeur" styleClass="whiteBone" text="Modifier">
                             <VBox.margin>
                                 <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
                             </VBox.margin></Button>
@@ -174,7 +174,7 @@
             </HBox>
             <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#handleFinish" styleClass="whiteBone" text="Créer">
+                  <Button fx:id="btnFinish" mnemonicParsing="false" onAction="#handleFinish" styleClass="whiteBone" text="Créer">
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin>

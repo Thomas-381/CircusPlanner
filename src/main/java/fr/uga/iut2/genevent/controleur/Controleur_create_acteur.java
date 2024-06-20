@@ -24,7 +24,7 @@ public class Controleur_create_acteur {
     /**
      * Application associée au contrôleur.
      */
-    Application app;
+    private Application app;
 
     /**
      * ImageView pour l'image de l'artiste.
@@ -35,25 +35,30 @@ public class Controleur_create_acteur {
      * Bouton pour retourner à la vue précédente.
      */
     @FXML
-    private Button BtnRetour;
+    private Button BtnRetour, btnFinish;
 
 
     /**
      * Liste des acteurs.
      */
     @FXML
-    ListView<Acteur> listeActeurs;
+    private ListView<Acteur> listeActeurs;
 
     /**
      * Champs de texte pour les informations du nouvel acteur.
      */
     @FXML
-    TextField tfSurnom, tfNom, tfPrenom, tfSpe;
+    private TextField tfSurnom, tfNom, tfPrenom, tfSpe;
     /**
      * Zone de texte pour les notes sur le nouvel acteur.
      */
     @FXML
-    TextArea taNotes;
+    private TextArea taNotes;
+
+    // L'acteur chargé par le controleur
+    private Acteur acteur;
+    // booléen indiquant si la fenêtre est ouverte en mode modification
+    private boolean modification;
 
     /**
      * Constructeur du contrôleur.
@@ -61,7 +66,21 @@ public class Controleur_create_acteur {
      */
     public Controleur_create_acteur(Application app) {
         this.app = app;
+        this.acteur = new Acteur();
+        modification = false;
     }
+
+    /**
+     * Constructeur utilisant un acteur existant
+     * @param app l'application
+     * @param acteur l'acteur à charger
+     */
+    public Controleur_create_acteur(Application app, Acteur acteur) {
+        this.app = app;
+        this.acteur = acteur;
+        modification = true;
+    }
+
     /**
      * Initialisation du contrôleur.
      */
@@ -71,8 +90,19 @@ public class Controleur_create_acteur {
         ImageView[] imageViews = { imgArtisteM/* Ajoutez ici d'autres ImageView */ };
         setupImageViewClickHandler(imageViews);
 
+        if (modification) {
+            btnFinish.setText("Modifier");
+        }
+
         // Lie la ViewList à la liste des acteurs
         listeActeurs.setItems(app.getActeurs());
+
+        // remplit les champs avec les infos de l'acteur
+        tfSurnom.setText(acteur.getSurnom());
+        tfNom.setText(acteur.getNom());
+        tfPrenom.setText(acteur.getPrenom());
+        tfSpe.setText(acteur.getSpecialite());
+        taNotes.setText(acteur.getCommentaires());
     }
 
     /**
@@ -122,10 +152,16 @@ public class Controleur_create_acteur {
     public void handleBtnCreate(ActionEvent event) {
         if (!tfSurnom.getText().isBlank() && !tfNom.getText().isBlank()
             && !tfPrenom.getText().isBlank() && !tfSpe.getText().isBlank()) {
-            // création du nouvel acteur
-            Acteur acteur = new Acteur(tfSurnom.getText(), tfNom.getText(), tfPrenom.getText(), tfSpe.getText(), taNotes.getText());
-            app.ajouterActeur(acteur);
-
+            // enregistrement des informations
+            acteur.setSurnom(tfSurnom.getText());
+            acteur.setNom(tfNom.getText());
+            acteur.setPrenom(tfPrenom.getText());
+            acteur.setSpecialite(tfSpe.getText());
+            acteur.setCommentaires(taNotes.getText());
+            // on n'enregistre pas de nouvel acteur si la fenêtre est en mode modification
+            if (modification) {
+                app.ajouterActeur(acteur);
+            }
             // fermeture de la fenêtre
             Stage window = (Stage) tfSurnom.getScene().getWindow();
             window.close();

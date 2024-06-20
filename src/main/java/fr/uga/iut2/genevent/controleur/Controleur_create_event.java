@@ -30,7 +30,7 @@ public class Controleur_create_event {
     // Custom DataFormat pour le Drag N Drop des acteurs
     private static final DataFormat spectacleFormat = new DataFormat("Spectacle.custom");
 
-    Application app;
+    private Application app;
 
     @FXML
     private ImageView imgEventC;
@@ -53,11 +53,13 @@ public class Controleur_create_event {
     @FXML
     private Button btnAddSpectacle;
 
-    // nouvel événement
-    Evenement evenement = new Evenement();
+    // l'événement chargé par le contrôleur
+    private Evenement evenement;
+    // booléen indiquant si la fenêtre est ouverte en mode modification
+    private boolean modification;
 
     @FXML
-    private Button BtnRetour;
+    private Button BtnRetour, btnModifier, btnFinish;
 
     /**
      * Constructeur du contrôleur.
@@ -65,6 +67,19 @@ public class Controleur_create_event {
      */
     public Controleur_create_event(Application app) {
         this.app = app;
+        this.evenement = new Evenement();
+        modification = false;
+    }
+
+    /**
+     * Constructeur prenant un événement existant
+     * @param app l'application
+     * @param evenement l'événement à charger
+     */
+    public Controleur_create_event(Application app, Evenement evenement) {
+        this.app = app;
+        this.evenement = evenement;
+        modification = true;
     }
 
     /**
@@ -76,7 +91,8 @@ public class Controleur_create_event {
         ImageView[] imageViews = { imgEventC/* Ajoutez ici d'autres ImageView */ };
         setupImageViewClickHandler(imageViews);
 
-
+        btnModifier.setDisable(true);
+        previewNotes.setDisable(true);
         // remplit la liste des numéros
         listeSpectacles.setItems(app.getSpectacles());
         cbSpectacles.setItems(app.getSpectacles());
@@ -87,6 +103,8 @@ public class Controleur_create_event {
                     previewTitre.setText(t1.getNom());
                     previewDesc.setText("LIEU : " + t1.getLieu());
                     previewNotes.setText(t1.getCommentaires());
+                    btnModifier.setDisable(false);
+                    previewNotes.setDisable(false);
                 })
         );
 
@@ -96,8 +114,20 @@ public class Controleur_create_event {
                 (observableValue, spectacle, t1) -> btnAddSpectacle.setDisable(false)
         );
 
+        if (modification) {
+            btnFinish.setText("Modifier");
+        }
+
         // Lie les ViewList des numeros au nouveau spectacle
         listeSpectaclesSelect.setItems(evenement.getSpectacles());
+
+        // remplit les champs avec les infos de l'événement
+        tfTitre.setText(evenement.getTitre());
+        tfDateDeb.setText(evenement.getDateDebut());
+        tfDateFin.setText(evenement.getDateFin());
+        tfLieu.setText(evenement.getAdresse());
+        tfNbrPlaces.setText(String.valueOf(evenement.getNbrPlaces()));
+        tfPrix.setText(String.valueOf(evenement.getPrix()));
     }
 
     /**
@@ -108,6 +138,22 @@ public class Controleur_create_event {
     public void handleBtnRetour(ActionEvent event) {
         Stage stage = (Stage) BtnRetour.getScene().getWindow();
         stage.close();
+    }
+
+    /**
+     * Gestion du bouton Modifier
+     * @param event l'événement du clic
+     * @throws IOException
+     */
+    @FXML
+    public void handleModifierSpectacle(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(MainView.class.getResource("create-spectacle.fxml"));
+        loader.setController(new Controleur_create_spectacle(app, listeSpectacles.getSelectionModel().getSelectedItem()));
+        Stage window = new Stage();
+        Scene scene = new Scene(loader.load());
+
+        window.setScene(scene);
+        window.show();
     }
 
     /**
@@ -169,7 +215,10 @@ public class Controleur_create_event {
             evenement.setDateFin(tfDateFin.getText());
             evenement.setPrix(Float.parseFloat(tfPrix.getText()));
             evenement.setNbrPlaces(Integer.parseInt(tfNbrPlaces.getText()));
-            app.ajouterEvenement(evenement);
+            // on n'enregistre pas de nouvel événement si la fenêtre est en mode modification
+            if (modification) {
+                app.ajouterEvenement(evenement);
+            }
 
             // fermeture de la fenêtre
             Stage window = (Stage) tfTitre.getScene().getWindow();
