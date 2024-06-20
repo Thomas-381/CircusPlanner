@@ -38,17 +38,6 @@ public class MainView extends Application {
         } catch (IOException e) {
                     LOGGER.log(Level.WARNING, "Fichier de sauvegarde non trouvé");
                     app = new fr.uga.iut2.genevent.modele.Application();
-
-                    // Peuplement de base de l'application pour tests (partie à supprimer à terme)
-                    app.ajouterEvenement(new Evenement("event1", "quelque part", "53/43/8946", "17/28/7391", 700));
-                    app.ajouterEvenement(new Evenement("event2", "autre part", "55/48/6846", "24/37/1468", 500));
-                    app.ajouterSpectacle(new Spectacle("spectacle1", "quelque part"));
-                    app.ajouterSpectacle(new Spectacle("spectacle2", "autre part"));
-                    app.ajouterNumero(new Numero("numero1"));
-                    app.ajouterNumero(new Numero("numero2"));
-                    app.ajouterActeur(new Acteur("acteur1", "patrick", "Jean", "spécialiste"));
-                    app.ajouterActeur(new Acteur("acteur2", "d'arc", "Jeanne", "très forte"));
-
                     LOGGER.log(Level.INFO, "Création d'une base vide");
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
