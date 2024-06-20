@@ -50,13 +50,13 @@
             <children>
                 <VBox prefHeight="215.0" prefWidth="195.0" styleClass="infoSup" GridPane.rowIndex="1">
                     <children>
-                        <Label fx:id="previewTitre" style="-fx-font-weight: bolder;" text="Nom event">
+                        <Label fx:id="previewTitre" style="-fx-font-weight: bolder;" text="Séléctionnez un Numéro">
                             <VBox.margin>
                                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                             </VBox.margin></Label>
                         <Label fx:id="previewDesc" prefHeight="200.0">
                             <VBox.margin>
-                                <Insets left="2.0" />
+                                <Insets />
                             </VBox.margin></Label>
                         <Label text="Notes :">
                             <VBox.margin>
@@ -64,11 +64,11 @@
                             </VBox.margin></Label>
                         <TextArea fx:id="previewNotes" prefHeight="200.0" prefWidth="200.0">
                             <VBox.margin>
-                                <Insets bottom="10.0" left="2.0" right="5.0" />
+                                <Insets />
                             </VBox.margin></TextArea>
                         <Button mnemonicParsing="false" styleClass="whiteBone" text="Modifier">
                             <VBox.margin>
-                                <Insets bottom="3.0" left="2.0" />
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
                             </VBox.margin></Button>
                     </children>
                     <GridPane.margin>
@@ -85,7 +85,7 @@
                                 <Insets left="2.0" />
                             </VBox.margin></Label>
                   <ListView fx:id="listeNumeros" onDragDetected="#dragDetectedNumero" prefHeight="200.0" prefWidth="200.0" styleClass="listeViewCote" />
-                        <Button fx:id="btnCréeNum" mnemonicParsing="false" onAction="#handleCreerNumero" styleClass="whiteBone" text="+ Créer Numéro">
+                        <Button mnemonicParsing="false" onAction="#handleCreerNumero" styleClass="whiteBone" text="+ Créer Numéro">
                             <VBox.margin>
                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                             </VBox.margin></Button>
@@ -123,10 +123,7 @@
                   <Image url="@Img/image-defaut.png" />
                </image>
                 </ImageView>
-                <VBox alignment="CENTER" prefHeight="167.0" prefWidth="350.0" style="-fx-background-color:ffffff;">
-                    <children>
-                        <Button mnemonicParsing="false" styleClass="whiteBone" text="+ Ajouter Numéro" />
-                    </children>
+                <VBox alignment="CENTER" prefHeight="167.0" prefWidth="350.0">
                     <VBox.margin>
                         <Insets bottom="20.0" left="2.0" right="2.0" />
                     </VBox.margin>

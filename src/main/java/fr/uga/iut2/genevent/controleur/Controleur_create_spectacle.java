@@ -5,7 +5,6 @@ import fr.uga.iut2.genevent.modele.Numero;
 import fr.uga.iut2.genevent.modele.Spectacle;
 import fr.uga.iut2.genevent.vue.MainView;
 import javafx.event.ActionEvent;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.fxml.FXMLLoader;
@@ -92,7 +91,7 @@ public class Controleur_create_spectacle {
         // Active le bouton Ajouter Acteur quand un acteur est sélectionné dans la choicebox
         btnAddNum.setDisable(true);
         cbNumeros.getSelectionModel().selectedItemProperty().addListener(
-                (observableValue, acteur, t1) -> btnAddNum.setDisable(false)
+                (observableValue, numero, t1) -> btnAddNum.setDisable(false)
         );
 
         // Lie les ViewList des numeros au nouveau spectacle

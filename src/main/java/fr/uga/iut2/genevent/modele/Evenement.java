@@ -153,6 +153,14 @@ public class Evenement implements Serializable{
     }
 
     /**
+     * Getter de l'attribut spectacles
+     * @return la liste des spectacles
+     */
+    public ObservableList<Spectacle> getSpectacles() {
+        return spectacles;
+    }
+
+    /**
      * Getter de l'attribut titre
      * @return le titre de l'événement
      */
