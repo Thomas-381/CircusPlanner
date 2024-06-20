@@ -50,6 +50,8 @@ public class Controleur_create_num {
     private ListView<Accessoire> listeAccessoires;
     @FXML
     private ListView<Animal> listeAnimaux;
+    @FXML
+    private Button BtnRetour;
 
     // Nouveau numéro vide
     private Numero numero = new Numero();
@@ -140,6 +142,13 @@ public class Controleur_create_num {
             window.close();
         }
     }
+
+    @FXML
+    public void handleBtnRetour(ActionEvent event) {
+        Stage stage = (Stage) BtnRetour.getScene().getWindow();
+        stage.close();
+    }
+
 
     // Méthodes pour le drag and drop des acteurs
 

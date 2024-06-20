@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" styleClass="arrierePlan" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" styleClass="arrierePlan" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
     <top>
         <HBox alignment="CENTER" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #d9d0c1;" BorderPane.alignment="CENTER">
             <children>
@@ -96,7 +96,7 @@
                <opaqueInsets>
                   <Insets />
                </opaqueInsets></VBox>
-                <Button mnemonicParsing="false" styleClass="retour" text="&lt;- Retour" />
+                <Button fx:id="BtnRetour" mnemonicParsing="false" onAction="#handleBtnRetour" styleClass="retour" text="&lt;- Retour" />
             </children>
             <padding>
                 <Insets bottom="5.0" left="5.0" />
@@ -124,10 +124,16 @@
                 <VBox alignment="CENTER" prefHeight="137.0" prefWidth="400.0">
                     <children>
                   <Label text="Acteurs" />
-                  <ListView fx:id="listeActeursSelect" onDragDropped="#dragDroppedActeurSelect" onDragEntered="#dragEnteredActeurSelect" onDragExited="#dragExitedActeurSelect" onDragOver="#dragOverActeurSelect" prefHeight="200.0" prefWidth="200.0" />
+                  <ListView fx:id="listeActeursSelect" onDragDropped="#dragDroppedActeurSelect" onDragEntered="#dragEnteredActeurSelect" onDragExited="#dragExitedActeurSelect" onDragOver="#dragOverActeurSelect" prefHeight="200.0" prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin></ListView>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                              <Button fx:id="btnAddActeur" mnemonicParsing="false" onAction="#handleAjouterActeur" styleClass="whiteBone" text="+ Ajouter Artiste" />
+                              <Button fx:id="btnAddActeur" mnemonicParsing="false" onAction="#handleAjouterActeur" styleClass="whiteBone" text="+ Ajouter Artiste">
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin></Button>
                         <ChoiceBox fx:id="cbActeurs" prefWidth="150.0" />
                      </children>
                   </HBox>
@@ -136,20 +142,26 @@
                         <Insets bottom="20.0" left="2.0" right="2.0" />
                     </VBox.margin>
                 </VBox>
-            <HBox alignment="TOP_CENTER" minHeight="100.0" prefHeight="100.0" prefWidth="200.0">
+            <HBox alignment="TOP_CENTER" minHeight="100.0" prefHeight="137.0" prefWidth="390.0">
                <children>
                   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
                      <children>
                         <Label text="Accessoire" />
                         <ListView fx:id="listeAccessoires" prefHeight="200.0" prefWidth="200.0" />
-                        <Button mnemonicParsing="false" styleClass="whiteBone" text="+ Ajouter Accessoire" />
+                        <Button mnemonicParsing="false" styleClass="whiteBone" text="+ Ajouter Accessoire">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin></Button>
                      </children>
                   </VBox>
                   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
                      <children>
                         <Label text="Animal" />
                         <ListView fx:id="listeAnimaux" prefHeight="200.0" prefWidth="200.0" />
-                        <Button mnemonicParsing="false" styleClass="whiteBone" text="+ Ajouter Animal" />
+                        <Button mnemonicParsing="false" styleClass="whiteBone" text="+ Ajouter Animal">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin></Button>
                      </children>
                   </VBox>
                </children>

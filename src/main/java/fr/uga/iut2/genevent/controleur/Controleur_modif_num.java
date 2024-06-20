@@ -1,19 +1,25 @@
 package fr.uga.iut2.genevent.controleur;
 
 import fr.uga.iut2.genevent.modele.Application;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import java.awt.*;
 import java.io.File;
 
 public class Controleur_modif_num {
     Application app;
     @FXML
     private ImageView imgNumeroM;
+    @FXML
+    private Button BtnRetour;
     public Controleur_modif_num(Application app) {
         this.app = app;
     }
@@ -45,4 +51,10 @@ public class Controleur_modif_num {
             imageView.setImage(image);
         }
     }
+    @FXML
+    public void handleBtnRetour(ActionEvent event) {
+        Stage stage = (Stage) BtnRetour.getScene().getWindow();
+        stage.close();
+    }
+
 }
