@@ -39,7 +39,7 @@ public class Controleur_create_event {
     @FXML
     private ListView<Spectacle> listeSpectacles;
     @FXML
-    private Label previewTitre, previewDesc;
+    private Label previewTitre, previewDesc, labelErrorDeb, labelErrorFin;
     @FXML
     private TextArea previewNotes;
 
@@ -75,6 +75,8 @@ public class Controleur_create_event {
         // Ajoutez ici toutes les ImageView pour lesquelles vous souhaitez appliquer la méthode de gestion des clics
         ImageView[] imageViews = { imgEventC/* Ajoutez ici d'autres ImageView */ };
         setupImageViewClickHandler(imageViews);
+        // Gestion d'eurreur: seuls les chiffres sont acceptés pour le textfield nb places
+        setupNumericField(tfNbrPlaces);
 
 
         // remplit la liste des numéros
@@ -227,5 +229,121 @@ public class Controleur_create_event {
         Dragboard db = event.getDragboard();
         evenement.ajouterSpectacle((Spectacle) db.getContent(spectacleFormat));
         event.setDropCompleted(true);
+
+    }
+
+    /**
+     * Gestion d'erreur qui efface un caractère non-numérique
+     * @param textField le textfield sur lequel la gestion agit
+     */
+    private void setupNumericField(TextField textField) {
+        textField.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue.matches("\\d*")) {
+                textField.setText(newValue.replaceAll("[^\\d]", ""));
+            }
+        });
+    }
+
+    /**
+     * Controle de la date de debut grace a la methode isValidDate
+     */
+    @FXML
+    private void handleDateDeb() {
+        String date = tfDateDeb.getText();
+        if (!isValidDate(date)) {
+            tfDateDeb.setText("");
+            labelErrorDeb.setText("JJ/MM/AAAA");
+        }
+        else{
+            labelErrorDeb.setText("");
+        }
+    }
+    /**
+     * Controle si la date de fin est valide et est plus petite que celle de debut
+     */
+    @FXML
+    private void handleDateFin() {
+        String date = tfDateFin.getText();
+        if (!isValidDate(date)) {
+            tfDateFin.setText("");
+            labelErrorFin.setText("JJ/MM/AAAA");
+        }
+        else{
+            if(isFinApresDebut(tfDateDeb.getText(),tfDateFin.getText())){
+                labelErrorFin.setText("");
+            }
+            else{
+                labelErrorFin.setText("Fin avant début");
+            }
+
+        }
+
+    }
+
+    /**
+     * Verification d'une date sous la forme JJ/MM/AAAA
+     * @param date la date a verifier
+     * @return true si la date a la bonne forme, false sinon
+     */
+    private boolean isValidDate(String date) {
+        // Vérifie si la date correspond au format "JJ/MM/AAAA"
+        if (date.matches("\\d{2}/\\d{2}/\\d{4}")) {
+            String[] parts = date.split("/");
+            int day = Integer.parseInt(parts[0]);
+            int month = Integer.parseInt(parts[1]);
+            int year = Integer.parseInt(parts[2]);
+
+            // Vérifie les plages de valeurs pour le jour et le mois
+            if (day >= 1 && day <= 31 && month >= 1 && month <= 12) {
+                // Vérifie les jours valides en fonction du mois
+                if (month == 2) {
+                    // Année bissextile
+                    boolean leapYear = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+                    if (leapYear) {
+                        return day <= 29;
+                    } else {
+                        return day <= 28;
+                    }
+                } else if (month == 4 || month == 6 || month == 9 || month == 11) {
+                    return day <= 30;
+                } else {
+                    return day <= 31;
+                }
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Verification que la datedebut est ulterieure à la datefin
+     * @param datedeb la date de debut
+     * @param datefin la date de fin
+     * @return true si la date de fin est après la date de debut, false sinon
+     */
+    private boolean isFinApresDebut(String datedeb, String datefin){
+        String[] partsdeb = datedeb.split("/");
+        int daydeb = Integer.parseInt(partsdeb[0]);
+        int monthdeb = Integer.parseInt(partsdeb[1]);
+        int yeardeb = Integer.parseInt(partsdeb[2]);
+
+        String[] partsfin = datefin.split("/");
+        int dayfin = Integer.parseInt(partsfin[0]);
+        int monthfin = Integer.parseInt(partsfin[1]);
+        int yearfin = Integer.parseInt(partsfin[2]);
+
+        if(yearfin>yeardeb){
+            return true;
+        }
+        else {
+            if (monthfin > monthdeb) {
+                return true;
+            } else {
+                if (dayfin > daydeb) {
+                    return true;
+                }
+                return false;
+            }
+        }
+
     }
 }

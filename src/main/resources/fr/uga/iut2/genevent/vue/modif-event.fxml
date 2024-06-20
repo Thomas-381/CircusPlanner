@@ -119,14 +119,24 @@
                     </VBox.margin></TextField>
                 <HBox prefHeight="37.0" prefWidth="500.0">
                     <children>
-                        <TextField prefHeight="26.0" prefWidth="85.0" promptText="Date debut">
-                            <HBox.margin>
-                                <Insets left="2.0" right="10.0" />
-                            </HBox.margin></TextField>
-                        <TextField prefHeight="26.0" prefWidth="85.0" promptText="Date fin">
-                            <HBox.margin>
-                                <Insets right="10.0" />
-                            </HBox.margin></TextField>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                              <TextField prefHeight="26.0" prefWidth="85.0" promptText="Date debut" fx:id="tfDateDeb" />
+                        <Label textFill="RED" fx:id="LabelDateDeb"/>
+                     </children>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                              <TextField prefHeight="26.0" prefWidth="85.0" promptText="Date fin" fx:id="tfDateFin"/>
+                        <Label textFill="RED" fx:id="LabelDateFin" />
+                     </children>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </VBox>
                         <TextField prefHeight="26.0" prefWidth="110.0" promptText="Nombre places">
                             <HBox.margin>
                                 <Insets right="10.0" />

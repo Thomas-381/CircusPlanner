@@ -113,44 +113,20 @@
     <center>
         <VBox prefHeight="524.0" prefWidth="400.0" style="-fx-background-color: #f7d7ad;" BorderPane.alignment="CENTER">
             <children>
-                <TextField minWidth="50.0" prefHeight="26.0" prefWidth="50.0" promptText="Titre">
+                <TextField maxWidth="100.0" minWidth="35.0" prefHeight="26.0" prefWidth="35.0" promptText="Titre">
                     <VBox.margin>
-                        <Insets left="2.0" right="200.0" top="10.0" />
+                        <Insets left="2.0" top="10.0" />
                     </VBox.margin></TextField>
                 <VBox prefHeight="104.0" prefWidth="404.0">
                     <children>
 
                         <HBox prefHeight="37.0" prefWidth="500.0">
                             <children>
-                                <TextField prefHeight="26.0" prefWidth="85.0" promptText="Date debut">
-                                    <HBox.margin>
-                                        <Insets left="2.0" right="10.0" />
-                                    </HBox.margin>
-                                </TextField>
-                                <TextField prefHeight="26.0" prefWidth="85.0" promptText="Date fin">
-                                    <HBox.margin>
-                                        <Insets right="10.0" />
-                                    </HBox.margin>
-                                </TextField>
                                 <TextField prefHeight="26.0" prefWidth="85.0" promptText="Lieu" />
                             </children>
                             <VBox.margin>
-                                <Insets top="20.0" />
+                                <Insets left="2.0" top="20.0" />
                             </VBox.margin>
-                        </HBox>
-                        <HBox prefHeight="100.0" prefWidth="200.0">
-                            <children>
-                                <TextField prefHeight="26.0" prefWidth="85.0" promptText="Nb places">
-                                    <HBox.margin>
-                                        <Insets left="2.0" right="10.0" top="5.0" />
-                                    </HBox.margin>
-                                </TextField>
-                                <TextField prefHeight="26.0" prefWidth="85.0" promptText="Prix">
-                                    <HBox.margin>
-                                        <Insets top="5.0" />
-                                    </HBox.margin>
-                                </TextField>
-                            </children>
                         </HBox>
                     </children>
                 </VBox>

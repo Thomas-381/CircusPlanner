@@ -100,6 +100,7 @@
                   <Insets top="5.0" />
                </GridPane.margin></VBox>
                 <Button fx:id="BtnRetour" mnemonicParsing="false" onAction="#handleBtnRetour" styleClass="retour" text="&lt;- Retour" />
+            <VBox prefHeight="200.0" prefWidth="100.0" />
             </children>
             <padding>
                 <Insets bottom="5.0" left="5.0" />
@@ -117,14 +118,27 @@
                 </VBox.margin></TextField>
             <HBox prefHeight="37.0" prefWidth="500.0">
                 <children>
-                    <TextField fx:id="tfDateDeb" prefHeight="26.0" prefWidth="85.0" promptText="Date debut">
-                        <HBox.margin>
-                            <Insets left="2.0" right="10.0" />
-                        </HBox.margin></TextField>
-                    <TextField fx:id="tfDateFin" prefHeight="26.0" prefWidth="85.0" promptText="Date fin">
-                        <HBox.margin>
-                            <Insets right="10.0" />
-                        </HBox.margin></TextField>
+               <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                  <children>
+                          <TextField fx:id="tfDateDeb" onAction="#handleDateDeb" prefHeight="26.0" prefWidth="85.0" promptText="Date debut">
+                        <VBox.margin>
+                           <Insets />
+                        </VBox.margin></TextField>
+                     <Label fx:id="labelErrorDeb" textFill="RED" />
+                  </children>
+                  <HBox.margin>
+                     <Insets right="10.0" />
+                  </HBox.margin>
+               </VBox>
+               <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                  <children>
+                          <TextField fx:id="tfDateFin" onAction="#handleDateFin" prefHeight="26.0" prefWidth="85.0" promptText="Date fin" />
+                     <Label fx:id="labelErrorFin" textFill="RED" />
+                  </children>
+                  <HBox.margin>
+                     <Insets right="10.0" />
+                  </HBox.margin>
+               </VBox>
                     <TextField fx:id="tfLieu" prefHeight="26.0" prefWidth="85.0" promptText="Lieu">
                         <HBox.margin>
                             <Insets right="10.0" />
