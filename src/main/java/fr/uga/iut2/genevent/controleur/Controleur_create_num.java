@@ -2,8 +2,6 @@ package fr.uga.iut2.genevent.controleur;
 
 import fr.uga.iut2.genevent.modele.*;
 import fr.uga.iut2.genevent.vue.MainView;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -45,13 +43,11 @@ public class Controleur_create_num {
     @FXML
     private ChoiceBox<Acteur> cbActeurs;
     @FXML
-    private Button btnAddActeur;
+    private Button btnAddActeur, BtnRetour;
     @FXML
     private ListView<Accessoire> listeAccessoires;
     @FXML
     private ListView<Animal> listeAnimaux;
-    @FXML
-    private Button BtnRetour;
 
     // Nouveau numéro vide
     private Numero numero = new Numero();
@@ -181,5 +177,25 @@ public class Controleur_create_num {
         numero.ajouterActeur((Acteur) db.getContent(acteurFormat));
         event.setDropCompleted(true);
     }
+    @FXML
+    public void handleAjouterAccessoire(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(MainView.class.getResource("choose-accessoire.fxml"));
+        loader.setController(new Controleur_create_num(app));
+        Stage window = new Stage();
+        Scene scene = new Scene(loader.load());
 
+        window.setScene(scene);
+        window.show();
+    }
+
+    @FXML
+    public void handleAjouterAnimaux(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(MainView.class.getResource("choose-accessoire.fxml"));
+        loader.setController(new Controleur_create_num(app));
+        Stage window = new Stage();
+        Scene scene = new Scene(loader.load());
+
+        window.setScene(scene);
+        window.show();
+    }
 }

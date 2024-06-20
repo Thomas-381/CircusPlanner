@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" styleClass="arrierePlan" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" styleClass="arrierePlan" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
     <top>
         <HBox alignment="CENTER" prefHeight="30.0" prefWidth="200.0" styleClass="titre" BorderPane.alignment="CENTER">
             <children>
@@ -147,8 +147,11 @@
                   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
                      <children>
                         <Label text="Accessoire" />
-                        <ListView fx:id="listeAccessoires" prefHeight="200.0" prefWidth="200.0" />
-                        <Button mnemonicParsing="false" styleClass="whiteBone" text="+ Ajouter Accessoire">
+                        <ListView fx:id="listeAccessoires" prefHeight="200.0" prefWidth="200.0">
+                           <VBox.margin>
+                              <Insets right="2.0" />
+                           </VBox.margin></ListView>
+                        <Button mnemonicParsing="false" onAction="#handleAjouterAccessoire" styleClass="whiteBone" text="+ Ajouter Accessoire">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin></Button>
@@ -157,8 +160,11 @@
                   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
                      <children>
                         <Label text="Animal" />
-                        <ListView fx:id="listeAnimaux" prefHeight="200.0" prefWidth="200.0" />
-                        <Button mnemonicParsing="false" styleClass="whiteBone" text="+ Ajouter Animal">
+                        <ListView fx:id="listeAnimaux" prefHeight="200.0" prefWidth="200.0">
+                           <VBox.margin>
+                              <Insets left="2.0" />
+                           </VBox.margin></ListView>
+                        <Button mnemonicParsing="false" onAction="#handleAjouterAnimaux" styleClass="whiteBone" text="+ Ajouter Animal">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin></Button>

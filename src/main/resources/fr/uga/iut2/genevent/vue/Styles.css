@@ -40,10 +40,13 @@ TextArea, ChoiceBox{
     -fx-background-color: #D3D3D3;
 }
 .ArriereCentre{
--fx-background-color: #f7d7ad;}
+    -fx-background-color: #f7d7ad;
+}
+
 .list-cell:even{
     -fx-background-color:#f5f98b;
 }
+
 .list-cell:odd{
     -fx-background-color:#f8aaaa;
 }
