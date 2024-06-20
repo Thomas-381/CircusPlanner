@@ -1,6 +1,6 @@
 
 Button{
-    -fx-background-color: #2C88D9;
+    -fx-background-color: #77b5fe;
     -fx-border-radius: 8px;
     -fx-background-radius: 8px;
     -fx-margin: 5px;
@@ -12,7 +12,7 @@ TextArea, ChoiceBox{
     -fx-margin: 8px;
 }
 .retour{
-    -fx-background-color:  #f7f4b0;
+    -fx-background-color: #f7f4b0;
     -fx-border-radius: 8px;
     -fx-background-radius: 8px;
     -fx-margin: 5px;
@@ -23,11 +23,11 @@ TextArea, ChoiceBox{
 }
 
 .titre{
-    -fx-background-color: #d9d0c1;
+    -fx-background-color: #8ea2c6;
 }
 
 .infoSup{
-    -fx-background-color: #bbc9c6;
+    -fx-background-color: #8ea2c6;
     -fx-border-radius: 15px;
     -fx-border-color: #f9f6ee;
     -fx-border-width: 1px;
@@ -37,5 +37,16 @@ TextArea, ChoiceBox{
 }
 
 .arrierePlan{
-    -fx-background-color: #f7d7ad;
+    -fx-background-color: #D3D3D3;
 }
+.ArriereCentre{
+-fx-background-color: #f7d7ad;}
+.list-cell:even{
+    -fx-background-color:#ffff6b;
+}
+.list-cell:odd{
+    -fx-background-color:#ff6f7d;
+}
+.list-cell:selected{
+-fx-background-color:#d1d1d1;
+-fx-color:#000000;}

@@ -12,18 +12,18 @@
             <children>
                 <ImageView fx:id="logo" accessibleHelp="LOGO" accessibleRoleDescription="LOGO" accessibleText="LOGO" fitHeight="80.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
                     <HBox.margin>
-                        <Insets right="110.0" />
+                        <Insets right="50.0" />
                     </HBox.margin>
                     <image>
                         <Image url="@Img/logo.png" />
                     </image></ImageView>
-                <Label alignment="CENTER" contentDisplay="CENTER" minWidth="200.0" prefHeight="24.0" prefWidth="233.0" text="Plannifiez l'emerveillement !">
+                <Label alignment="CENTER" contentDisplay="CENTER" minWidth="350.0" prefHeight="24.0" prefWidth="310.0" text="Plannifiez l'emerveillement !" textFill="WHITE">
                     <font>
-                        <Font size="17.0" />
+                        <Font size="26.0" />
                     </font></Label>
                 <ImageView fitHeight="75.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                     <HBox.margin>
-                        <Insets left="110.0" />
+                        <Insets left="50.0" />
                     </HBox.margin>
                     <image>
                         <Image url="@Img/profilN.png" />
@@ -57,9 +57,9 @@
                             <VBox.margin>
                                 <Insets left="2.0" />
                             </VBox.margin></Label>
-                  <ListView fx:id="listeActeurs" prefHeight="169.0" prefWidth="183.0" />
+                  <ListView fx:id="listeActeurs" prefHeight="169.0" prefWidth="183.0" styleClass="listeViewCote" />
                     </children></VBox>
-                <Button fx:id="BtnRetour" mnemonicParsing="false" onAction="#handleBtnRetour" styleClass="retour" text="&lt;- Retour" />
+                <Button fx:id="BtnRetour" mnemonicParsing="false" onAction="#handleBtnRetour" styleClass="retour" text="↩︎ Retour" />
             </children>
             <padding>
                 <Insets bottom="5.0" left="5.0" />
