@@ -111,7 +111,7 @@ public class ControleurMainView {
     @FXML
     public void handleAjouterActeur(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(MainView.class.getResource("create-artiste.fxml"));
-        loader.setController(new Controleur_modif_acteur(app));
+        loader.setController(new Controleur_create_acteur(app));
         Stage window = new Stage();
         Scene scene = new Scene(loader.load());
 

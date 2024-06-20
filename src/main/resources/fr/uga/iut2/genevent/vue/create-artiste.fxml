@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" styleClass="arrierePlan" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" styleClass="arrierePlan" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
     <top>
         <HBox alignment="CENTER" prefHeight="30.0" prefWidth="200.0" styleClass="titre" BorderPane.alignment="CENTER">
             <children>
@@ -57,9 +57,9 @@
                             <VBox.margin>
                                 <Insets left="2.0" />
                             </VBox.margin></Label>
-                  <ListView prefHeight="169.0" prefWidth="183.0" />
+                  <ListView fx:id="listeActeurs" prefHeight="169.0" prefWidth="183.0" />
                     </children></VBox>
-                <Button fx:id="BtnRetour" mnemonicParsing="false" styleClass="retour" text="&lt;- Retour" />
+                <Button fx:id="BtnRetour" mnemonicParsing="false" onAction="#handleBtnRetour" styleClass="retour" text="&lt;- Retour" />
             </children>
             <padding>
                 <Insets bottom="5.0" left="5.0" />
@@ -72,7 +72,7 @@
     <center>
         <VBox prefHeight="524.0" prefWidth="400.0" style="-fx-background-color: #f7d7ad;" BorderPane.alignment="CENTER">
             <children>
-                <TextField minWidth="50.0" prefHeight="26.0" prefWidth="50.0" promptText="Nom artiste">
+                <TextField fx:id="tfSurnom" minWidth="50.0" prefHeight="26.0" prefWidth="50.0" promptText="Nom artiste">
                     <VBox.margin>
                         <Insets left="5.0" right="200.0" top="10.0" />
                     </VBox.margin></TextField>
@@ -88,22 +88,17 @@
                   </ImageView>
                   <VBox prefHeight="200.0" prefWidth="100.0">
                      <children>
-                        <TextField promptText="Nom">
+                        <TextField fx:id="tfNom" promptText="Nom">
                            <VBox.margin>
                               <Insets bottom="8.0" top="5.0" />
                            </VBox.margin>
                         </TextField>
-                        <TextField promptText="Prenom">
+                        <TextField fx:id="tfPrenom" promptText="Prenom">
                            <VBox.margin>
                               <Insets bottom="8.0" />
                            </VBox.margin>
                         </TextField>
-                        <TextField promptText="Surnom">
-                           <VBox.margin>
-                              <Insets bottom="8.0" />
-                           </VBox.margin>
-                        </TextField>
-                        <TextField promptText="Spécialité" />
+                        <TextField fx:id="tfSpe" promptText="Spécialité" />
                      </children>
                      <HBox.margin>
                         <Insets left="5.0" />
@@ -114,7 +109,17 @@
                   <Insets top="10.0" />
                </VBox.margin>
             </HBox>
-            <Button mnemonicParsing="false" styleClass="whiteBone" text="+ Ajouter artiste">
+            <Label text="Notes :">
+               <VBox.margin>
+                  <Insets left="30.0" top="30.0" />
+               </VBox.margin>
+            </Label>
+            <TextArea fx:id="taNotes" prefHeight="200.0" prefWidth="200.0">
+               <VBox.margin>
+                  <Insets bottom="30.0" left="30.0" right="30.0" />
+               </VBox.margin>
+            </TextArea>
+            <Button mnemonicParsing="false" onAction="#handleBtnCreate" styleClass="whiteBone" text="+ Ajouter artiste">
                <VBox.margin>
                   <Insets left="275.0" top="50.0" />
                </VBox.margin></Button>

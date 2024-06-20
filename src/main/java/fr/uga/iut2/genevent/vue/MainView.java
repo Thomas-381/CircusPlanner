@@ -59,6 +59,7 @@ public class MainView extends Application {
 
         try {
             Sauvegarde.save(app);
+            LOGGER.log(Level.INFO, "Succès de la sauvegarde de l'application");
         } catch (IOException e) {
             LOGGER.log(Level.SEVERE, "fichier de sauvegarde non accessible, l'état n'a pas été sauvegardé");
         }
