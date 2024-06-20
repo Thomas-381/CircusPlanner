@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
@@ -34,6 +35,8 @@ public class ControleurMainView {
     private Label previewTitre, previewDesc;
     @FXML
     private TextArea previewNotes;
+    @FXML
+    private Button btnModifier;
 
     /**
      * Constructeur du contrôleur.
@@ -54,12 +57,20 @@ public class ControleurMainView {
         listeSpectacles.setItems(app.getSpectacles());
         listeActeurs.setItems(app.getActeurs());
 
+        btnModifier.setDisable(true);
+        previewNotes.setDisable(true);
+
         // Ajoute des EventListeners aux listes pour afficher une preview
         listeEvents.getSelectionModel().selectedItemProperty().addListener(
                 ((observableValue, evenement, t1) -> {
                     previewTitre.setText(t1.getTitre());
                     previewDesc.setText("DATE : " + t1.getDateDebut() + " - " + t1.getDateFin() + "\n ADRESSE : " + t1.getAdresse());
                     previewNotes.setText(t1.getCommentaires());
+                    listeNumeros.getSelectionModel().clearSelection();
+                    listeSpectacles.getSelectionModel().clearSelection();
+                    listeActeurs.getSelectionModel().clearSelection();
+                    btnModifier.setDisable(false);
+                    previewNotes.setDisable(false);
                 })
         );
         listeSpectacles.getSelectionModel().selectedItemProperty().addListener(
@@ -67,6 +78,11 @@ public class ControleurMainView {
                     previewTitre.setText(t1.getNom());
                     previewDesc.setText("LIEU : " + t1.getLieu());
                     previewNotes.setText(t1.getCommentaires());
+                    listeNumeros.getSelectionModel().clearSelection();
+                    listeEvents.getSelectionModel().clearSelection();
+                    listeActeurs.getSelectionModel().clearSelection();
+                    btnModifier.setDisable(false);
+                    previewNotes.setDisable(false);
                 })
         );
         listeNumeros.getSelectionModel().selectedItemProperty().addListener(
@@ -74,6 +90,11 @@ public class ControleurMainView {
                     previewTitre.setText(t1.getTitre());
                     previewDesc.setText("");
                     previewNotes.setText(t1.getCommentaires());
+                    listeEvents.getSelectionModel().clearSelection();
+                    listeSpectacles.getSelectionModel().clearSelection();
+                    listeActeurs.getSelectionModel().clearSelection();
+                    btnModifier.setDisable(false);
+                    previewNotes.setDisable(false);
                 })
         );
         listeActeurs.getSelectionModel().selectedItemProperty().addListener(
@@ -81,6 +102,11 @@ public class ControleurMainView {
                     previewTitre.setText(t1.getSurnom());
                     previewDesc.setText("NOM COMPLET : " + t1.getPrenom() + " " + t1.getNom() + "\nSPECIALITE : " + t1.getSpecialite());
                     previewNotes.setText(t1.getCommentaires());
+                    listeNumeros.getSelectionModel().clearSelection();
+                    listeSpectacles.getSelectionModel().clearSelection();
+                    listeEvents.getSelectionModel().clearSelection();
+                    btnModifier.setDisable(false);
+                    previewNotes.setDisable(false);
                 })
         );
     }
@@ -141,6 +167,33 @@ public class ControleurMainView {
         Stage window = new Stage();
         Scene scene = new Scene(loader.load());
 
+        window.setScene(scene);
+        window.show();
+    }
+
+    /**
+     * Gestion du clic sur le bouton de modification.
+     * @param event L'événement de clic.
+     */
+    @FXML
+    public void handleBtnModifier(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        if (listeEvents.getSelectionModel().getSelectedItem() != null) {
+            loader = new FXMLLoader(MainView.class.getResource("create-event.fxml"));
+            loader.setController(new Controleur_create_event(app, listeEvents.getSelectionModel().getSelectedItem()));
+        } else if (listeSpectacles.getSelectionModel().getSelectedItem() != null) {
+            loader = new FXMLLoader(MainView.class.getResource("create-spectacle.fxml"));
+            loader.setController(new Controleur_create_spectacle(app, listeSpectacles.getSelectionModel().getSelectedItem()));
+        } else if (listeNumeros.getSelectionModel().getSelectedItem() != null) {
+            loader = new FXMLLoader(MainView.class.getResource("create-numero.fxml"));
+            loader.setController(new Controleur_create_num(app, listeNumeros.getSelectionModel().getSelectedItem()));
+        } else if (listeActeurs.getSelectionModel().getSelectedItem() != null) {
+            loader = new FXMLLoader(MainView.class.getResource("create-artiste.fxml"));
+            loader.setController(new Controleur_create_acteur(app, listeActeurs.getSelectionModel().getSelectedItem()));
+        }
+
+        Stage window = new Stage();
+        Scene scene = new Scene(loader.load());
         window.setScene(scene);
         window.show();
     }
