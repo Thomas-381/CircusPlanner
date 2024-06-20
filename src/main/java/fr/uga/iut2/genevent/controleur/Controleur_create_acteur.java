@@ -24,7 +24,7 @@ public class Controleur_create_acteur {
     /**
      * Application associée au contrôleur.
      */
-    private Application app;
+    private final Application app;
 
     /**
      * ImageView pour l'image de l'artiste.
@@ -56,9 +56,9 @@ public class Controleur_create_acteur {
     private TextArea taNotes;
 
     // L'acteur chargé par le controleur
-    private Acteur acteur;
+    private final Acteur acteur;
     // booléen indiquant si la fenêtre est ouverte en mode modification
-    private boolean modification;
+    private final boolean modification;
 
     /**
      * Constructeur du contrôleur.
@@ -111,9 +111,7 @@ public class Controleur_create_acteur {
      */
     private void setupImageViewClickHandler(ImageView... imageViews) {
         for (ImageView imageView : imageViews) {
-            imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
-                handleImageClick(imageView);
-            });
+            imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> handleImageClick(imageView));
         }
     }
 

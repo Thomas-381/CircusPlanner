@@ -31,7 +31,7 @@ public class Controleur_create_spectacle {
     /**
      * Application associée au contrôleur.
      */
-    private Application app;
+    private final Application app;
 
     @FXML
     private ImageView imgSpectacleC;
@@ -54,9 +54,9 @@ public class Controleur_create_spectacle {
     private Button btnAddNum;
 
     // spectacle chargé par le contrôleur
-    private Spectacle spectacle;
+    private final Spectacle spectacle;
     // booléen indiquant si la fenêtre est ouverte en mode modification
-    private boolean modification;
+    private final boolean modification;
 
     @FXML
     private Button BtnRetour, btnModifier, btnFinish;

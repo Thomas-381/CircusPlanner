@@ -18,7 +18,6 @@ import javafx.scene.input.*;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
-import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 
@@ -30,7 +29,7 @@ public class Controleur_create_event {
     // Custom DataFormat pour le Drag N Drop des acteurs
     private static final DataFormat spectacleFormat = new DataFormat("Spectacle.custom");
 
-    private Application app;
+    private final Application app;
 
     @FXML
     private ImageView imgEventC;
@@ -54,9 +53,9 @@ public class Controleur_create_event {
     private Button btnAddSpectacle;
 
     // l'événement chargé par le contrôleur
-    private Evenement evenement;
+    private final Evenement evenement;
     // booléen indiquant si la fenêtre est ouverte en mode modification
-    private boolean modification;
+    private final boolean modification;
 
     @FXML
     private Button BtnRetour, btnModifier, btnFinish;
@@ -90,7 +89,7 @@ public class Controleur_create_event {
         // Ajoutez ici toutes les ImageView pour lesquelles vous souhaitez appliquer la méthode de gestion des clics
         ImageView[] imageViews = { imgEventC/* Ajoutez ici d'autres ImageView */ };
         setupImageViewClickHandler(imageViews);
-        // Gestion d'eurreur: seuls les chiffres sont acceptés pour le textfield nb places
+        // Gestion d'erreur : seuls les chiffres sont acceptés pour le text field nb places
         setupNumericField(tfNbrPlaces);
 
         btnModifier.setDisable(true);
@@ -164,9 +163,7 @@ public class Controleur_create_event {
      */
     private void setupImageViewClickHandler(ImageView... imageViews) {
         for (ImageView imageView : imageViews) {
-            imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
-                handleImageClick(imageView);
-            });
+            imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> handleImageClick(imageView));
         }
     }
 
@@ -225,8 +222,6 @@ public class Controleur_create_event {
             // fermeture de la fenêtre
             Stage window = (Stage) tfTitre.getScene().getWindow();
             window.close();
-        } else {
-
         }
     }
 
@@ -285,7 +280,7 @@ public class Controleur_create_event {
 
     /**
      * Gestion d'erreur qui efface un caractère non-numérique
-     * @param textField le textfield sur lequel la gestion agit
+     * @param textField le text field sur lequel la gestion agit
      */
     private void setupNumericField(TextField textField) {
         textField.textProperty().addListener((observable, oldValue, newValue) -> {
@@ -296,7 +291,7 @@ public class Controleur_create_event {
     }
 
     /**
-     * Controle de la date de debut grace a la methode isValidDate
+     * Contrôle de la date de debut grace a la methode isValidDate
      */
     @FXML
     private void handleDateDeb() {
@@ -309,7 +304,7 @@ public class Controleur_create_event {
         }
     }
     /**
-     * Controle si la date de fin est valide et est plus petite que celle de debut
+     * Contrôle si la date de fin est valide et est plus petite que celle de debut
      */
     @FXML
     private void handleDateFin() {
@@ -364,7 +359,7 @@ public class Controleur_create_event {
     }
 
     /**
-     * Verification que la datedebut est ulterieure à la datefin
+     * Verification que la date debut est ultérieure à la datefin
      * @param datedeb la date de debut
      * @param datefin la date de fin
      * @return true si la date de fin est après la date de debut, false sinon

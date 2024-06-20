@@ -2,8 +2,6 @@ package fr.uga.iut2.genevent.controleur;
 
 import fr.uga.iut2.genevent.modele.*;
 import fr.uga.iut2.genevent.vue.MainView;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -30,7 +28,7 @@ public class Controleur_create_num {
     /**
      * Application associée au contrôleur.
      */
-    private Application app;
+    private final Application app;
 
     @FXML
     private ImageView imgNumeroC;
@@ -60,9 +58,9 @@ public class Controleur_create_num {
     private Button BtnRetour, btnModifier, btnFinish;
 
     // numéro chargé par le contrôleur
-    private Numero numero;
+    private final Numero numero;
     // booléen indiquant si la fenêtre est ouverte en mode modification
-    private boolean modification;
+    private final boolean modification;
 
     /**
      * Constructeur du contrôleur.
@@ -309,7 +307,7 @@ public class Controleur_create_num {
      */
     @FXML
     public void handleAjouterAnimaux(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(MainView.class.getResource("choose-annimaux.fxml"));
+        FXMLLoader loader = new FXMLLoader(MainView.class.getResource("choose-animaux.fxml"));
         loader.setController(this);
         Stage window = new Stage();
         Scene scene = new Scene(loader.load());

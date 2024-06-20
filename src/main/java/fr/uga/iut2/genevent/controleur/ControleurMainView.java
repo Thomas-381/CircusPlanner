@@ -21,7 +21,7 @@ public class ControleurMainView {
     /**
      * Application associée au contrôleur.
      */
-    private Application app;
+    private final Application app;
 
     @FXML
     private ListView<Evenement> listeEvents;
@@ -63,64 +63,64 @@ public class ControleurMainView {
 
         // Ajoute des EventListeners aux listes pour afficher une preview
         listeEvents.getSelectionModel().selectedItemProperty().addListener(
-                ((observableValue, evenement, t1) -> {
-                    if (t1 != null) {
-                        previewTitre.setText(t1.getTitre());
-                        previewDesc.setText("DATE : " + t1.getDateDebut() + " - " + t1.getDateFin() + "\n ADRESSE : " + t1.getAdresse());
-                        previewNotes.setText(t1.getCommentaires());
-                        listeNumeros.getSelectionModel().clearSelection();
-                        listeSpectacles.getSelectionModel().clearSelection();
-                        listeActeurs.getSelectionModel().clearSelection();
-                        btnModifier.setDisable(false);
-                        previewNotes.setDisable(false);
-                        btnSupprimer.setDisable(false);
-                    }
-                })
+            ((observableValue, evenement, t1) -> {
+                if (t1 != null) {
+                    previewTitre.setText(t1.getTitre());
+                    previewDesc.setText("DATE : " + t1.getDateDebut() + " - " + t1.getDateFin() + "\n ADRESSE : " + t1.getAdresse());
+                    previewNotes.setText(t1.getCommentaires());
+                    listeNumeros.getSelectionModel().clearSelection();
+                    listeSpectacles.getSelectionModel().clearSelection();
+                    listeActeurs.getSelectionModel().clearSelection();
+                    btnModifier.setDisable(false);
+                    previewNotes.setDisable(false);
+                    btnSupprimer.setDisable(false);
+                }
+            })
         );
         listeSpectacles.getSelectionModel().selectedItemProperty().addListener(
-                ((observableValue, spectacles, t1) -> {
-                    if (t1 != null) {
-                        previewTitre.setText(t1.getNom());
-                        previewDesc.setText("LIEU : " + t1.getLieu());
-                        previewNotes.setText(t1.getCommentaires());
-                        listeNumeros.getSelectionModel().clearSelection();
-                        listeEvents.getSelectionModel().clearSelection();
-                        listeActeurs.getSelectionModel().clearSelection();
-                        btnModifier.setDisable(false);
-                        previewNotes.setDisable(false);
-                        btnSupprimer.setDisable(false);
-                    }
-                })
+            ((observableValue, spectacles, t1) -> {
+                if (t1 != null) {
+                    previewTitre.setText(t1.getNom());
+                    previewDesc.setText("LIEU : " + t1.getLieu());
+                    previewNotes.setText(t1.getCommentaires());
+                    listeNumeros.getSelectionModel().clearSelection();
+                    listeEvents.getSelectionModel().clearSelection();
+                    listeActeurs.getSelectionModel().clearSelection();
+                    btnModifier.setDisable(false);
+                    previewNotes.setDisable(false);
+                    btnSupprimer.setDisable(false);
+                }
+            })
         );
         listeNumeros.getSelectionModel().selectedItemProperty().addListener(
-                ((observableValue, numeros, t1) -> {
-                    if (t1 != null) {
-                        previewTitre.setText(t1.getTitre());
-                        previewDesc.setText("");
-                        previewNotes.setText(t1.getCommentaires());
-                        listeEvents.getSelectionModel().clearSelection();
-                        listeSpectacles.getSelectionModel().clearSelection();
-                        listeActeurs.getSelectionModel().clearSelection();
-                        btnModifier.setDisable(false);
-                        previewNotes.setDisable(false);
-                        btnSupprimer.setDisable(false);
-                    }
-                })
+            ((observableValue, numeros, t1) -> {
+                if (t1 != null) {
+                    previewTitre.setText(t1.getTitre());
+                    previewDesc.setText("");
+                    previewNotes.setText(t1.getCommentaires());
+                    listeEvents.getSelectionModel().clearSelection();
+                    listeSpectacles.getSelectionModel().clearSelection();
+                    listeActeurs.getSelectionModel().clearSelection();
+                    btnModifier.setDisable(false);
+                    previewNotes.setDisable(false);
+                    btnSupprimer.setDisable(false);
+                }
+            })
         );
         listeActeurs.getSelectionModel().selectedItemProperty().addListener(
-                ((observableValue, acteur, t1) -> {
-                    if (t1 != null) {
-                        previewTitre.setText(t1.getSurnom());
-                        previewDesc.setText("NOM COMPLET : " + t1.getPrenom() + " " + t1.getNom() + "\nSPECIALITE : " + t1.getSpecialite());
-                        previewNotes.setText(t1.getCommentaires());
-                        listeNumeros.getSelectionModel().clearSelection();
-                        listeSpectacles.getSelectionModel().clearSelection();
-                        listeEvents.getSelectionModel().clearSelection();
-                        btnModifier.setDisable(false);
-                        previewNotes.setDisable(false);
-                        btnSupprimer.setDisable(false);
-                    }
-                })
+            ((observableValue, acteur, t1) -> {
+                if (t1 != null) {
+                    previewTitre.setText(t1.getSurnom());
+                    previewDesc.setText("NOM COMPLET : " + t1.getPrenom() + " " + t1.getNom() + "\nSPECIALITE : " + t1.getSpecialite());
+                    previewNotes.setText(t1.getCommentaires());
+                    listeNumeros.getSelectionModel().clearSelection();
+                    listeSpectacles.getSelectionModel().clearSelection();
+                    listeEvents.getSelectionModel().clearSelection();
+                    btnModifier.setDisable(false);
+                    previewNotes.setDisable(false);
+                    btnSupprimer.setDisable(false);
+                }
+            })
         );
     }
 
@@ -191,6 +191,7 @@ public class ControleurMainView {
     @FXML
     public void handleBtnModifier(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
+        // On cherche quel élément est sélectionné
         if (listeEvents.getSelectionModel().getSelectedItem() != null) {
             loader = new FXMLLoader(MainView.class.getResource("create-event.fxml"));
             loader.setController(new Controleur_create_event(app, listeEvents.getSelectionModel().getSelectedItem()));
@@ -213,6 +214,7 @@ public class ControleurMainView {
 
     @FXML
     public void handleBtnSuppr(ActionEvent event) {
+        // On cherche quel élément est sélectionné
         if (listeEvents.getSelectionModel().getSelectedItem() != null) {
             listeEvents.getItems().remove(listeEvents.getSelectionModel().getSelectedItem());
         } else if (listeSpectacles.getSelectionModel().getSelectedItem() != null) {
