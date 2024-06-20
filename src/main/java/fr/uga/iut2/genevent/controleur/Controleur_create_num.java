@@ -212,7 +212,7 @@ public class Controleur_create_num {
         if (!tfTitre.getText().isBlank()) {
             numero.setTitre(tfTitre.getText());
             // on n'enregistre pas de nouveau numéro si la fenêtre est en mode modification
-            if (modification) {
+            if (!modification) {
                 app.ajouterNumero(numero);
             }
 

@@ -218,7 +218,7 @@ public class Controleur_create_event {
             evenement.setPrix(Float.parseFloat(tfPrix.getText()));
             evenement.setNbrPlaces(Integer.parseInt(tfNbrPlaces.getText()));
             // on n'enregistre pas de nouvel événement si la fenêtre est en mode modification
-            if (modification) {
+            if (!modification) {
                 app.ajouterEvenement(evenement);
             }
 

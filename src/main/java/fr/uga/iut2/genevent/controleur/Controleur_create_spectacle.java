@@ -217,7 +217,7 @@ public class Controleur_create_spectacle {
             spectacle.setNom(tfTitre.getText());
             spectacle.setLieu(tfLieu.getText());
             // on n'enregistre pas de nouveau spectacle si la fenêtre est en mode modification
-            if (modification) {
+            if (!modification) {
                 app.ajouterSpectacle(spectacle);
             }
 

@@ -159,7 +159,7 @@ public class Controleur_create_acteur {
             acteur.setSpecialite(tfSpe.getText());
             acteur.setCommentaires(taNotes.getText());
             // on n'enregistre pas de nouvel acteur si la fenêtre est en mode modification
-            if (modification) {
+            if (!modification) {
                 app.ajouterActeur(acteur);
             }
             // fermeture de la fenêtre
