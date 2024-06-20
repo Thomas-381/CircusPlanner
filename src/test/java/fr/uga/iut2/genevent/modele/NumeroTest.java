@@ -8,6 +8,10 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Classe de test pour la classe Numero.
+ * Cette classe contient des tests unitaires pour vérifier le bon fonctionnement des méthodes de la classe Numero.
+ */
 class NumeroTest {
     private Numero numeroChien;
     private Numero numeroClown;
@@ -16,6 +20,10 @@ class NumeroTest {
     private ArrayList<Animal> animaux;
     private ArrayList<Accessoire> accessoires;
     private ArrayList<Acteur> acteurs;
+
+    /**
+     * Configuration initiale avant chaque test.
+     */
     @BeforeEach
     void setUp(){
         numeroChien = new Numero("Le chien qui parle");
@@ -28,6 +36,10 @@ class NumeroTest {
         acteur = new Acteur();
         numeroChien.ajouterActeur(acteur);
     }
+    /**
+     * Teste la méthode ajouterAnimal de la classe Numero.
+     * Ce test vérifie que la méthode ajouterAnimal ajoute correctement un animal à un numéro.
+     */
     @Test
     void ajouterAnimal() {
 
@@ -43,6 +55,10 @@ class NumeroTest {
 
     }
 
+    /**
+     * Teste la méthode ajouterAccessoire de la classe Numero.
+     * Ce test vérifie que la méthode ajouterAccessoire ajoute correctement un accessoire à un numéro.
+     */
     @Test
     void ajouterAccessoire() {
         assertEquals(accessoires, numeroChien.getAccessoires());
@@ -56,6 +72,10 @@ class NumeroTest {
         assertEquals(accessoires, numeroChevauxComplet.getAccessoires());
     }
 
+    /**
+     * Teste la méthode ajouterActeur de la classe Numero.
+     * Ce test vérifie que la méthode ajouterActeur ajoute correctement un acteur à un numéro.
+     */
     @Test
     void ajouterActeur() {
         assertEquals(acteurs, numeroClown.getActeurs());
@@ -69,12 +89,20 @@ class NumeroTest {
         assertEquals(acteurs, numeroChevauxComplet.getActeurs());
     }
 
+    /**
+     * Teste la méthode getTitre de la classe Numero.
+     * Ce test vérifie que la méthode getTitre retourne le bon titre pour un numéro.
+     */
     @Test
     void getTitre() {
         assertEquals("Spectacle de clowns", numeroClown.getTitre());
         assertEquals("Spectacle de chevaux", numeroChevauxComplet.getTitre());
     }
 
+    /**
+     * Teste la méthode getAnimaux de la classe Numero.
+     * Ce test vérifie que la méthode getAnimaux retourne la bonne liste d'animaux pour un numéro.
+     */
     @Test
     void getAnimaux() {
         assertEquals(animaux, numeroChien.getAnimaux());
@@ -94,6 +122,10 @@ class NumeroTest {
         assertEquals(animaux, numeroChevauxComplet.getAnimaux());
     }
 
+    /**
+     * Teste la méthode getAccessoires de la classe Numero.
+     * Ce test vérifie que la méthode getAccessoires retourne la bonne liste d'accessoires pour un numéro.
+     */
     @Test
     void getAccessoires() {
         assertEquals("Spectacle de clowns", numeroClown.getTitre());
@@ -114,6 +146,10 @@ class NumeroTest {
         assertEquals(accessoires, numeroChevauxComplet.getAccessoires());
     }
 
+    /**
+     * Teste la méthode getActeurs de la classe Numero.
+     * Ce test vérifie que la méthode getActeurs retourne la bonne liste d'acteurs pour un numéro.
+     */
     @Test
     void getActeurs() {
         assertEquals("Spectacle de clowns", numeroClown.getTitre());
@@ -133,6 +169,10 @@ class NumeroTest {
         assertEquals(acteurs, numeroChevauxComplet.getActeurs());
     }
 
+    /**
+     * Teste la méthode getCommentaires de la classe Numero.
+     * Ce test vérifie que la méthode getCommentaires retourne les bons commentaires pour un numéro.
+     */
     @Test
     void getCommentaires() {
         assertEquals("", numeroChien.getCommentaires());
