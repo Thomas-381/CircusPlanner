@@ -21,11 +21,17 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * Contrôleur pour la vue de création d'un spectacle.
+ */
 public class Controleur_create_spectacle {
 
     // Custom DataFormat pour le Drag N Drop des acteurs
     private static final DataFormat numeroFormat = new DataFormat("Numero.custom");
 
+    /**
+     * Application associée au contrôleur.
+     */
     Application app;
 
     @FXML
@@ -53,10 +59,18 @@ public class Controleur_create_spectacle {
 
     @FXML
     private Button BtnRetour;
+
+    /**
+     * Constructeur du contrôleur.
+     * @param app L'application associée au contrôleur.
+     */
     public Controleur_create_spectacle(Application app) {
         this.app = app;
     }
 
+    /**
+     * Initialisation du contrôleur.
+     */
     @FXML
     private void initialize() {
         // Ajoutez ici toutes les ImageView pour lesquelles vous souhaitez appliquer la méthode de gestion des clics
@@ -85,6 +99,10 @@ public class Controleur_create_spectacle {
         listeNumerosSelect.setItems(spectacle.getNumeros());
     }
 
+    /**
+     * Configuration du gestionnaire de clics pour les ImageView.
+     * @param imageViews Les ImageView à configurer.
+     */
     private void setupImageViewClickHandler(ImageView... imageViews) {
         for (ImageView imageView : imageViews) {
             imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
@@ -93,6 +111,10 @@ public class Controleur_create_spectacle {
         }
     }
 
+    /**
+     * Gestion du clic sur une ImageView.
+     * @param imageView L'ImageView sur laquelle le clic a été effectué.
+     */
     private void handleImageClick(ImageView imageView) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().add(
@@ -106,12 +128,21 @@ public class Controleur_create_spectacle {
             imageView.setImage(image);
         }
     }
+
+    /**
+     * Gestion du clic sur le bouton de retour.
+     * @param event L'événement de clic.
+     */
     @FXML
     public void handleBtnRetour(ActionEvent event) {
         Stage stage = (Stage) BtnRetour.getScene().getWindow();
         stage.close();
     }
 
+    /**
+     * Gestion du clic sur le bouton de création d'un numéro.
+     * @param event L'événement de clic.
+     */
     @FXML
     public void handleCreerNumero(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(MainView.class.getResource("create-numero.fxml"));
@@ -123,6 +154,10 @@ public class Controleur_create_spectacle {
         window.show();
     }
 
+    /**
+     * Gestion du clic sur le bouton d'ajout d'un acteur.
+     * @param event L'événement de clic.
+     */
     @FXML
     public void handleAjouterActeur(ActionEvent event) {
         spectacle.ajouterNumero(cbNumeros.getValue());
@@ -130,6 +165,10 @@ public class Controleur_create_spectacle {
         btnAddNum.setDisable(true);
     }
 
+    /**
+     * Gestion du clic sur le bouton de fin.
+     * @param event L'événement de clic.
+     */
     @FXML
     public void handleFinish(ActionEvent event) {
         if (!tfTitre.getText().isBlank() && !tfLieu.getText().isBlank()) {
@@ -145,6 +184,10 @@ public class Controleur_create_spectacle {
 
     // Méthodes pour le drag and drop des acteurs
 
+    /**
+     * Gestion de la détection du drag d'un numéro.
+     * @param event L'événement de drag.
+     */
     @FXML
     public void dragDetectedNumero(MouseEvent event) {
         Dragboard db = listeNumeros.startDragAndDrop(TransferMode.COPY);
@@ -153,21 +196,37 @@ public class Controleur_create_spectacle {
         db.setContent(content);
     }
 
+    /**
+     * Gestion de l'entrée du drag d'un numéro dans la liste des numéros sélectionnés.
+     * @param event L'événement de drag.
+     */
     @FXML
     public void dragEnteredNumeroSelect(DragEvent event) {
         listeNumerosSelect.setBlendMode(BlendMode.DIFFERENCE);
     }
 
+    /**
+     * Gestion de la sortie du drag d'un numéro de la liste des numéros sélectionnés.
+     * @param event L'événement de drag.
+     */
     @FXML
     public void dragExitedNumeroSelect(DragEvent event) {
         listeNumerosSelect.setBlendMode(null);
     }
 
+    /**
+     * Gestion du survol du drag d'un numéro sur la liste des numéros sélectionnés.
+     * @param event L'événement de drag.
+     */
     @FXML
     public void dragOverNumeroSelect(DragEvent event) {
         event.acceptTransferModes(TransferMode.COPY);
     }
 
+    /**
+     * Gestion du drop d'un numéro dans la liste des numéros sélectionnés.
+     * @param event L'événement de drop.
+     */
     @FXML
     public void dragDroppedNumeroSelect(DragEvent event) {
         Dragboard db = event.getDragboard();
@@ -175,5 +234,3 @@ public class Controleur_create_spectacle {
         event.setDropCompleted(true);
     }
 }
-
-

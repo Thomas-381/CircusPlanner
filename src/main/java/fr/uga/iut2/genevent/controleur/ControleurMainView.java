@@ -11,11 +11,15 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
-import javax.swing.*;
 import java.io.IOException;
 
+/**
+ * Contrôleur pour la vue principale.
+ */
 public class ControleurMainView {
-
+    /**
+     * Application associée au contrôleur.
+     */
     private Application app;
 
     @FXML
@@ -31,10 +35,17 @@ public class ControleurMainView {
     @FXML
     private TextArea previewNotes;
 
+    /**
+     * Constructeur du contrôleur.
+     * @param app L'application associée au contrôleur.
+     */
     public ControleurMainView(Application app) {
         this.app = app;
     }
 
+    /**
+     * Initialisation du contrôleur.
+     */
     @FXML
     public void initialize() {
         // initialise les listes avec les éléments du modèle
@@ -70,11 +81,14 @@ public class ControleurMainView {
                     previewTitre.setText(t1.getSurnom());
                     previewDesc.setText("NOM COMPLET : " + t1.getPrenom() + " " + t1.getNom() + "\nSPECIALITE : " + t1.getSpecialite());
                     previewNotes.setText(t1.getCommentaires());
-                    previewNotes.setText(t1.getCommentaires());
                 })
         );
     }
 
+    /**
+     * Gestion du clic sur le bouton d'ajout d'un événement.
+     * @param event L'événement de clic.
+     */
     @FXML
     public void handleAjouterEvent(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(MainView.class.getResource("create-event.fxml"));
@@ -86,6 +100,10 @@ public class ControleurMainView {
         window.show();
     }
 
+    /**
+     * Gestion du clic sur le bouton d'ajout d'un spectacle.
+     * @param event L'événement de clic.
+     */
     @FXML
     public void handleAjouterSpectacle(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(MainView.class.getResource("create-spectacle.fxml"));
@@ -97,6 +115,10 @@ public class ControleurMainView {
         window.show();
     }
 
+    /**
+     * Gestion du clic sur le bouton d'ajout d'un numéro.
+     * @param event L'événement de clic.
+     */
     @FXML
     public void handleAjouterNumero(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(MainView.class.getResource("create-numero.fxml"));
@@ -108,6 +130,10 @@ public class ControleurMainView {
         window.show();
     }
 
+    /**
+     * Gestion du clic sur le bouton d'ajout d'un acteur.
+     * @param event L'événement de clic.
+     */
     @FXML
     public void handleAjouterActeur(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(MainView.class.getResource("create-artiste.fxml"));
@@ -118,6 +144,4 @@ public class ControleurMainView {
         window.setScene(scene);
         window.show();
     }
-
-
 }
