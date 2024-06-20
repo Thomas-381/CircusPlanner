@@ -180,7 +180,7 @@ public class Controleur_create_num {
     @FXML
     public void handleAjouterAccessoire(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(MainView.class.getResource("choose-accessoire.fxml"));
-        loader.setController(new Controleur_create_num(app));
+        loader.setController(this);
         Stage window = new Stage();
         Scene scene = new Scene(loader.load());
 
@@ -190,11 +190,29 @@ public class Controleur_create_num {
 
     @FXML
     public void handleAjouterAnimaux(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(MainView.class.getResource("choose-accessoire.fxml"));
-        loader.setController(new Controleur_create_num(app));
+        FXMLLoader loader = new FXMLLoader(MainView.class.getResource("choose-annimaux.fxml"));
+        loader.setController(this);
         Stage window = new Stage();
         Scene scene = new Scene(loader.load());
 
+        window.setScene(scene);
+        window.show();
+    }
+    @FXML
+    public void handleCreeAnimaux(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(MainView.class.getResource("create-animaux.fxml"));
+        loader.setController(this);
+        Stage window = new Stage();
+        Scene scene = new Scene(loader.load());
+        window.setScene(scene);
+        window.show();
+    }
+    @FXML
+    public void handleCreeAccessoire(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(MainView.class.getResource("create-accessoire.fxml"));
+        loader.setController(this);
+        Stage window = new Stage();
+        Scene scene = new Scene(loader.load());
         window.setScene(scene);
         window.show();
     }

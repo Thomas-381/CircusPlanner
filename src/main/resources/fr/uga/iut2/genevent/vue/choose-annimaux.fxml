@@ -13,6 +13,6 @@
   </rowConstraints>
    <children>
       <ChoiceBox fx:id="ChoiceBoxAccessoire" prefWidth="150.0" />
-      <Button fx:id="BtnAddAccessoire" mnemonicParsing="false" styleClass="whiteBone" text="+ Animaux" GridPane.rowIndex="1" />
+      <Button fx:id="BtnAddAccessoire" mnemonicParsing="false" onAction="#handleCreeAnimaux" styleClass="whiteBone" text="+ Animaux" GridPane.rowIndex="1" />
    </children>
 </GridPane>
