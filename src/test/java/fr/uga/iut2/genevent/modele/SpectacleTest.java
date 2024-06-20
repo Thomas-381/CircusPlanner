@@ -1,6 +1,9 @@
 package fr.uga.iut2.genevent.modele;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -8,6 +11,21 @@ import static org.junit.jupiter.api.Assertions.*;
  * Cette classe contient des tests pour la classe Spectacle.
  */
 class SpectacleTest {
+
+
+    private Numero numero;
+    private Acteur acteur;
+
+
+    /**
+     * Configuration initiale avant chaque test.
+     */
+    @BeforeEach
+    void setUp() {
+        numero = new Numero();
+        acteur = new Acteur();
+        numero.ajouterActeur(acteur);
+    }
 
     /**
      * Test pour la méthode setNom de la classe Spectacle.
@@ -47,16 +65,6 @@ class SpectacleTest {
         assertEquals("Test Lieu", spectacle.getLieu());
     }
 
-    /**
-     * Test pour la méthode ajouterOrganisateur de la classe Spectacle.
-     */
-    @Test
-    void ajouterOrganisateur() {
-        Spectacle spectacle = new Spectacle();
-        Organisateur organisateur = new Organisateur();
-        spectacle.ajouterOrganisateur(organisateur);
-        assertTrue(spectacle.getOrganisateurs().contains(organisateur));
-    }
 
     /**
      * Test pour la méthode ajouterNumero de la classe Spectacle.
@@ -81,15 +89,13 @@ class SpectacleTest {
         assertTrue(spectacle.getNumeros().contains(numero));
     }
 
-    /**
-     * Test pour la méthode getOrganisateurs de la classe Spectacle.
-     */
     @Test
-    void getOrganisateurs() {
-        Spectacle spectacle = new Spectacle();
-        Organisateur organisateur = new Organisateur();
-        spectacle.ajouterOrganisateur(organisateur);
-        assertEquals(1, spectacle.getOrganisateurs().size());
-        assertTrue(spectacle.getOrganisateurs().contains(organisateur));
+    void getCommentaires() {
+        Spectacle spectacle = new Spectacle("Test Nom", "Test Lieu");
+        spectacle.ajouterNumero(numero);
+        assertEquals("", spectacle.getCommentaires());
+        acteur.setCommentaires("Allergique aux arachides");
+        assertEquals("Allergique aux arachides", spectacle.getCommentaires());
     }
+
 }

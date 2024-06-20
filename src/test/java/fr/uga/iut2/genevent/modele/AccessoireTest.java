@@ -22,7 +22,7 @@ class AccessoireTest {
         assertEquals("Perche", accessoire.getLabel());
 
         Accessoire accessoire2 = new Accessoire("Bracelet");
-        accessoire.setLabel("");
-        assertEquals("", accessoire.getLabel());
+        accessoire2.setLabel("");
+        assertEquals("", accessoire2.getLabel());
     }
 }

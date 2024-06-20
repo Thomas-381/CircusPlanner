@@ -139,7 +139,10 @@ public class Numero implements Serializable {
     public String getCommentaires() {
         StringBuilder retours = new StringBuilder();
         for (Acteur a : acteurs) {
-            retours.append(a.getCommentaires() + "\n");
+            retours.append(a.getCommentaires()).append("\n");
+        }
+        if(retours.length()>0){
+            retours.deleteCharAt(retours.length()-1);   //On retire le dernier saut à la ligne que rajoute le StringBuilder
         }
         return retours.toString();
     }

@@ -12,6 +12,7 @@ class NumeroTest {
     private Numero numeroChien;
     private Numero numeroClown;
     private Numero numeroChevauxComplet;
+    private Acteur acteur;
     private ArrayList<Animal> animaux;
     private ArrayList<Accessoire> accessoires;
     private ArrayList<Acteur> acteurs;
@@ -24,6 +25,8 @@ class NumeroTest {
         accessoires = new ArrayList<>();
         animaux = new ArrayList<>();
         acteurs = new ArrayList<>();
+        acteur = new Acteur();
+        numeroChien.ajouterActeur(acteur);
     }
     @Test
     void ajouterAnimal() {
@@ -128,5 +131,12 @@ class NumeroTest {
         acteurs.add(acteur2);
         assertNotEquals(acteurs, numeroChien.getActeurs());
         assertEquals(acteurs, numeroChevauxComplet.getActeurs());
+    }
+
+    @Test
+    void getCommentaires() {
+        assertEquals("", numeroChien.getCommentaires());
+        acteur.setCommentaires("Allergique aux arachides");
+        assertEquals("Allergique aux arachides", numeroChien.getCommentaires());
     }
 }
