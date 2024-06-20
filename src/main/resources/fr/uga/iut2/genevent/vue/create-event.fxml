@@ -120,7 +120,7 @@
                 <children>
                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                   <children>
-                          <TextField fx:id="tfDateDeb" onAction="#handleDateDeb" prefHeight="26.0" prefWidth="85.0" promptText="Date debut">
+                          <TextField fx:id="tfDateDeb" onKeyTyped="#handleDateDeb" prefHeight="26.0" prefWidth="85.0" promptText="Date debut">
                         <VBox.margin>
                            <Insets />
                         </VBox.margin></TextField>
@@ -132,7 +132,7 @@
                </VBox>
                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                   <children>
-                          <TextField fx:id="tfDateFin" onAction="#handleDateFin" prefHeight="26.0" prefWidth="85.0" promptText="Date fin" />
+                          <TextField fx:id="tfDateFin" onKeyTyped="#handleDateFin" prefHeight="26.0" prefWidth="85.0" promptText="Date fin" />
                      <Label fx:id="labelErrorFin" textFill="RED" />
                   </children>
                   <HBox.margin>

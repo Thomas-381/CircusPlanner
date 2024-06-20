@@ -209,8 +209,8 @@ public class Controleur_create_event {
     @FXML
     public void handleFinish(ActionEvent event) {
         if (!tfTitre.getText().isBlank() && !tfLieu.getText().isBlank()
-            && !tfDateDeb.getText().isBlank() && !tfDateFin.getText().isBlank()
-            && !tfNbrPlaces.getText().isBlank() && !tfPrix.getText().isBlank()) {
+                && !tfDateDeb.getText().isBlank() && !tfDateFin.getText().isBlank()
+                && !tfNbrPlaces.getText().isBlank() && !tfPrix.getText().isBlank()) {
             evenement.setTitre(tfTitre.getText());
             evenement.setAdresse(tfLieu.getText());
             evenement.setDateDebut(tfDateDeb.getText());
@@ -225,6 +225,8 @@ public class Controleur_create_event {
             // fermeture de la fenêtre
             Stage window = (Stage) tfTitre.getScene().getWindow();
             window.close();
+        } else {
+
         }
     }
 
@@ -300,7 +302,6 @@ public class Controleur_create_event {
     private void handleDateDeb() {
         String date = tfDateDeb.getText();
         if (!isValidDate(date)) {
-            tfDateDeb.setText("");
             labelErrorDeb.setText("JJ/MM/AAAA");
         }
         else{
@@ -314,7 +315,6 @@ public class Controleur_create_event {
     private void handleDateFin() {
         String date = tfDateFin.getText();
         if (!isValidDate(date)) {
-            tfDateFin.setText("");
             labelErrorFin.setText("JJ/MM/AAAA");
         }
         else{
