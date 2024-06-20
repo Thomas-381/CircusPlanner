@@ -96,7 +96,7 @@
                <opaqueInsets>
                   <Insets />
                </opaqueInsets></VBox>
-                <Button fx:id="BtnRetour" mnemonicParsing="false" styleClass="retour" text="&lt;- Retour" />
+                <Button fx:id="BtnRetour" mnemonicParsing="false" onAction="#handleBtnRetour" styleClass="retour" text="&lt;- Retour" />
             </children>
             <padding>
                 <Insets bottom="5.0" left="5.0" />
@@ -130,7 +130,10 @@
                      </VBox.margin></ListView>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                              <Button fx:id="btnAddActeur" mnemonicParsing="false" onAction="#handleAjouterActeur" styleClass="whiteBone" text="+ Ajouter Artiste" />
+                              <Button fx:id="btnAddActeur" mnemonicParsing="false" onAction="#handleAjouterActeur" styleClass="whiteBone" text="+ Ajouter Artiste">
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin></Button>
                         <ChoiceBox fx:id="cbActeurs" prefWidth="150.0" />
                      </children>
                   </HBox>

@@ -6,10 +6,10 @@ Button{
     -fx-margin: 5px;
 }
 
-ListView, TextArea{
-    -fx-border-radius: 3px;
-    -fx-background-radius: 3px;
-    -fx-margin: 3px;
+TextArea, ChoiceBox{
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-margin: 8px;
 }
 .retour{
     -fx-background-color:  #f7f4b0;

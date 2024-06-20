@@ -112,8 +112,6 @@ public class Controleur_create_spectacle {
         stage.close();
     }
 
-}
-
     @FXML
     public void handleCreerNumero(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(MainView.class.getResource("create-numero.fxml"));
