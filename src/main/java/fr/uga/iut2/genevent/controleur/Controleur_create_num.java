@@ -57,6 +57,18 @@ public class Controleur_create_num {
     @FXML
     private Button BtnRetour, btnModifier, btnFinish;
 
+    // Page Animaux
+    @FXML
+    private TextField tfNomAnimal, tfEspeceAnimal;
+    @FXML
+    private ChoiceBox<Animal> cbAnimaux;
+
+    // Page Accessoires
+    @FXML
+    private TextField tfNomAccessoire;
+    @FXML
+    private ChoiceBox<Accessoire> cbAccessoires;
+
     // numéro chargé par le contrôleur
     private final Numero numero;
     // booléen indiquant si la fenêtre est ouverte en mode modification
@@ -295,8 +307,51 @@ public class Controleur_create_num {
         Stage window = new Stage();
         Scene scene = new Scene(loader.load());
 
+        cbAccessoires.setItems(app.getAccessoires());
+        cbAccessoires.getSelectionModel().selectedItemProperty().addListener(
+                ((observableValue, acteur, t1) -> {
+                    if (t1 == null) {
+                        tfNomAccessoire.setDisable(false);
+                    } else {
+                        tfNomAccessoire.setDisable(true);
+                    }
+                })
+        );
+
         window.setScene(scene);
         window.show();
+    }
+
+    @FXML
+    public void handleCreateAccessoire(ActionEvent event) {
+        if (cbAccessoires.getValue() != null) {
+            numero.ajouterAccessoire(cbAccessoires.getValue());
+        } else {
+            if (!tfNomAccessoire.getText().isBlank()) {
+                Accessoire accessoire = new Accessoire(tfNomAccessoire.getText());
+                numero.ajouterAccessoire(accessoire);
+                app.ajouterAccessoire(accessoire);
+            }
+        }
+        // Fermeture de la fenêtre
+        Stage window = (Stage) tfNomAccessoire.getScene().getWindow();
+        window.close();
+    }
+
+    @FXML
+    public void handleCreateAnimal(ActionEvent event) {
+        if (cbAnimaux.getValue() != null) {
+            numero.ajouterAnimal(cbAnimaux.getValue());
+        } else {
+            if (!tfNomAnimal.getText().isBlank() && !tfEspeceAnimal.getText().isBlank()) {
+                Animal animal = new Animal(tfNomAnimal.getText(), tfEspeceAnimal.getText());
+                numero.ajouterAnimal(animal);
+                app.ajouterAnimal(animal);
+            }
+        }
+        // Fermeture de la fenêtre
+        Stage window = (Stage) tfNomAnimal.getScene().getWindow();
+        window.close();
     }
 
     /**
@@ -312,24 +367,19 @@ public class Controleur_create_num {
         Stage window = new Stage();
         Scene scene = new Scene(loader.load());
 
-        window.setScene(scene);
-        window.show();
-    }
-    @FXML
-    public void handleCreeAnimaux(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(MainView.class.getResource("create-animaux.fxml"));
-        loader.setController(this);
-        Stage window = new Stage();
-        Scene scene = new Scene(loader.load());
-        window.setScene(scene);
-        window.show();
-    }
-    @FXML
-    public void handleCreeAccessoire(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(MainView.class.getResource("create-accessoire.fxml"));
-        loader.setController(this);
-        Stage window = new Stage();
-        Scene scene = new Scene(loader.load());
+        cbAnimaux.setItems(app.getAnimaux());
+        cbAnimaux.getSelectionModel().selectedItemProperty().addListener(
+                ((observableValue, acteur, t1) -> {
+                    if (t1 == null) {
+                        tfEspeceAnimal.setDisable(false);
+                        tfNomAnimal.setDisable(false);
+                    } else {
+                        tfEspeceAnimal.setDisable(true);
+                        tfNomAnimal.setDisable(true);
+                    }
+                })
+        );
+
         window.setScene(scene);
         window.show();
     }
