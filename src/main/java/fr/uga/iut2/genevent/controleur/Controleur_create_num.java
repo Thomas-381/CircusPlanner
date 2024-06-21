@@ -185,6 +185,8 @@ public class Controleur_create_num {
         FXMLLoader loader = new FXMLLoader(MainView.class.getResource("create-artiste.fxml"));
         loader.setController(new Controleur_create_acteur(app, listeActeurs.getSelectionModel().getSelectedItem()));
         Stage window = new Stage();
+        window.setTitle("CircusPlanner : modification d'acteur");
+
         Scene scene = new Scene(loader.load());
 
         window.setScene(scene);
@@ -200,6 +202,8 @@ public class Controleur_create_num {
         FXMLLoader loader = new FXMLLoader(MainView.class.getResource("create-artiste.fxml"));
         loader.setController(new Controleur_create_acteur(app));
         Stage window = new Stage();
+        window.setTitle("CircusPlanner : Création d'acteur");
+
         Scene scene = new Scene(loader.load());
 
         window.setScene(scene);
@@ -320,6 +324,8 @@ public class Controleur_create_num {
         FXMLLoader loader = new FXMLLoader(MainView.class.getResource("choose-accessoire.fxml"));
         loader.setController(this);
         Stage window = new Stage();
+        window.setTitle("CircusPlanner : Ajout d'accessoire");
+
         Scene scene = new Scene(loader.load());
 
         cbAccessoires.setItems(app.getAccessoires());
@@ -380,6 +386,8 @@ public class Controleur_create_num {
         FXMLLoader loader = new FXMLLoader(MainView.class.getResource("choose-animaux.fxml"));
         loader.setController(this);
         Stage window = new Stage();
+        window.setTitle("CircusPlanner : Ajout d'animal");
+
         Scene scene = new Scene(loader.load());
 
         cbAnimaux.setItems(app.getAnimaux());

@@ -155,6 +155,8 @@ public class Controleur_create_event {
         FXMLLoader loader = new FXMLLoader(MainView.class.getResource("create-spectacle.fxml"));
         loader.setController(new Controleur_create_spectacle(app, listeSpectacles.getSelectionModel().getSelectedItem()));
         Stage window = new Stage();
+        window.setTitle("CircusPlanner : Modification de spectacle");
+
         Scene scene = new Scene(loader.load());
 
         window.setScene(scene);
@@ -194,6 +196,8 @@ public class Controleur_create_event {
         FXMLLoader loader = new FXMLLoader(MainView.class.getResource("create-spectacle.fxml"));
         loader.setController(new Controleur_create_spectacle(app));
         Stage window = new Stage();
+        window.setTitle("CircusPlanner : Création de spectacle");
+
         Scene scene = new Scene(loader.load());
 
         window.setScene(scene);

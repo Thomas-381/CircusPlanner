@@ -104,13 +104,13 @@
                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
             </padding>
          </VBox>
-         <VBox maxHeight="410.0" minHeight="80.0" prefHeight="327.0" prefWidth="180.0" styleClass="infoSup" GridPane.rowIndex="1">
+         <VBox maxHeight="410.0" minHeight="80.0" prefHeight="327.0" prefWidth="180.0" styleClass="infoSup" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
             <Label text="Mes acteurs">
                <VBox.margin>
                   <Insets />
                </VBox.margin>
             </Label>
-            <ListView fx:id="listeActeurs" prefHeight="68.0" prefWidth="170.0" styleClass="listeViewCote" />
+            <ListView fx:id="listeActeurs" prefHeight="68.0" prefWidth="170.0" styleClass="listeViewCote" VBox.vgrow="ALWAYS" />
             <Button fx:id="btnAjouterActeur" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleAjouterActeur" styleClass="whiteBone" text="+ Nouvel acteur">
                <VBox.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />

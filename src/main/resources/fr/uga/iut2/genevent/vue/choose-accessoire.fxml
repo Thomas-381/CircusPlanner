@@ -32,6 +32,6 @@
                 </VBox>
             </children>
         </HBox>
-        <Button mnemonicParsing="false" onAction="#handleCreateAccessoire" styleClass="whiteBone" text="+ Ajouter Animal" />
+        <Button mnemonicParsing="false" onAction="#handleCreateAccessoire" styleClass="whiteBone" text="+ Ajouter Accessoire" />
     </children>
 </VBox>

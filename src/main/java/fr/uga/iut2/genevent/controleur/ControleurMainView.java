@@ -133,6 +133,7 @@ public class ControleurMainView {
         FXMLLoader loader = new FXMLLoader(MainView.class.getResource("create-event.fxml"));
         loader.setController(new Controleur_create_event(app));
         Stage window = new Stage();
+        window.setTitle("CircusPlanner : Création d'événement");
         Scene scene = new Scene(loader.load());
 
         window.setScene(scene);
@@ -148,6 +149,7 @@ public class ControleurMainView {
         FXMLLoader loader = new FXMLLoader(MainView.class.getResource("create-spectacle.fxml"));
         loader.setController(new Controleur_create_spectacle(app));
         Stage window = new Stage();
+        window.setTitle("CircusPlanner : Création de spectacle");
         Scene scene = new Scene(loader.load());
 
         window.setScene(scene);
@@ -163,6 +165,7 @@ public class ControleurMainView {
         FXMLLoader loader = new FXMLLoader(MainView.class.getResource("create-numero.fxml"));
         loader.setController(new Controleur_create_num(app));
         Stage window = new Stage();
+        window.setTitle("CircusPlanner : Création de numéro");
         Scene scene = new Scene(loader.load());
 
         window.setScene(scene);
@@ -178,6 +181,8 @@ public class ControleurMainView {
         FXMLLoader loader = new FXMLLoader(MainView.class.getResource("create-artiste.fxml"));
         loader.setController(new Controleur_create_acteur(app));
         Stage window = new Stage();
+        window.setTitle("CircusPlanner : Création d'acteur");
+
         Scene scene = new Scene(loader.load());
 
         window.setScene(scene);
@@ -191,22 +196,26 @@ public class ControleurMainView {
     @FXML
     public void handleBtnModifier(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
+        Stage window = new Stage();
         // On cherche quel élément est sélectionné
         if (listeEvents.getSelectionModel().getSelectedItem() != null) {
             loader = new FXMLLoader(MainView.class.getResource("create-event.fxml"));
             loader.setController(new Controleur_create_event(app, listeEvents.getSelectionModel().getSelectedItem()));
+            window.setTitle("CircusPlanner : Modification d'événement");
         } else if (listeSpectacles.getSelectionModel().getSelectedItem() != null) {
             loader = new FXMLLoader(MainView.class.getResource("create-spectacle.fxml"));
             loader.setController(new Controleur_create_spectacle(app, listeSpectacles.getSelectionModel().getSelectedItem()));
+            window.setTitle("CircusPlanner : Modification de Spectacle");
         } else if (listeNumeros.getSelectionModel().getSelectedItem() != null) {
             loader = new FXMLLoader(MainView.class.getResource("create-numero.fxml"));
             loader.setController(new Controleur_create_num(app, listeNumeros.getSelectionModel().getSelectedItem()));
+            window.setTitle("CircusPlanner : Modification de numéro");
         } else if (listeActeurs.getSelectionModel().getSelectedItem() != null) {
             loader = new FXMLLoader(MainView.class.getResource("create-artiste.fxml"));
             loader.setController(new Controleur_create_acteur(app, listeActeurs.getSelectionModel().getSelectedItem()));
+            window.setTitle("CircusPlanner : Modification d'acteur");
         }
 
-        Stage window = new Stage();
         Scene scene = new Scene(loader.load());
         window.setScene(scene);
         window.show();

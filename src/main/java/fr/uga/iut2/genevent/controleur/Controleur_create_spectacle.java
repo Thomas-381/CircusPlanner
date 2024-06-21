@@ -179,6 +179,8 @@ public class Controleur_create_spectacle {
         FXMLLoader loader = new FXMLLoader(MainView.class.getResource("create-numero.fxml"));
         loader.setController(new Controleur_create_num(app, listeNumeros.getSelectionModel().getSelectedItem()));
         Stage window = new Stage();
+        window.setTitle("CircusPlanner : Modification de numéro");
+
         Scene scene = new Scene(loader.load());
 
         window.setScene(scene);
@@ -194,6 +196,8 @@ public class Controleur_create_spectacle {
         FXMLLoader loader = new FXMLLoader(MainView.class.getResource("create-numero.fxml"));
         loader.setController(new Controleur_create_num(app));
         Stage window = new Stage();
+        window.setTitle("CircusPlanner : Création de numéro");
+
         Scene scene = new Scene(loader.load());
 
         window.setScene(scene);
